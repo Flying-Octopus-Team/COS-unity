@@ -38,7 +38,6 @@ public class PlayerController : MonoBehaviour
         cController = GetComponent<CharacterController>();
         stepSource = GetComponent<AudioSource>();
         flashlight = playerCamera.GetComponentInChildren<Flashlight>();
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()
