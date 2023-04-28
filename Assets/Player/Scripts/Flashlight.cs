@@ -25,7 +25,6 @@ public class Flashlight : MonoBehaviour
     }
     public void TurnFlashlight(bool newState)
     {
-        Debug.Log($"Flashlight state change: {currentState} -> {newState}");
         if(currentState && !newState) 
         {
             audioSource.PlayOneShot(turnOffSound);

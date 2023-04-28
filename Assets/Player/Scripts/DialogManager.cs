@@ -9,12 +9,15 @@ public class DialogManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI dialogOutput;
     [SerializeField] private GameObject noteOutput;
+    [SerializeField] private GameEvent lockCursorEvent;
+    [SerializeField] private GameEvent unlockCursorEvent;
 
     private Queue<Quote> dialogQueue = new Queue<Quote>();
 
     private void Start()
     {
         instance = this;
+        lockCursorEvent.Raise();
         StartCoroutine(DialogLoop());
     }
     public void AddToQuery(Quote q)
@@ -28,7 +31,7 @@ public class DialogManager : MonoBehaviour
         if(tmp)
         {
             tmp.SetText(n.noteData);
-            Cursor.lockState = CursorLockMode.None;
+            unlockCursorEvent.Raise();
         }
     }
 
@@ -60,5 +63,11 @@ public class DialogManager : MonoBehaviour
     private void OnDestroy()
     {
         StopAllCoroutines();
+    }
+
+    public void LockCursor(bool state)
+    {
+        Debug.Log($"Locking: {state}");
+        Cursor.lockState = state ? CursorLockMode.Locked : CursorLockMode.Confined;
     }
 }

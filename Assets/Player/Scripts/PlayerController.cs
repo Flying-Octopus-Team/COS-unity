@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     public float stepRate = 0.5f;
     private float stepTimer;
     private bool isGrounded;
+    private bool canLookAround = true;
     private CharacterController cController;
 
     [Header("Audio")]
@@ -80,6 +81,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandleCameraMovement()
     {
+        if (!canLookAround) return;
         Vector2 cameraMovement = cameraInput * cameraSensitivity * Time.deltaTime;
         this.transform.Rotate(Vector3.up * cameraMovement.x);
 
@@ -112,12 +114,9 @@ public class PlayerController : MonoBehaviour
                 o.Interact();
                 return;
             }
-            if (flashlight) flashlight.SwitchFlashlight();
             Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow,3);
             return;
         }
-
-        if (flashlight) flashlight.SwitchFlashlight();
         Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.TransformDirection(Vector3.forward) * interactionDistance, Color.red,3);
     }
 
@@ -134,6 +133,11 @@ public class PlayerController : MonoBehaviour
     {        
         //Moze potem zmienic na box?
         return Physics.CheckSphere(GetLegsPosition(), len, groundMask);
+    }
+
+    public void LockLookingAround(bool lockState)
+    {
+        canLookAround = lockState;
     }
 
     //INPUT
@@ -154,6 +158,14 @@ public class PlayerController : MonoBehaviour
             HandlePlayerInteraction();
         }
     }
+    public void HandleFlashlightInput(InputAction.CallbackContext context)
+    {
+        if (context.started && flashlight)
+        {
+            flashlight.SwitchFlashlight();
+        }
+    }
+
     //OTHER
     private Vector3 GetLegsPosition()
     {
