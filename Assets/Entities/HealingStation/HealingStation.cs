@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class HealingStation : MonoBehaviour
 {
+    [SerializeField] private PlayerReference pRef;
     [SerializeField] private GameEvent lockPlayerMovement;
     [SerializeField] private GameEvent unlockPlayerMovement;
     bool semaphoreLock = false;
 
     public void StartHealSequence()
     {
-        if(!semaphoreLock)
+        if(!semaphoreLock && pRef.GetPc())
         {
             semaphoreLock = true;
             StartCoroutine(HealSequence());
@@ -20,7 +21,11 @@ public class HealingStation : MonoBehaviour
     IEnumerator HealSequence()
     {
         lockPlayerMovement.Raise();
-        yield return new WaitForSeconds(2);
+        for (int i=0;i<2;i++)
+        {
+            pRef.GetPc().HealPlayer(5);
+            yield return new WaitForSeconds(1);
+        }
         unlockPlayerMovement.Raise();
         semaphoreLock = false;
     }

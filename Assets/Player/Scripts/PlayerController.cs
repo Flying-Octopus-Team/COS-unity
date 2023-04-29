@@ -7,6 +7,8 @@ using UnityEngine.InputSystem.XR;
 
 public class PlayerController : MonoBehaviour
 {
+    private const int MAX_HP = 100;
+    [SerializeField] private PlayerReference pRef;
     [Header("Movement")]
     [SerializeField] private float cameraSensitivity = 100f;
     [SerializeField] private float walkingSpeed = 10f;
@@ -49,6 +51,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioClip[] stepSound;
     [SerializeField] private AudioClip landSound;
 
+    private void Awake()
+    {
+        pRef.SetPc(this);
+    }
     void Start()
     {
         playerCamera = GetComponentInChildren<Camera>();
@@ -130,7 +136,7 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(playerCamera.transform.position, 
             playerCamera.transform.forward, out hit, interactionDistance, interactionMask))
         {
-            if(hit.transform.TryGetComponent<IInteract>(out IInteract o))
+            if(hit.transform.TryGetComponent(out IInteract o))
             {
                 Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.green,3);
                 o.Interact();
@@ -144,7 +150,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandlePlayerLifeSupport()
     {
-        if (lifeSupportHoldTime > 0f)
+        if (lifeSupportHoldTime > 0f && health>0)
         {
             //effects cuz player holding button
             lifesupportBootStatus.localScale= new Vector3((float)((Time.time - lifeSupportHoldTime)/ lifeSupportSwitchTime),1,1);
@@ -172,7 +178,9 @@ public class PlayerController : MonoBehaviour
 
     public void DamagePlayer(int dmg)
     {
+        if (health <= 0) return;
         health-=dmg;
+        health=Mathf.Clamp(health, 0, MAX_HP);
         if (health <= 0) PlayerDie();
     }
 
@@ -195,11 +203,17 @@ public class PlayerController : MonoBehaviour
     {
         canLookAround = lockState;
     }
+  
     public void LockMovingAround(bool lockState)
     {
         canMoveAround = lockState;
     }
 
+    public void HealPlayer(int amout)
+    {
+        health += Mathf.Abs(amout);
+        health = Mathf.Clamp(health, 0, MAX_HP);
+    }
     public void PlayerDie()
     {
         gameOverScreen.gameObject.SetActive(true);
@@ -235,7 +249,7 @@ public class PlayerController : MonoBehaviour
 
     public void HandleLifeSupportInput(InputAction.CallbackContext context)
     {
-       
+        if (health <= 0) return;
         if (context.performed)
         {
             lifeSupportHoldTime = Time.time;
@@ -265,5 +279,13 @@ public class PlayerController : MonoBehaviour
     {
         Gizmos.color = IsGrounded()? Color.green : Color.red;
         Gizmos.DrawSphere(GetLegsPosition(), len);
+    }
+    private void OnGUI()
+    {
+        GUI.Label(new Rect(0, 0, 150, 50), $"PlayerHP: {health}");
+        GUI.Label(new Rect(0, 15, 150, 50), $"LifeSupport: {lifeSupportStatus}");
+        GUI.Label(new Rect(0, 30, 150, 50), $"canLookAround: {canLookAround}");
+        GUI.Label(new Rect(0, 45, 150, 50), $"canMoveAround: {canMoveAround}");
+        GUI.Label(new Rect(0, 60, 150, 50), $"Cursor: {Cursor.lockState}");
     }
 }

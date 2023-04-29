@@ -433,6 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e084f6f9e6ccd8245b57a87e7b38cd8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pRef: {fileID: 11400000, guid: 5c184b669e2eeda489a93cfe0f245e80, type: 2}
   cameraSensitivity: 30
   walkingSpeed: 10
   groundMask:
