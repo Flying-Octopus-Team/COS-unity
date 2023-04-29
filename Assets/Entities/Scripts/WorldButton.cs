@@ -8,7 +8,6 @@ public class WorldButton : MonoBehaviour, IInteract
     [SerializeField] private UnityEvent actions;
     public void Interact()
     {
-        Debug.Log("Bang");
         actions.Invoke();
     }
 }
