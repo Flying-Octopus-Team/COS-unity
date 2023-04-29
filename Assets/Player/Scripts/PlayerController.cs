@@ -7,18 +7,33 @@ using UnityEngine.InputSystem.XR;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Movement")]
     [SerializeField] private float cameraSensitivity = 100f;
     [SerializeField] private float walkingSpeed = 10f;
     [SerializeField] private LayerMask groundMask;
+    [SerializeField] private GameEvent lockCursor;
+    [SerializeField] private GameEvent unlockCursor;
+    [Header("Utility")]
     [SerializeField] private LayerMask interactionMask;
-    [SerializeField] private Flashlight flashlight;
+    private Flashlight flashlight;
+    [SerializeField] private double lifeSupportSwitchTime = 2.0f;
+    [SerializeField] private AudioClip lifeSupportOnSound;
+    [SerializeField] private AudioClip lifeSupportOffSound;
+    [SerializeField] private RectTransform lifesupportBootStatus;
+    [SerializeField] private RectTransform lifesupportBootStatusHolder;
+    [SerializeField] private Transform gameOverScreen;
+    private double lifeSupportHoldTime;
+    private bool lifeSupportStatus;
+    [SerializeField] private int health = 100;
+    private float healthLostTimer = 0;
 
-    public float len = 0.4f;
+    public float len = 0.3f;
 
     private Camera playerCamera;
     private Vector2 cameraInput;
     private Vector2 movementInput;
     private Vector3 playerVelocity;
+    private Vector3 lastPlayerPosition;
 
     private float xRot = 0f; //Buffer for mouse up/down input
     private float interactionDistance = 10f;
@@ -26,6 +41,7 @@ public class PlayerController : MonoBehaviour
     private float stepTimer;
     private bool isGrounded;
     private bool canLookAround = true;
+    private bool canMoveAround = true;
     private CharacterController cController;
 
     [Header("Audio")]
@@ -43,12 +59,15 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        //Landing
         bool newIsGrounded = IsGrounded(); 
         if(!isGrounded && newIsGrounded)
         {
             stepSource.PlayOneShot(landSound);
         }
         isGrounded= newIsGrounded;
+        //
+        HandlePlayerLifeSupport();
         HandleCameraMovement();
         HandlePlayerMovement(isGrounded);
         HandlePlayerPhysics(isGrounded);
@@ -59,15 +78,16 @@ public class PlayerController : MonoBehaviour
 
     private void HandlePlayerMovement(bool grounded)
     {
+        if (!canMoveAround || health <= 0) return;
+        float movementPenalty = lifeSupportStatus ? 1 : 0.5f;
         Vector3 moveVector = transform.right * movementInput.x + transform.forward * movementInput.y;
-        moveVector *= Time.deltaTime * walkingSpeed;
+        moveVector *= Time.deltaTime * (walkingSpeed * movementPenalty);
 
         cController.Move(moveVector);
-
         if (moveVector.magnitude > 0 && grounded)
         {
-            stepTimer += Time.deltaTime;
-            if (stepTimer > stepRate && stepSource)
+            stepTimer += Time.deltaTime * movementPenalty;
+            if (stepTimer > stepRate && stepSource && Vector3.Distance(transform.position, lastPlayerPosition)>0.015f)
             {
                 stepSource.PlayOneShot(GetRandomClip(ref stepSound));
                 stepTimer = 0;
@@ -77,11 +97,12 @@ public class PlayerController : MonoBehaviour
         {
             stepTimer = stepRate*0.85f;
         }
+        lastPlayerPosition = transform.position;
     }
 
     private void HandleCameraMovement()
     {
-        if (!canLookAround) return;
+        if (!canLookAround || health<=0) return;
         Vector2 cameraMovement = cameraInput * cameraSensitivity * Time.deltaTime;
         this.transform.Rotate(Vector3.up * cameraMovement.x);
 
@@ -102,6 +123,7 @@ public class PlayerController : MonoBehaviour
         }
         cController.Move(playerVelocity);
     }
+    
     private void HandlePlayerInteraction()
     {
         RaycastHit hit;
@@ -120,6 +142,40 @@ public class PlayerController : MonoBehaviour
         Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.TransformDirection(Vector3.forward) * interactionDistance, Color.red,3);
     }
 
+    private void HandlePlayerLifeSupport()
+    {
+        if (lifeSupportHoldTime > 0f)
+        {
+            //effects cuz player holding button
+            lifesupportBootStatus.localScale= new Vector3((float)((Time.time - lifeSupportHoldTime)/ lifeSupportSwitchTime),1,1);
+            if ((Time.time - lifeSupportHoldTime) >= lifeSupportSwitchTime)
+            {
+                lifeSupportStatus = !lifeSupportStatus;
+                AudioClip sound = (lifeSupportStatus) ? lifeSupportOnSound : lifeSupportOffSound;
+                stepSource.PlayOneShot(sound);
+                Debug.Log($"Switch life support state to {lifeSupportStatus}");
+                lifeSupportHoldTime = 0;
+                lifesupportBootStatus.localScale = new Vector3(0, 1, 1);
+                lifesupportBootStatusHolder.gameObject.SetActive(false);
+            }
+        }
+        if (!lifeSupportStatus)
+        {
+            healthLostTimer += Time.deltaTime;
+            if(healthLostTimer > 1 ) 
+            {
+                DamagePlayer(10);
+                healthLostTimer = 0;
+            }
+        }
+    }
+
+    public void DamagePlayer(int dmg)
+    {
+        health-=dmg;
+        if (health <= 0) PlayerDie();
+    }
+
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
         Rigidbody body = hit.collider.attachedRigidbody;
@@ -130,7 +186,7 @@ public class PlayerController : MonoBehaviour
     }
     
     private bool IsGrounded()
-    {        
+    {
         //Moze potem zmienic na box?
         return Physics.CheckSphere(GetLegsPosition(), len, groundMask);
     }
@@ -138,6 +194,16 @@ public class PlayerController : MonoBehaviour
     public void LockLookingAround(bool lockState)
     {
         canLookAround = lockState;
+    }
+    public void LockMovingAround(bool lockState)
+    {
+        canMoveAround = lockState;
+    }
+
+    public void PlayerDie()
+    {
+        gameOverScreen.gameObject.SetActive(true);
+        unlockCursor.Raise();
     }
 
     //INPUT
@@ -158,11 +224,29 @@ public class PlayerController : MonoBehaviour
             HandlePlayerInteraction();
         }
     }
+    
     public void HandleFlashlightInput(InputAction.CallbackContext context)
     {
         if (context.started && flashlight)
         {
             flashlight.SwitchFlashlight();
+        }
+    }
+
+    public void HandleLifeSupportInput(InputAction.CallbackContext context)
+    {
+       
+        if (context.performed)
+        {
+            lifeSupportHoldTime = Time.time;
+            lifesupportBootStatus.localScale = new Vector3(0, 1, 1);
+            lifesupportBootStatusHolder.gameObject.SetActive(true);
+        }
+        if (context.canceled)
+        {
+            lifesupportBootStatus.localScale = new Vector3(0, 1, 1);
+            lifesupportBootStatusHolder.gameObject.SetActive(false);
+            lifeSupportHoldTime = 0;
         }
     }
 
