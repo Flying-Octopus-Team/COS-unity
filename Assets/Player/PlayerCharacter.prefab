@@ -394,6 +394,8 @@ GameObject:
   - component: {fileID: 484406916038814088}
   - component: {fileID: 8643232896940406903}
   - component: {fileID: 5721366335987072396}
+  - component: {fileID: 7436203320591628556}
+  - component: {fileID: 2792880591884696559}
   m_Layer: 6
   m_Name: PlayerCharacter
   m_TagString: Player
@@ -752,6 +754,10 @@ MonoBehaviour:
   noteOutput: {fileID: 6444468458024893411}
   lockCursorEvent: {fileID: 11400000, guid: 0f848bc784ee3a54da9bd40ac852745e, type: 2}
   unlockCursorEvent: {fileID: 11400000, guid: 5929263a996cc0c46a4712bdbdfd301c, type: 2}
+  lockPlayerMovementEvent: {fileID: 11400000, guid: 9e99f5e6d105a62409eb499fdf16514d,
+    type: 2}
+  unlockPlayerMovementEvent: {fileID: 11400000, guid: 1cd2399b55e17f5499c2b0c11015d77b,
+    type: 2}
 --- !u!114 &8643232896940406903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -783,18 +789,6 @@ MonoBehaviour:
       - m_Target: {fileID: 2480553269104861518}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: LockLookingAround
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2480553269104861518}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: LockMovingAround
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -844,6 +838,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7436203320591628556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535202211954697770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f99163b62d962842ba5e4524a38405e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 9e99f5e6d105a62409eb499fdf16514d, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 2480553269104861518}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: LockMovingAround
@@ -855,6 +865,34 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2792880591884696559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535202211954697770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f99163b62d962842ba5e4524a38405e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 1cd2399b55e17f5499c2b0c11015d77b, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2480553269104861518}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: LockMovingAround
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &2802053952442106686
 GameObject:
@@ -2554,6 +2592,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 1cd2399b55e17f5499c2b0c11015d77b, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8337503251481397275
 GameObject:
   m_ObjectHideFlags: 0
@@ -2675,4 +2725,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4524127174550518322}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 4b8c92e7800967c4bbf9f450d2cc2a78, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
