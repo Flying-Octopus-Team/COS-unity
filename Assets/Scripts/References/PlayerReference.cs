@@ -13,7 +13,6 @@ public class PlayerReference : ScriptableObject
     }
     public PlayerController GetPc()
     {
-        if (pc == null) Debug.LogWarning("Trying get acces to null player!");
         return pc;
     }
 }

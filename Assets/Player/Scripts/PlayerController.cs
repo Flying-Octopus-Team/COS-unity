@@ -168,9 +168,9 @@ public class PlayerController : MonoBehaviour
         if (!lifeSupportStatus)
         {
             healthLostTimer += Time.deltaTime;
-            if(healthLostTimer > 1 ) 
+            if(healthLostTimer > 2 ) 
             {
-                DamagePlayer(10);
+                DamagePlayer(5);
                 healthLostTimer = 0;
             }
         }
@@ -272,6 +272,13 @@ public class PlayerController : MonoBehaviour
     private AudioClip GetRandomClip(ref AudioClip[] clips)
     {
         return clips[UnityEngine.Random.Range(0, clips.Length)];
+    }
+    
+    public float GetPlayerDetectionLevel()
+    {
+        float detection = 1;
+        if (lifeSupportStatus) detection *= 3;
+        return detection;
     }
     //DEBUG
     [ExecuteAlways]
