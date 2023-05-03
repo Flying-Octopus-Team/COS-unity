@@ -67,7 +67,7 @@ public class Enemy : MonoBehaviour
                 Debug.DrawRay(transform.position, directionToPlayer, Color.red, 1f);
             }
         }
-        if (!playerInRange)
+        if (! playerInRange)
         {
             angleToPlayer = 0;
         }
@@ -89,8 +89,6 @@ public class Enemy : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detectionRange* PlayerDetectionModificator());
-        Gizmos.color = Color.blue;
-        Gizmos.DrawLine(transform.position, transform.position+(transform.forward*detectionRange * PlayerDetectionModificator()));
     }
 
     private float CalcAngleToPoint(Transform point)
