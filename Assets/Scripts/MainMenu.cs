@@ -15,6 +15,7 @@ public class MainMenu : ScriptableObject {
     }
 
     public void ChangeGraphicLevel(int level) {
+        level = Mathf.Clamp(level, 0, QualitySettings.names.Length-1);
         QualitySettings.SetQualityLevel(level, true);
     }
 
