@@ -1,27 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour
-{
-    bool isLoading = false;
+[CreateAssetMenu(fileName = "Main Menu", menuName = "ScriptableObjects/Main Menu")]
+public class MainMenu : ScriptableObject {
+    [SerializeField] private AudioMixer effectsVolume;
+    [SerializeField] private AudioMixer musicVolume;
 
-    public void StartGame()
-    {
-        if (isLoading) return; 
-        
-        StartCoroutine(LoadYourAsyncScene());
+    public void StartGame() {
+        SceneManager.LoadScene(1);
     }
 
-    IEnumerator LoadYourAsyncScene()
-    {
-        isLoading = true;
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(1);
-        // Wait until the asynchronous scene fully loads
-        while (!asyncLoad.isDone)
-        {
-            yield return null;
-        }
+    public void ChangeGraphicLevel(int level) {
+        level = Mathf.Clamp(level, 0, QualitySettings.names.Length-1);
+        QualitySettings.SetQualityLevel(level, true);
+    }
+
+    public void SetEffectVolume(float sliderValue) {
+        effectsVolume.SetFloat("EffectsVolume", Mathf.Log10(sliderValue) * 20);
+    }
+
+    public void SetMusicVolume(float sliderValue) {
+        musicVolume.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
+    }
+
+    public void ExitGame() {
+        #if UNITY_EDITOR
+            EditorApplication.ExitPlaymode();
+        #else
+            Application.Quit();
+        #endif
     }
 }
