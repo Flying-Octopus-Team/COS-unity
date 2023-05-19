@@ -15,6 +15,27 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private GameEvent lockCursor;
     [SerializeField] private GameEvent unlockCursor;
+    /// <summary>
+    /// 
+    /// </summary>
+    [Header("Latara")]
+    public Transform lataraHandler;
+    [Header("Sway")]
+    private float step = 0.01f;
+    private float maxStepDistance = 0.06f;
+
+    private float rotationStep = 4f;
+    private float maxRotationStep = 5f;
+    public float smooth = 10f;
+    private float travelLimit = 0.02f;
+    public float multiplier = 0.2f;
+
+    private float speedCurve;
+    private float curveSin { get => Mathf.Sin(speedCurve); }
+    private float curveCos { get => Mathf.Cos(speedCurve); }
+    /// <summary>
+    /// 
+    /// </summary>
     [Header("Utility")]
     [SerializeField] private LayerMask interactionMask;
     private Flashlight flashlight;
@@ -77,6 +98,7 @@ public class PlayerController : MonoBehaviour
         HandleCameraMovement();
         HandlePlayerMovement(isGrounded);
         HandlePlayerPhysics(isGrounded);
+        FlashLightPositionRotation(isGrounded);
     }
 
 
@@ -182,6 +204,51 @@ public class PlayerController : MonoBehaviour
         health-=dmg;
         health=Mathf.Clamp(health, 0, MAX_HP);
         if (health <= 0) PlayerDie();
+    }
+
+    void FlashLightPositionRotation(bool grounded)
+    {
+        if (!canLookAround || health <= 0) return;
+        lataraHandler.localPosition = Vector3.Lerp(lataraHandler.localPosition, Sway() + BobOffset(grounded), Time.deltaTime * smooth);
+        lataraHandler.localRotation = Quaternion.Slerp(lataraHandler.localRotation, Quaternion.Euler(SwayRotation()) * Quaternion.Euler(BobRotation()), Time.deltaTime * smooth);
+    }
+
+    private Vector3 Sway()
+    {
+        Vector3 invertLook = cameraInput * -step;
+        invertLook.x = Mathf.Clamp(invertLook.x, -maxStepDistance, maxStepDistance);
+        invertLook.y = Mathf.Clamp(invertLook.y, -maxStepDistance, maxStepDistance);
+
+        return invertLook;
+    }
+    private Vector3 SwayRotation()
+    {
+        Vector2 invertLook = cameraInput * -rotationStep;
+        invertLook.x = Mathf.Clamp(invertLook.x, -maxRotationStep, maxRotationStep);
+        invertLook.y = Mathf.Clamp(invertLook.y, -maxRotationStep, maxRotationStep);
+        return new Vector3(invertLook.y, invertLook.x, invertLook.x);
+    }
+    private Vector3 BobOffset(bool grounded)
+    {
+        //horizontal + vertical
+        speedCurve += Time.deltaTime * (grounded ? (cameraInput.x + cameraInput.y) * multiplier : 1f) + 0.01f;
+        Vector3 bobPosition = new Vector3();
+        bobPosition.x = (curveCos * travelLimit * (grounded ? 1 : 0)) - (movementInput.x * travelLimit);
+        //vertical
+        bobPosition.y = (curveSin * travelLimit) - (cameraInput.y * travelLimit);
+        bobPosition.z = -(movementInput.y * travelLimit);
+
+        return bobPosition;
+    }
+
+    private Vector3 BobRotation()
+    {
+        Vector3 bobEulerRotation = new Vector3();
+        bobEulerRotation.x = (movementInput != Vector2.zero ? (Mathf.Sin(2 * speedCurve)) : (Mathf.Sin(2 * speedCurve) / 2));
+        bobEulerRotation.y = (movementInput != Vector2.zero ?  curveCos : 0);
+        bobEulerRotation.z = (movementInput != Vector2.zero ?   curveCos * movementInput.x : 0);
+        bobEulerRotation *= multiplier;
+        return bobEulerRotation;
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit)

@@ -2796,7 +2796,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh35450
+  m_Name: pb_Mesh28490
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -5252,7 +5252,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh35370
+  m_Name: pb_Mesh28410
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -5648,6 +5648,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480553269104861518, guid: 9500903c6c689e34cbd5164e117e868f,
+        type: 3}
+      propertyPath: bobLimit.x
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480553269104861518, guid: 9500903c6c689e34cbd5164e117e868f,
+        type: 3}
+      propertyPath: bobLimit.y
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480553269104861518, guid: 9500903c6c689e34cbd5164e117e868f,
+        type: 3}
+      propertyPath: bobLimit.z
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480553269104861518, guid: 9500903c6c689e34cbd5164e117e868f,
+        type: 3}
+      propertyPath: multiplier
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480553269104861518, guid: 9500903c6c689e34cbd5164e117e868f,
+        type: 3}
+      propertyPath: multiplier.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480553269104861518, guid: 9500903c6c689e34cbd5164e117e868f,
+        type: 3}
+      propertyPath: multiplier.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480553269104861518, guid: 9500903c6c689e34cbd5164e117e868f,
+        type: 3}
+      propertyPath: multiplier.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480553269104861518, guid: 9500903c6c689e34cbd5164e117e868f,
+        type: 3}
+      propertyPath: bobExaggeration
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
