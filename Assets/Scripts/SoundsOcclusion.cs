@@ -8,7 +8,7 @@ public class SoundsOcclusion : MonoBehaviour {
     private void OnTriggerEnter(Collider collider) {
         if (collider.CompareTag("Player")) {
             foreach (AudioLowPassFilter filter in lowPassFilter) {
-                filter.cutoffFrequency = 22000;
+                filter.cutoffFrequency = 5007.7f;
             }
         }
     }
@@ -16,7 +16,7 @@ public class SoundsOcclusion : MonoBehaviour {
     private void OnTriggerExit(Collider collider) {
         if (collider.CompareTag("Player")) {
             foreach (AudioLowPassFilter filter in lowPassFilter) {
-                filter.cutoffFrequency = 1000;
+                filter.cutoffFrequency = 2000;
             }
         }
     }
