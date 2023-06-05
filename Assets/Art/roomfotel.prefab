@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4016507221891118748
 Transform:
@@ -105,10 +105,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: "roomkrzes\u0142o2"
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: afcc571a2d42b2249ac82069986d14ba,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: afcc571a2d42b2249ac82069986d14ba,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8188882744077473160}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: afcc571a2d42b2249ac82069986d14ba,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 790607142088691657}
   m_SourcePrefab: {fileID: 100100000, guid: afcc571a2d42b2249ac82069986d14ba, type: 3}
 --- !u!4 &1522510530315162857 stripped
 Transform:
@@ -116,3 +129,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1345364900583011074}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2191805984530910803 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: afcc571a2d42b2249ac82069986d14ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 1345364900583011074}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &8188882744077473160
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2191805984530910803}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.21, y: 0.805, z: 0.6}
+  m_Center: {x: -0.315, y: 0.95, z: 0}
+--- !u!65 &790607142088691657
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2191805984530910803}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.7, y: 0.65, z: 0.6}
+  m_Center: {x: -0.085, y: 0.32, z: 0}

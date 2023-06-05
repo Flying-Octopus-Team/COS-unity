@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8747264938602549962
 Transform:
@@ -105,10 +105,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: "roomst\xF3\u0142"
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3a924c0045043c544ad25ed68ad171ec,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3a924c0045043c544ad25ed68ad171ec,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2856509687195244471}
   m_SourcePrefab: {fileID: 100100000, guid: 3a924c0045043c544ad25ed68ad171ec, type: 3}
 --- !u!4 &98052306535297245 stripped
 Transform:
@@ -116,3 +125,30 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 492831283090347830}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &727202289990888039 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3a924c0045043c544ad25ed68ad171ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 492831283090347830}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2856509687195244471
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727202289990888039}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.88, y: 0.8375131, z: 1.6500001}
+  m_Center: {x: -0.02106987, y: 0.41875648, z: 0}
