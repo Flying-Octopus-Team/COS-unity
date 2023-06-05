@@ -369,7 +369,7 @@ MonoBehaviour:
   gameOverScreen: {fileID: 6574386681777538721}
   health: 100
   len: 0.4
-  stepRate: 0.95
+  stepRate: 0.6
   stepSound:
   - {fileID: 8300000, guid: 39cbf0b5f07c3ff4bacbe0a0237cdb05, type: 3}
   - {fileID: 8300000, guid: c82129e7b542665469626a5e221fba68, type: 3}
