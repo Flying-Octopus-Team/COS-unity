@@ -4558,6 +4558,46 @@ PrefabInstance:
       propertyPath: bobExaggeration
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 2480553269104861518, guid: 9500903c6c689e34cbd5164e117e868f,
+        type: 3}
+      propertyPath: stepSound.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480553269104861518, guid: 9500903c6c689e34cbd5164e117e868f,
+        type: 3}
+      propertyPath: stepSound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: f0ffb81e573a3461aafcc6f97edd0f8d, type: 3}
+    - target: {fileID: 2480553269104861518, guid: 9500903c6c689e34cbd5164e117e868f,
+        type: 3}
+      propertyPath: stepSound.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 37dcc5a2f8ebf45f08a7363f25a50ef7, type: 3}
+    - target: {fileID: 2480553269104861518, guid: 9500903c6c689e34cbd5164e117e868f,
+        type: 3}
+      propertyPath: stepSound.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5eacd7530bdaf48fa9c7aaf19a384a2a, type: 3}
+    - target: {fileID: 2480553269104861518, guid: 9500903c6c689e34cbd5164e117e868f,
+        type: 3}
+      propertyPath: stepSound.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: ec34d4a3fe7d34b93aad065530a31805, type: 3}
+    - target: {fileID: 2480553269104861518, guid: 9500903c6c689e34cbd5164e117e868f,
+        type: 3}
+      propertyPath: stepSound.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3c171bd096e7d4e72aa7b8bebd44e32f, type: 3}
+    - target: {fileID: 2480553269104861518, guid: 9500903c6c689e34cbd5164e117e868f,
+        type: 3}
+      propertyPath: stepSound.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: b647e111da8054efbbf1c3725df01f95, type: 3}
+    - target: {fileID: 2480553269104861518, guid: 9500903c6c689e34cbd5164e117e868f,
+        type: 3}
+      propertyPath: stepSound.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 61f7f7d668d1244138c1c8b242f5f797, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
