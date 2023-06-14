@@ -21,7 +21,6 @@ public class AmbientPlayer : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             StartCoroutine(FadeIn());
-            Debug.Log("in");
         }
         
     }
@@ -30,7 +29,6 @@ public class AmbientPlayer : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             StartCoroutine(FadeOut());
-            Debug.Log("Out");
         }
     }
 
