@@ -356,10 +356,12 @@ public class PlayerController : MonoBehaviour
     }
     private void OnGUI()
     {
+        /*
         GUI.Label(new Rect(0, 0, 150, 50), $"PlayerHP: {health}");
         GUI.Label(new Rect(0, 15, 150, 50), $"LifeSupport: {lifeSupportStatus}");
         GUI.Label(new Rect(0, 30, 150, 50), $"canLookAround: {canLookAround}");
         GUI.Label(new Rect(0, 45, 150, 50), $"canMoveAround: {canMoveAround}");
         GUI.Label(new Rect(0, 60, 150, 50), $"Cursor: {Cursor.lockState}");
+        */
     }
 }
