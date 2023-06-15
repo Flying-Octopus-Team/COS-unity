@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: DIALOG_TEST
   m_EditorClassIdentifier: 
   dialogueQuotes:
-  - text: KWESTIA 1
-    audio: {fileID: 0}
-  - text: KWESTIA 2
-    audio: {fileID: 0}
+  - text: Wpis z 21.02.2094
+    audio: {fileID: 8300000, guid: 6ca201de2f0edff4fb8b5e09056ef39a, type: 3}

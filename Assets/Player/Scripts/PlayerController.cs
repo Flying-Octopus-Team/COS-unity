@@ -91,7 +91,8 @@ public class PlayerController : MonoBehaviour
         bool newIsGrounded = IsGrounded(); 
         if(!isGrounded && newIsGrounded)
         {
-            stepSource.PlayOneShot(landSound);
+            //wylaczone tymczasowo - nie ma dzwieku upadku
+            //stepSource.PlayOneShot(landSound);
         }
         isGrounded= newIsGrounded;
         //
