@@ -79,6 +79,7 @@ public class PlayerController : MonoBehaviour
     }
     void Start()
     {
+        Application.targetFrameRate= 120;
         playerCamera = GetComponentInChildren<Camera>();
         cController = GetComponent<CharacterController>();
         stepSource = GetComponent<AudioSource>();
