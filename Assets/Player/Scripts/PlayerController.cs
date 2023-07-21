@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     [Header("Latara")]
     public Transform lataraHandler;
     [Header("Sway")]
+    [SerializeField] private Vector3 legsOffset;
     private float step = 0.01f;
     private float maxStepDistance = 0.06f;
 
@@ -46,7 +47,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private RectTransform lifesupportBootStatusHolder;
     [SerializeField] private Transform gameOverScreen;
     private double lifeSupportHoldTime;
-    private bool lifeSupportStatus;
+    private bool lifeSupportStatus = true;
     [SerializeField] private int health = 100;
     private float healthLostTimer = 0;
 
@@ -78,6 +79,7 @@ public class PlayerController : MonoBehaviour
     }
     void Start()
     {
+        Application.targetFrameRate= 120;
         playerCamera = GetComponentInChildren<Camera>();
         cController = GetComponent<CharacterController>();
         stepSource = GetComponent<AudioSource>();
@@ -90,7 +92,8 @@ public class PlayerController : MonoBehaviour
         bool newIsGrounded = IsGrounded(); 
         if(!isGrounded && newIsGrounded)
         {
-            stepSource.PlayOneShot(landSound);
+            //wylaczone tymczasowo - nie ma dzwieku upadku
+            //stepSource.PlayOneShot(landSound);
         }
         isGrounded= newIsGrounded;
         //
@@ -334,7 +337,7 @@ public class PlayerController : MonoBehaviour
     //OTHER
     private Vector3 GetLegsPosition()
     {
-        return this.transform.position - Vector3.up;
+        return this.transform.position - legsOffset;
     }
     private AudioClip GetRandomClip(ref AudioClip[] clips)
     {
@@ -356,10 +359,12 @@ public class PlayerController : MonoBehaviour
     }
     private void OnGUI()
     {
+        /*
         GUI.Label(new Rect(0, 0, 150, 50), $"PlayerHP: {health}");
         GUI.Label(new Rect(0, 15, 150, 50), $"LifeSupport: {lifeSupportStatus}");
         GUI.Label(new Rect(0, 30, 150, 50), $"canLookAround: {canLookAround}");
         GUI.Label(new Rect(0, 45, 150, 50), $"canMoveAround: {canMoveAround}");
         GUI.Label(new Rect(0, 60, 150, 50), $"Cursor: {Cursor.lockState}");
+        */
     }
 }

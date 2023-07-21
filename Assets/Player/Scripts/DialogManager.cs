@@ -16,10 +16,12 @@ public class DialogManager : MonoBehaviour
     [SerializeField] private GameEvent unlockPlayerMovementEvent;
 
     private Queue<Quote> dialogQueue = new Queue<Quote>();
+    private AudioSource audioOutput;
 
     private void Start()
     {
         instance = this;
+        audioOutput = GetComponent<AudioSource>();
         lockCursorEvent.Raise();
         StartCoroutine(DialogLoop());
     }
@@ -49,6 +51,7 @@ public class DialogManager : MonoBehaviour
                 dialogOutput.SetText(result.text);
                 if (result.audio)
                 {
+                    if(audioOutput)audioOutput.PlayOneShot(result.audio);
                     yield return new WaitForSeconds(result.audio.length);
                 }
                 else
