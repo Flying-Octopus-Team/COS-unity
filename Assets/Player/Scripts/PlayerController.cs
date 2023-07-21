@@ -34,9 +34,6 @@ public class PlayerController : MonoBehaviour
     private float speedCurve;
     private float curveSin { get => Mathf.Sin(speedCurve); }
     private float curveCos { get => Mathf.Cos(speedCurve); }
-    /// <summary>
-    /// 
-    /// </summary>
     [Header("Utility")]
     [SerializeField] private LayerMask interactionMask;
     private Flashlight flashlight;
