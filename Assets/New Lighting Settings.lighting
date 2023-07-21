@@ -40,12 +40,12 @@ LightingSettings:
   m_FinalGatherFiltering: 1
   m_PVRCulling: 0
   m_PVRSampling: 1
-  m_PVRDirectSampleCount: 32
-  m_PVRSampleCount: 1024
-  m_PVREnvironmentSampleCount: 512
+  m_PVRDirectSampleCount: 64
+  m_PVRSampleCount: 2048
+  m_PVREnvironmentSampleCount: 1024
   m_PVREnvironmentReferencePointCount: 2048
-  m_LightProbeSampleCountMultiplier: 5
-  m_PVRBounces: 20
+  m_LightProbeSampleCountMultiplier: 10
+  m_PVRBounces: 25
   m_PVRMinBounces: 1
   m_PVREnvironmentImportanceSampling: 1
   m_PVRFilteringMode: 1
