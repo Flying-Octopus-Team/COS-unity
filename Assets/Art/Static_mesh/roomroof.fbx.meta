@@ -3,7 +3,12 @@ guid: 07dbdda3335f2d340aebe30c43f5377f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: trimroom_floor
+    second: {fileID: 2100000, guid: 8e9fa4b6fb6bf834fa42583b23262f63, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
