@@ -178,7 +178,7 @@ Transform:
   - {fileID: 1172504713128407250}
   - {fileID: 1194126044438313571}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8855853370769452364
 GameObject:
@@ -2168,6 +2168,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LampRoom (45)
       objectReference: {fileID: 0}
+    - target: {fileID: 6002200451341978076, guid: eb019e11ee2173f428c0ca4fa8b52061,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0c5ad1712d968f54b88e723a83abc403, type: 2}
     - target: {fileID: 6138491368353283460, guid: eb019e11ee2173f428c0ca4fa8b52061,
         type: 3}
       propertyPath: m_Color.b
@@ -2820,6 +2825,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LampRoom (46)
       objectReference: {fileID: 0}
+    - target: {fileID: 6002200451341978076, guid: eb019e11ee2173f428c0ca4fa8b52061,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0c5ad1712d968f54b88e723a83abc403, type: 2}
     - target: {fileID: 6138491368353283460, guid: eb019e11ee2173f428c0ca4fa8b52061,
         type: 3}
       propertyPath: m_Color.b
@@ -3551,6 +3561,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LampRoom (44)
       objectReference: {fileID: 0}
+    - target: {fileID: 6002200451341978076, guid: eb019e11ee2173f428c0ca4fa8b52061,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0c5ad1712d968f54b88e723a83abc403, type: 2}
     - target: {fileID: 6138491368353283460, guid: eb019e11ee2173f428c0ca4fa8b52061,
         type: 3}
       propertyPath: m_Color.b
@@ -3650,6 +3665,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LampRoom (48)
       objectReference: {fileID: 0}
+    - target: {fileID: 6002200451341978076, guid: eb019e11ee2173f428c0ca4fa8b52061,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0c5ad1712d968f54b88e723a83abc403, type: 2}
     - target: {fileID: 6138491368353283460, guid: eb019e11ee2173f428c0ca4fa8b52061,
         type: 3}
       propertyPath: m_Color.b
@@ -4460,6 +4480,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LampRoom (37)
       objectReference: {fileID: 0}
+    - target: {fileID: 6002200451341978076, guid: eb019e11ee2173f428c0ca4fa8b52061,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0c5ad1712d968f54b88e723a83abc403, type: 2}
     - target: {fileID: 6138491368353283460, guid: eb019e11ee2173f428c0ca4fa8b52061,
         type: 3}
       propertyPath: m_Color.b
@@ -5428,6 +5453,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LampRoom (47)
       objectReference: {fileID: 0}
+    - target: {fileID: 6002200451341978076, guid: eb019e11ee2173f428c0ca4fa8b52061,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0c5ad1712d968f54b88e723a83abc403, type: 2}
     - target: {fileID: 6138491368353283460, guid: eb019e11ee2173f428c0ca4fa8b52061,
         type: 3}
       propertyPath: m_Color.b
