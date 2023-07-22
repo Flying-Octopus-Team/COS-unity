@@ -25,6 +25,15 @@ public class DoorController : MonoBehaviour
         doorAnim.SetBool("DoorState",state);
         if(doorAS) doorAS.PlayOneShot(doorSound);
     }
+    public void SetState(bool newState)
+    {
+        if(state != newState) 
+        {
+            state = newState;
+            doorAnim.SetBool("DoorState", state);
+            if (doorAS) doorAS.PlayOneShot(doorSound);
+        }
+    }
     public void SwitchpowerState(bool newState)
     {
         powerState = newState;

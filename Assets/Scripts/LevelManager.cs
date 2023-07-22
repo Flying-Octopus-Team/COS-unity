@@ -6,9 +6,12 @@ using static UnityEngine.UIElements.UxmlAttributeDescription;
 
 public class LevelManager : MonoBehaviour
 {
+    [Header("Overall")]
+    [SerializeField] private GameObject[] levels;
+
     [Header("First Stage")]
     [SerializeField] private MeshRenderer[] indicators;
-    [SerializeField] private bool[] fuseStates;
+    private bool[] fuseStates;
     [SerializeField] private Color indicatorsActiveColor;
     [SerializeField] private Color indicatorsInactiveColor;
     [SerializeField] private DoorController stageOneDoors;
@@ -44,5 +47,21 @@ public class LevelManager : MonoBehaviour
     public void ResetLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    [ContextMenu("LoadLevel1")]
+    public void LoadLevel1()
+    {
+        levels[0].SetActive(true);
+    }
+    [ContextMenu("LoadLevel2")]
+    public void LoadLevel2()
+    {
+        levels[1].SetActive(true);
+    }
+    [ContextMenu("LoadLevel3")]
+    public void LoadLevel3()
+    {
+        levels[2].SetActive(true);
     }
 }
