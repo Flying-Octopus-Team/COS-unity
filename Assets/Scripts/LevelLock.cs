@@ -52,12 +52,12 @@ public class LevelLock : MonoBehaviour
 
         yield return new WaitForSeconds (3);//czekaj az drzwi sie zamkno
 
-        if (playerIn) //czy przypadkiem nie wyskoczyl urwis jeden
-        {
+        //if (playerIn) //czy przypadkiem nie wyskoczyl urwis jeden
+       // {
             dorsOut.SwitchpowerState(true);//zasilamy drzwi wyjsciowe
             dorsOut.SetState(true);//otwieramy drzwi wyjsciowe
             if (levelManager) levelManager.LoadStage(stageToLoad);//zaladuj tylko odpowiedni etap
-        }
+        //}
         /*
         else //jesli jednak wyskoczyl to otwieramy wejscie jeszcze raz
         {
