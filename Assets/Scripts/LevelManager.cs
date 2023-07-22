@@ -7,7 +7,7 @@ using static UnityEngine.UIElements.UxmlAttributeDescription;
 public class LevelManager : MonoBehaviour
 {
     [Header("Overall")]
-    [SerializeField] private GameObject[] levels;
+    [SerializeField] private GameObject[] stages;
 
     [Header("First Stage")]
     [SerializeField] private MeshRenderer[] indicators;
@@ -22,6 +22,8 @@ public class LevelManager : MonoBehaviour
             indicators[i].material.SetColor("_EmissionColor", indicatorsInactiveColor);
         }
         fuseStates = new bool[indicators.Length];
+        stageOneDoors.SwitchpowerState(false);
+        LoadStage(0);
     }
     public void SwitchPowerStageOne(int fuse)
     {
@@ -38,10 +40,9 @@ public class LevelManager : MonoBehaviour
             enableDoors = enableDoors && fuseStates[i];
         }
 
-        Debug.Log(enableDoors);
         if (stageOneDoors)
         {
-            stageOneDoors.SwitchpowerState(true);
+            stageOneDoors.SwitchpowerState(enableDoors);
         }
     }
     public void ResetLevel()
@@ -49,19 +50,27 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void LoadStage(int stage)
+    {
+        for (int i = 0; i< stages.Length;i++)
+        {
+            stages[i].SetActive(stage==i);
+        }
+    }
+
     [ContextMenu("LoadLevel1")]
     public void LoadLevel1()
     {
-        levels[0].SetActive(true);
+        stages[0].SetActive(true);
     }
     [ContextMenu("LoadLevel2")]
     public void LoadLevel2()
     {
-        levels[1].SetActive(true);
+        stages[1].SetActive(true);
     }
     [ContextMenu("LoadLevel3")]
     public void LoadLevel3()
     {
-        levels[2].SetActive(true);
+        stages[2].SetActive(true);
     }
 }

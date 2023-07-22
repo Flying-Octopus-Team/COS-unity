@@ -10,6 +10,8 @@ public class DoorController : MonoBehaviour
     [SerializeField] private AudioClip doorSound;
     [SerializeField] private AudioSource doorAS;
 
+    float lockTime = 0;
+
     private void Start()
     {
         if(doorAnim == null)
@@ -17,13 +19,19 @@ public class DoorController : MonoBehaviour
             doorAnim = GetComponent<Animator>();
         }
     }
+    [ContextMenu("SwitchState")]
     public void SwitchState()
     {
         if (!powerState) return;
 
-        state = !state;
-        doorAnim.SetBool("DoorState",state);
-        if(doorAS) doorAS.PlayOneShot(doorSound);
+        if(Time.time > lockTime)
+        {
+            state = !state;
+            doorAnim.SetBool("DoorState", state);
+            if (doorAS) doorAS.PlayOneShot(doorSound);
+            lockTime = Time.time + 2;//potem podmienic na faktyczna dlugosc animacji
+        }
+        
     }
     public void SetState(bool newState)
     {
@@ -37,5 +45,9 @@ public class DoorController : MonoBehaviour
     public void SwitchpowerState(bool newState)
     {
         powerState = newState;
+    }
+    public bool RealDoorState()
+    {
+        return false;
     }
 }
