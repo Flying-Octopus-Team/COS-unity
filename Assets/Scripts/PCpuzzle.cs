@@ -13,6 +13,7 @@ public class PCpuzzle : MonoBehaviour, IInteract
     {
         audioSource = GetComponent<AudioSource>();
         if (text) text.SetText(code);
+        this.name = $"PC ({code})";
     }
     [ContextMenu("Select PC")]
     public void Interact()
