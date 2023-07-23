@@ -48,5 +48,11 @@ public class WorldButton : MonoBehaviour, IInteract
     public void Deactivate()
     {
         active = false;
+        UdateColor();
+    }
+    public void ChangeButtonState(bool newState)
+    {
+        active = newState;
+        UdateColor();
     }
 }

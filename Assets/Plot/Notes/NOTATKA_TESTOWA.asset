@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e4c738dfe0bbee4c891220b01f71207, type: 3}
   m_Name: NOTATKA_TESTOWA
   m_EditorClassIdentifier: 
-  noteData: SIEMA SIEMA
+  noteData: "05.01.2091\r\nWprowadzamy kody do sektor\xF3w. Kod do sektora A38 to:
+    8965.\r"

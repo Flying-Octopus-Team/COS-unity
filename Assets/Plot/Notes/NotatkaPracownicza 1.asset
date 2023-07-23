@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e4c738dfe0bbee4c891220b01f71207, type: 3}
+  m_Name: NotatkaPracownicza 1
+  m_EditorClassIdentifier: 
+  noteData: "6.09.2094\r\nPull request closed\r\nNote:\r\nNie, nie mo\u017Cesz doda\u0107
+    obs\u0142ugi pada do g\u0142\xF3wnego modu\u0142u steruj\u0105cego stacj\u0105.\r\nI
+    nie obchodzi mnie \u017Ce wyda\u0142e\u015B na niego 29.99$\r\n\r\n"

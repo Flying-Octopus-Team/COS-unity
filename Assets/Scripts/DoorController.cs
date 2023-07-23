@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DoorController : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class DoorController : MonoBehaviour
     private Animator doorAnim;
     [SerializeField] private AudioClip doorSound;
     [SerializeField] private AudioSource doorAS;
+    [SerializeField] private WorldButton doorButton;
+    [SerializeField] private UnityEvent eventOnStartOpening;
 
     float lockTime = 0;
 
@@ -18,6 +21,7 @@ public class DoorController : MonoBehaviour
         {
             doorAnim = GetComponent<Animator>();
         }
+        SwitchpowerState(powerState);
     }
     [ContextMenu("SwitchState")]
     public void SwitchState()
@@ -45,9 +49,18 @@ public class DoorController : MonoBehaviour
     public void SwitchpowerState(bool newState)
     {
         powerState = newState;
+        if (doorButton)
+        {
+            doorButton.ChangeButtonState(powerState);
+        }
     }
     public bool RealDoorState()
     {
         return false;
+    }
+
+    public void AnimationStartEvent()
+    {
+        eventOnStartOpening.Invoke();
     }
 }

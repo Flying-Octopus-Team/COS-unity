@@ -28,10 +28,6 @@ public class LevelLock : MonoBehaviour
             {
                 StartCoroutine(LoadSequence());
             }
-            else
-            {
-                Debug.LogWarning("Przestan skakac no");
-            }
         }
     }
 

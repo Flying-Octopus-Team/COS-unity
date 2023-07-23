@@ -15,9 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private GameEvent lockCursor;
     [SerializeField] private GameEvent unlockCursor;
-    /// <summary>
-    /// 
-    /// </summary>
+
     [Header("Latara")]
     public Transform lataraHandler;
     [Header("Sway")]
