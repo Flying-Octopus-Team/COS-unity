@@ -68,6 +68,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioClip[] stepSound;
     [SerializeField] private AudioClip landSound;
 
+    [Header("Pause")]
+    [SerializeField] private Transform pauseScreen;
+    bool paused = false;
+
     private void Awake()
     {
         pRef.SetPc(this);
@@ -286,6 +290,23 @@ public class PlayerController : MonoBehaviour
     }
 
     //INPUT
+
+    public void HandleMainMenu(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            paused = !paused;
+            if (paused)
+            {
+                unlockCursor.Raise();
+            }
+            else
+            {
+                lockCursor.Raise();
+            }
+            pauseScreen.gameObject.SetActive(paused);
+        }   
+    }
     public void HandleLookupInput(InputAction.CallbackContext context)
     {
         cameraInput = context.ReadValue<Vector2>();

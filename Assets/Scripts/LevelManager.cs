@@ -88,6 +88,10 @@ public class LevelManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+    public void BackToMainMenul()
+    {
+        SceneManager.LoadScene(0);
+    }
     public void ActivateComputer(PCpuzzle pc)
     {
         if (passedSecondStage) return;
@@ -135,5 +139,14 @@ public class LevelManager : MonoBehaviour
     public void LoadLevel3()
     {
         stages[2].SetActive(true);
+    }
+    [ContextMenu("UnlockAllDors")]
+    public void UnlockAllDors()
+    {
+        stageOneDoors.SwitchpowerState(true);
+        stageTwoDoors.SwitchpowerState(true);
+
+        stageOneDoors.SetState(true);
+        stageOneDoors.SetState(true);
     }
 }
