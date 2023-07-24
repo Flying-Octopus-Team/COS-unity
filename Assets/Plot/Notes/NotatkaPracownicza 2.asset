@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e4c738dfe0bbee4c891220b01f71207, type: 3}
+  m_Name: NotatkaPracownicza 2
+  m_EditorClassIdentifier: 
+  noteData: "4.02.2094\r\nPo dzisiejszym szkoleniu okaza\u0142o si\u0119 \u017Ce
+    BHP s\u0105 \"zasadami\" a nie \"sugestiami\".\r\nInterpretowanie ich jako \"TO-DO
+    list\" r\xF3wnie\u017C zosta\u0142o pot\u0119pione.\r\nDlatego w zwi\u0105zku
+    z ostatnimi \"incydentami\" z przestrzeni biurowej zosta\u0142y usuni\u0119te
+    wszystkie wentylatory i spinacze\r\n"

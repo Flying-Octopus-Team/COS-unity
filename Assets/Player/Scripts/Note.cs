@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NoteData", menuName = "ScriptableObjects/Note")]
 public class Note : ScriptableObject
 {
-    [Multiline]
+    [Multiline(15)]
     public string noteData;
 
     public void pushNote()

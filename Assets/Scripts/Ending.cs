@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class Ending : MonoBehaviour
@@ -8,6 +9,7 @@ public class Ending : MonoBehaviour
     [SerializeField] private PlayerReference pRef;
     [SerializeField] private GameEvent lockPlayerMovement;
     [SerializeField] private GameEvent unlockCursor;
+    [SerializeField] private UnityEvent eventToRise;
     bool semaphoreLock = false;
 
     private void OnTriggerEnter(Collider other)
@@ -23,6 +25,8 @@ public class Ending : MonoBehaviour
     IEnumerator EndingSequence()
     {
         lockPlayerMovement.Raise();
+        yield return new WaitForSeconds(1);
+        eventToRise.Invoke();
         yield return new WaitForSeconds(3);
         unlockCursor.Raise();
         SceneManager.LoadScene(0);

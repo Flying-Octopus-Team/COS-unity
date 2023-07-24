@@ -15,9 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private GameEvent lockCursor;
     [SerializeField] private GameEvent unlockCursor;
-    /// <summary>
-    /// 
-    /// </summary>
+
     [Header("Latara")]
     public Transform lataraHandler;
     [Header("Sway")]
@@ -34,9 +32,6 @@ public class PlayerController : MonoBehaviour
     private float speedCurve;
     private float curveSin { get => Mathf.Sin(speedCurve); }
     private float curveCos { get => Mathf.Cos(speedCurve); }
-    /// <summary>
-    /// 
-    /// </summary>
     [Header("Utility")]
     [SerializeField] private LayerMask interactionMask;
     private Flashlight flashlight;
@@ -72,6 +67,10 @@ public class PlayerController : MonoBehaviour
     private AudioSource stepSource;
     [SerializeField] private AudioClip[] stepSound;
     [SerializeField] private AudioClip landSound;
+
+    [Header("Pause")]
+    [SerializeField] private Transform pauseScreen;
+    bool paused = false;
 
     private void Awake()
     {
@@ -291,6 +290,23 @@ public class PlayerController : MonoBehaviour
     }
 
     //INPUT
+
+    public void HandleMainMenu(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            paused = !paused;
+            if (paused)
+            {
+                unlockCursor.Raise();
+            }
+            else
+            {
+                lockCursor.Raise();
+            }
+            pauseScreen.gameObject.SetActive(paused);
+        }   
+    }
     public void HandleLookupInput(InputAction.CallbackContext context)
     {
         cameraInput = context.ReadValue<Vector2>();
