@@ -4569,8 +4569,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "3D Artists:\nKamil Sell\nEmil Kopytek\n\n2D Artists:\nSeven\nMisuzu Faraday\n\nAudio:\nOlek\nMaras\n\nProgrammers:\nMi\u0142osz
-    'DAX.PL' Klim\nCosinus\n\nMany thanks to:\ndyedMagenta\nFrost\nTum\nCarl-bot\nChannu\nKazmo"
+  m_text: "3D Artists:\nKamil Sell\nEmil Kopytek\n\n2D Artists:\nSeven\nMisuzu Faraday\n\nAudio
+    and sound design:\nAleksander Intek\nMarek Kokorudz\n\nProgrammers:\nMi\u0142osz
+    Klim\nCosinus\n\nMany thanks to:\ndyedMagenta\nFrost\nTum\nCarl-bot\nChannu\nKazmo"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7a75433ec9bea9a46a752fbd6c9d385f, type: 2}
   m_sharedMaterial: {fileID: 410896014808052429, guid: 7a75433ec9bea9a46a752fbd6c9d385f,
