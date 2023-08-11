@@ -12,7 +12,9 @@ public class SzkiceChangingImage : MonoBehaviour {
         image = GetComponent<Image>();
     }
 
-    private void Start() { 
+    private void OnEnable() {
+        i = 0;
+        image.sprite = szkiceImages[i];
         StartCoroutine(ChangeImage());
     }
 
