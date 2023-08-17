@@ -295,17 +295,21 @@ public class PlayerController : MonoBehaviour
     {
         if (context.started)
         {
-            paused = !paused;
-            if (paused)
-            {
-                unlockCursor.Raise();
-            }
-            else
-            {
-                lockCursor.Raise();
-            }
-            pauseScreen.gameObject.SetActive(paused);
+            MainMenuToggle();
         }   
+    }
+    public void MainMenuToggle()
+    {
+        paused = !paused;
+        if (paused)
+        {
+            unlockCursor.Raise();
+        }
+        else
+        {
+            lockCursor.Raise();
+        }
+        pauseScreen.gameObject.SetActive(paused);
     }
     public void HandleLookupInput(InputAction.CallbackContext context)
     {

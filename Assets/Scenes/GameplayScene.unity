@@ -11568,7 +11568,7 @@ PrefabInstance:
         type: 3}
       propertyPath: actions.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 11400000, guid: 6f0ebf944b31d2544b81d9b23dacee03,
+      objectReference: {fileID: 11400000, guid: 9f1070d0bd96a0e48a96df0bfca031e2,
         type: 2}
     - target: {fileID: 5392089595877326268, guid: d05696c47e7d9a64db4473f392f5d86d,
         type: 3}
@@ -34525,6 +34525,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 578384368546083350, guid: 9500903c6c689e34cbd5164e117e868f,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1535202211954697770, guid: 9500903c6c689e34cbd5164e117e868f,
         type: 3}
       propertyPath: m_Name
@@ -34583,6 +34588,16 @@ PrefabInstance:
     - target: {fileID: 2164823867429795113, guid: 9500903c6c689e34cbd5164e117e868f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480553269104861518, guid: 9500903c6c689e34cbd5164e117e868f,
+        type: 3}
+      propertyPath: cameraSensitivity
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289198545477325399, guid: 9500903c6c689e34cbd5164e117e868f,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
