@@ -3,43 +3,67 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
-public class ButtonSrcipt : MonoBehaviour
+public class ButtonSrcipt : MonoBehaviour, IInteract
 {
-    [SerializeField] public int buttonValue;
+    [SerializeField] public string buttonValue;
     [SerializeField] private TextMeshProUGUI buttonTMPro;
-    private CodePanelScript addNumber = new CodePanelScript();
-    private BoxCollider buttonBoxCollider;
-
-    UnityEvent pressedButton;
+    [SerializeField] private CodePanelScript addNumber;
+    [SerializeField] private Color clickColor;
+    [SerializeField] private Color normalColor;
+    [SerializeField] private GameObject buttonCube;
+    
+    private AudioSource buttonClickSound;
+    private Material cubeMaterial;
+    private UnityEvent pressedButton;
 
     void Start()
     {
-        buttonTMPro.text = buttonValue.ToString();
+        MeshRenderer renderer = buttonCube.GetComponent<MeshRenderer>();
+        buttonClickSound = GetComponent<AudioSource>();
+        
+        if (renderer)
+        {
+            cubeMaterial = renderer.material;
+            print(cubeMaterial);
+        }
 
         if (pressedButton == null)
         {
             pressedButton = new UnityEvent();
         }
 
-        pressedButton.AddListener(testuje);
+        // Add method to call after Interact
+        pressedButton.AddListener(OnPressedButton);
+        pressedButton.AddListener(ChangeColor);
+
+        buttonTMPro.text = buttonValue;
 
     }
 
-    // Update is called once per frame
-    void Update()
+    // After click do CodePanel's method addNumber 
+    void OnPressedButton()
     {
-
+        addNumber.AddNumber(buttonValue);
     }
 
-
-    // It allows using a cube as a button
-    private void OnMouseUpAsButton()
+    // After interact player with button call methods (Listener)
+    public void Interact()
     {
         pressedButton.Invoke();
     }
 
-    void testuje()
+    // Change Color and play audio after click
+    void ChangeColor()
     {
-        addNumber.AddNumber(buttonValue);
+        cubeMaterial.SetColor("_EmissionColor", clickColor);
+        if(buttonValue != "E") buttonClickSound.Play();
+        StartCoroutine(waiter());
+    }
+
+    // Retururn to normal color after 0.5 sec
+    IEnumerator waiter()
+    {
+        yield return new WaitForSeconds(0.5f);
+        cubeMaterial.SetColor("_EmissionColor", normalColor);
     }
 }
