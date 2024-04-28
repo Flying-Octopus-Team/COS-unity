@@ -2,15 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.InputSystem.LowLevel;
-using UnityEngine.ProBuilder.Shapes;
 using UnityEngine.Events;
 using UnityEngine.Audio;
 
 public class CodePanelScript : MonoBehaviour
 {
     [SerializeField] private string code;
-    [SerializeField] private int codeLength;
     [SerializeField] private TextMeshProUGUI displayNumber;
     [SerializeField] private GameObject display;
     [SerializeField] private UnityEvent actionAfterGoodCode;
@@ -26,52 +23,56 @@ public class CodePanelScript : MonoBehaviour
 
     private Material displayNumberMaterial;
     private AudioSource enteredCodeAudio;
+    private new MeshRenderer renderer;
 
-    // Start is called before the first frame update
+    void Awake()
+    {
+        renderer = display.GetComponent<MeshRenderer>();
+        enteredCodeAudio = GetComponent<AudioSource>();
+    }
+
     void Start()
     {
-        Renderer renderer = display.GetComponent<MeshRenderer>();
-        enteredCodeAudio = GetComponent<AudioSource>();
         if (renderer)
         {
             displayNumberMaterial = renderer.material;
             print(displayNumberMaterial);
         }
-        displayNumber.text = "";
+        displayNumber.SetText("");
     }
 
     public void AddNumber(string number)
     {
         // Add number to display 
-        if(number != "E" && number != "C" && displayNumber.text.Length < code.Length)
+        
+       switch(number)
         {
-            displayNumber.text += number;
-        } 
-        // Clear display
-        else if(number == "C")
-        {
-            displayNumber.text = "";
-            displayNumberMaterial.SetColor("_EmissionColor", normalColor);
-        }
-        // Enter Code
-        else if(number == "E")
-        {
-            // If good set good color, good audio and call action
-            if (displayNumber.text == code)
-            {
-                displayNumberMaterial.SetColor("_EmissionColor", goodColor);
-                actionAfterGoodCode.Invoke();
-                enteredCodeAudio.clip = goodCodeAudio;
-                enteredCodeAudio.Play();
-            }
-            // If not set bad color and bad audio
-            else
-            {
+            case "C":
+                displayNumber.SetText("");
+                displayNumberMaterial.SetColor("_EmissionColor", normalColor);
+                break;
+            case "E":
+                // If good set good color, good audio and call action
+                if (displayNumber.text == code)
+                {
+                    displayNumberMaterial.SetColor("_EmissionColor", goodColor);
+                    actionAfterGoodCode.Invoke();
+                    enteredCodeAudio.clip = goodCodeAudio;
+                    enteredCodeAudio.Play();
+                    return;
+                }
+                // If not set bad color and bad audio
                 displayNumberMaterial.SetColor("_EmissionColor", badColor);
                 enteredCodeAudio.clip = badCodeAudio;
                 enteredCodeAudio.Play();
-            }
-        }   
-          
+                break;
+            default:
+                if(displayNumber.text.Length < code.Length)
+                {
+                    displayNumber.text += number;
+                }
+                break;
+        }
+       
     }
 }

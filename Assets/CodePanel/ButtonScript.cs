@@ -3,23 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
-public class ButtonSrcipt : MonoBehaviour, IInteract
+public class ButtonScript : MonoBehaviour, IInteract
 {
-    [SerializeField] public string buttonValue;
     [SerializeField] private TextMeshProUGUI buttonTMPro;
     [SerializeField] private CodePanelScript addNumber;
     [SerializeField] private Color clickColor;
     [SerializeField] private Color normalColor;
     [SerializeField] private GameObject buttonCube;
-    
+
+    public string buttonValue;
     private AudioSource buttonClickSound;
     private Material cubeMaterial;
     private UnityEvent pressedButton;
+    private new MeshRenderer renderer;
+
+    private void Awake()
+    {
+        renderer = buttonCube.GetComponent<MeshRenderer>();
+        buttonClickSound = GetComponent<AudioSource>();
+    }
 
     void Start()
     {
-        MeshRenderer renderer = buttonCube.GetComponent<MeshRenderer>();
-        buttonClickSound = GetComponent<AudioSource>();
+        
         
         if (renderer)
         {
@@ -57,13 +63,12 @@ public class ButtonSrcipt : MonoBehaviour, IInteract
     {
         cubeMaterial.SetColor("_EmissionColor", clickColor);
         if(buttonValue != "E") buttonClickSound.Play();
-        StartCoroutine(waiter());
+        Invoke("BackToNormalColor", 0.5f);
     }
 
-    // Retururn to normal color after 0.5 sec
-    IEnumerator waiter()
+    // Return to normal color after 0.5 sec
+    void BackToNormalColor()
     {
-        yield return new WaitForSeconds(0.5f);
         cubeMaterial.SetColor("_EmissionColor", normalColor);
     }
 }

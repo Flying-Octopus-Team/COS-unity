@@ -349,16 +349,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a12d7f360369c47a95ba9cb17ab09b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  code: 0000
   displayNumber: {fileID: 6850753473954201172}
-  code: 1
   display: {fileID: 4025985065394748756}
+  actionAfterGoodCode:
+    m_PersistentCalls:
+      m_Calls: []
   goodColor: {r: 0.4019652, g: 0.7075472, b: 0.32373622, a: 1}
   badColor: {r: 0.754717, g: 0.11747954, b: 0.11747954, a: 1}
   normalColor: {r: 0.7529412, g: 0.7529412, b: 0.7529412, a: 0}
-  codeLength: 4
-  action:
-    m_PersistentCalls:
-      m_Calls: []
+  goodCodeAudio: {fileID: 8300000, guid: 85ded919c953dab4f8280da203cb2900, type: 3}
+  badCodeAudio: {fileID: 8300000, guid: 2e74a4b85e0aeef4a9b808bf7e6dd567, type: 3}
 --- !u!82 &6264314958026210572
 AudioSource:
   m_ObjectHideFlags: 0
