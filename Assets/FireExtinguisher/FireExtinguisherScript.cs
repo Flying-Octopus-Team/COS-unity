@@ -28,7 +28,7 @@ public class FireExtinguisherScript : MonoBehaviour, IInteract
         if (rb == null) return;
         if (!isInteract)
         {
-            StartCoroutine(Fly(2f));
+            StartCoroutine(Fly(flyTime));
             rb.isKinematic = false;
             isInteract = true;
         }
@@ -50,7 +50,6 @@ public class FireExtinguisherScript : MonoBehaviour, IInteract
     {
         if (!collision.gameObject.CompareTag("Player"))
         {
-            feParticleSystem.Play();
             isInteract = false;
         }
     }
