@@ -8,26 +8,25 @@ public class LightFlashing : MonoBehaviour {
     
     private Light lightComponent;
     private float randomTimeFlashing;
-    private bool[] lightOnOrOff = new bool[2] { false, true };
 
     private void Awake()
     {
         lightComponent = GetComponent<Light>();
     }
     void Start() {
-        StartCoroutine(Flashing());
+        // Draw first value
+        randomTimeFlashing = Random.Range(0.15f, 1f);
     }
 
-    IEnumerator Flashing() {
-        while (true) {
-            // i = 0 -> light off, i = 1 -> light on
-            for(int i=0; i<2; i++)
-            {
-                randomTimeFlashing = Random.Range(0.05f, 1f);
-                lightComponent.enabled = lightOnOrOff[i];
-                meshRenderer.material = lightMaterials[i];
-                yield return new WaitForSeconds(randomTimeFlashing);
-            }
+    private void FixedUpdate()
+    {
+        if(Time.time >= randomTimeFlashing)
+        {
+            lightComponent.enabled = !lightComponent.enabled;
+            if (lightComponent.enabled) meshRenderer.material = lightMaterials[1];
+            else meshRenderer.material = lightMaterials[0];
+            randomTimeFlashing += Random.Range(0.05f, 1f);
         }
     }
+
 }
