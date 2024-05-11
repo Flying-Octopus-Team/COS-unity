@@ -4,6 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using System;
 
 [CreateAssetMenu(fileName = "Main Menu", menuName = "ScriptableObjects/Main Menu")]
 public class MainMenu : ScriptableObject {
@@ -17,6 +18,10 @@ public class MainMenu : ScriptableObject {
     public void ChangeGraphicLevel(int level) {
         level = Mathf.Clamp(level, 0, QualitySettings.names.Length-1);
         QualitySettings.SetQualityLevel(level, true);
+    }
+    public void ChangeFullscreen(int level)
+    {
+        Screen.fullScreen = Convert.ToBoolean(level);
     }
 
     public void SetEffectVolume(float sliderValue) {
