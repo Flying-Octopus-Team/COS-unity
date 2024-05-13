@@ -39,8 +39,10 @@ public class ChangePrefabsNames : Editor {
         }
 
         for (int i = 0; i < prefabs.Count; i++) {
-            Debug.Log(PrefabUtility.GetCorrespondingObjectFromOriginalSource(prefabs[i]));
-            prefabs[i].name = PrefabUtility.GetCorrespondingObjectFromOriginalSource(prefabs[i]).name;
+            if (prefabs[i] != null) {
+                Debug.Log(PrefabUtility.GetCorrespondingObjectFromOriginalSource(prefabs[i]));
+                prefabs[i].name = PrefabUtility.GetCorrespondingObjectFromOriginalSource(prefabs[i]).name;
+            }
         }
     }
 
