@@ -4,11 +4,11 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-public class ChangePrefabsNames : MonoBehaviour {
-    private List<GameObject> prefabs = new List<GameObject>();
+public class ChangePrefabsNames : Editor {
+    public static List<GameObject> prefabs = new List<GameObject>();
 
-    [ContextMenu("Look For Prefabs")]
-    private void LookForPrefabs() {
+    [MenuItem("Prefabs Settings/Look for prefabs")]
+    public static void LookForPrefabs() {
         prefabs.Clear();
 
         GameObject[] allObjects = FindObjectsOfType<GameObject>();
@@ -23,8 +23,8 @@ public class ChangePrefabsNames : MonoBehaviour {
         Debug.Log($"{prefabs.Count()} Prefabs found on the scene");
     }
 
-    [ContextMenu("Rename instances of prefabs to its names")]
-    void RenamePrefabs() {
+    [MenuItem("Prefabs Settings/Rename prefabs")]
+    public static void RenamePrefabs() {
         for (int i = 0; i < prefabs.Count; i++) {
             //Debug.Log(PrefabUtility.GetPrefabParent(prefabs[1]));
             Debug.Log(PrefabUtility.GetCorrespondingObjectFromOriginalSource(prefabs[i]));
