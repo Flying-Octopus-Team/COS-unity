@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LightFlashing : MonoBehaviour {
-    public MeshRenderer meshRenderer;
+   
     [Tooltip("0 - light off, 1 - light on")] [SerializeField] private Material[] lightMaterials = new Material[2];
     
     private Light lightComponent;
     private float randomTimeFlashing;
+    private MeshRenderer meshRenderer;
+    [SerializeField] private GameObject gameObjectMesh;
+    [SerializeField] private GameObject gameObjectLight;
 
     private void Awake()
     {
-        lightComponent = GetComponent<Light>();
+        meshRenderer = gameObjectMesh.GetComponent<MeshRenderer>();
+        lightComponent = gameObjectLight.GetComponent<Light>();
     }
     void Start() {
         // Draw first value
