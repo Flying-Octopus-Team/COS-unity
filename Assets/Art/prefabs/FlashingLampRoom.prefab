@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9097053746174977192}
+  - component: {fileID: -9080024752675837843}
   m_Layer: 0
-  m_Name: LampRoom
+  m_Name: FlashingLampRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,6 +34,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-9080024752675837843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130241999908223802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4020ef85ab4a9db48a7c1f826b617f8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightMaterials:
+  - {fileID: 2100000, guid: 637174766aae9934f92773e89b9886ea, type: 2}
+  - {fileID: 2100000, guid: 252de60e61a721f40ad799c8ab158aee, type: 2}
+  gameObjectMesh: {fileID: 5209791698019952649}
+  gameObjectLight: {fileID: 2023473674247369721}
 --- !u!1 &2023473674247369721
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,6 +255,12 @@ PrefabInstance:
 --- !u!4 &4829887806458458803 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d8bed1024295cd84aa8745c7b50d7325,
+    type: 3}
+  m_PrefabInstance: {fileID: 4939758451439899992}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5209791698019952649 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d8bed1024295cd84aa8745c7b50d7325,
     type: 3}
   m_PrefabInstance: {fileID: 4939758451439899992}
   m_PrefabAsset: {fileID: 0}
