@@ -1346,7 +1346,7 @@ PrefabInstance:
     - target: {fileID: 1985674195292155347, guid: 6e4b860eab402ff4f9ec0f56b636fd7b,
         type: 3}
       propertyPath: m_Name
-      value: corridordoor (1)
+      value: corridordoor
       objectReference: {fileID: 0}
     - target: {fileID: 2027222238737605948, guid: 6e4b860eab402ff4f9ec0f56b636fd7b,
         type: 3}

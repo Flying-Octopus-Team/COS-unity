@@ -126,7 +126,7 @@ PrefabInstance:
     - target: {fileID: 6082220552884899297, guid: 10eb70989104dd848ba28b8ed02536ac,
         type: 3}
       propertyPath: m_Name
-      value: tablet_low Variant
+      value: tabletLow
       objectReference: {fileID: 0}
     - target: {fileID: 6082220552884899297, guid: 10eb70989104dd848ba28b8ed02536ac,
         type: 3}

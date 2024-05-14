@@ -35,10 +35,10 @@ Transform:
   - {fileID: 8251994397699855953}
   - {fileID: 1661866094881638775}
   - {fileID: 6952138710466261537}
-  - {fileID: 9203305368241537712}
+  - {fileID: 6151613736446537878}
   - {fileID: 885294215989556447}
   - {fileID: 3786060866333049719}
-  - {fileID: 1846249015814520321}
+  - {fileID: 3709111027183209529}
   - {fileID: 2569876277840235615}
   - {fileID: 1660852809327765318}
   - {fileID: 7526942600199324671}
@@ -46,14 +46,14 @@ Transform:
   - {fileID: 6091144492360834162}
   - {fileID: 118104170113682315}
   - {fileID: 4410536023128439395}
-  - {fileID: 585624479312583438}
+  - {fileID: 973550365559639135}
   - {fileID: 2510464352283240474}
   - {fileID: 2095281592259926088}
   - {fileID: 1538466693233936115}
   - {fileID: 6049098755736785373}
   - {fileID: 49071601529390311}
   - {fileID: 7199560035481107126}
-  - {fileID: 5525231120978206685}
+  - {fileID: 4586916055354544599}
   - {fileID: 6705553889196142278}
   - {fileID: 4994684858949084400}
   - {fileID: 7461696710544175714}
@@ -71,7 +71,7 @@ Transform:
   - {fileID: 3261869089084563418}
   - {fileID: 3304555588956074582}
   - {fileID: 1864762153522658692}
-  - {fileID: 7249391066181109290}
+  - {fileID: 7629941556732368751}
   - {fileID: 5632067761322943145}
   - {fileID: 1557492058877904649}
   - {fileID: 8274153832299834879}
@@ -85,9 +85,9 @@ Transform:
   - {fileID: 5840522357963379562}
   - {fileID: 4347497132149348712}
   - {fileID: 6517574289977516506}
-  - {fileID: 1292979240583175752}
+  - {fileID: 2056008040468025089}
   - {fileID: 684485302676399112}
-  - {fileID: 7808023203071317201}
+  - {fileID: 1325344251344040056}
   - {fileID: 1854126599550387988}
   - {fileID: 5365977061055971648}
   - {fileID: 6241437964592441551}
@@ -187,7 +187,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5705864188690068253}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.9044838, y: -0.09514618, z: -13.889713}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -196,11 +196,11 @@ Transform:
   - {fileID: 7600239630238756388}
   - {fileID: 3005327374584272550}
   - {fileID: 8221344923060897370}
-  - {fileID: 6353064747228795303}
+  - {fileID: 668277985957182432}
   - {fileID: 6839739634299671930}
   - {fileID: 8087000886243504136}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6851625219312341079
 GameObject:
@@ -776,7 +776,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3104267832067481921}
+  - {fileID: 7476513435473931787}
   - {fileID: 2078375746205712066}
   - {fileID: 1516473842198740273}
   - {fileID: 5001668960780805165}
@@ -795,14 +795,14 @@ Transform:
   - {fileID: 4458783190563882279}
   - {fileID: 7274807462250732919}
   - {fileID: 510902200773933213}
-  - {fileID: 2701979485411260462}
+  - {fileID: 8394376733990820784}
   - {fileID: 940140583848843175}
   - {fileID: 5911838390145755416}
   - {fileID: 9191926327092954749}
   - {fileID: 5306431464526664358}
   - {fileID: 3325878853551535407}
   - {fileID: 8923712760913042470}
-  - {fileID: 3417568853896114566}
+  - {fileID: 4571908244038934416}
   m_Father: {fileID: 3188482427766845210}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -814,10 +814,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8087000886243504136}
     m_Modifications:
+    - target: {fileID: 2085741072103516291, guid: af752fc3301ca294bb31b596fb7de790,
+        type: 3}
+      propertyPath: m_Name
+      value: bateria
+      objectReference: {fileID: 0}
     - target: {fileID: 2250118330841210523, guid: af752fc3301ca294bb31b596fb7de790,
         type: 3}
       propertyPath: m_Name
-      value: Bateria (3)
+      value: Battery
       objectReference: {fileID: 0}
     - target: {fileID: 5837101815220872093, guid: af752fc3301ca294bb31b596fb7de790,
         type: 3}
@@ -1082,7 +1087,12 @@ PrefabInstance:
     - target: {fileID: 4124438595437833222, guid: e308ff2b2a2648649b56868bb4f7926a,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomFloor (8)
+      value: RoomFloor (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8718801460870850285, guid: e308ff2b2a2648649b56868bb4f7926a,
+        type: 3}
+      propertyPath: m_Name
+      value: roomFloor (10)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1103,10 +1113,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8087000886243504136}
     m_Modifications:
+    - target: {fileID: 2085741072103516291, guid: af752fc3301ca294bb31b596fb7de790,
+        type: 3}
+      propertyPath: m_Name
+      value: bateria (8)
+      objectReference: {fileID: 0}
     - target: {fileID: 2250118330841210523, guid: af752fc3301ca294bb31b596fb7de790,
         type: 3}
       propertyPath: m_Name
-      value: Bateria (9)
+      value: Battery (8)
       objectReference: {fileID: 0}
     - target: {fileID: 5837101815220872093, guid: af752fc3301ca294bb31b596fb7de790,
         type: 3}
@@ -1240,14 +1255,19 @@ PrefabInstance:
     - target: {fileID: 4124438595437833222, guid: e308ff2b2a2648649b56868bb4f7926a,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomFloor (2)
+      value: RoomFloor (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8718801460870850285, guid: e308ff2b2a2648649b56868bb4f7926a,
+        type: 3}
+      propertyPath: m_Name
+      value: roomFloor (15)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e308ff2b2a2648649b56868bb4f7926a, type: 3}
---- !u!4 &585624479312583438 stripped
+--- !u!4 &973550365559639135 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 405940493098243922, guid: e308ff2b2a2648649b56868bb4f7926a,
     type: 3}
@@ -1263,7 +1283,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 1f7aa4d40edff6e48b549003cad031e1, type: 3}
       propertyPath: m_Name
-      value: ToxinStorm
+      value: DustStorm
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1f7aa4d40edff6e48b549003cad031e1, type: 3}
       propertyPath: m_RootOrder
@@ -1414,7 +1434,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f7aa4d40edff6e48b549003cad031e1, type: 3}
---- !u!4 &6353064747228795303 stripped
+--- !u!4 &668277985957182432 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1f7aa4d40edff6e48b549003cad031e1,
     type: 3}
@@ -1428,6 +1448,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6839739634299671930}
     m_Modifications:
+    - target: {fileID: 1364576786209484329, guid: 001a1cb094755da428a2c57a34fded1f,
+        type: 3}
+      propertyPath: m_Name
+      value: roomWall (9)
+      objectReference: {fileID: 0}
     - target: {fileID: 3091256469081076281, guid: 001a1cb094755da428a2c57a34fded1f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1486,7 +1511,7 @@ PrefabInstance:
     - target: {fileID: 6244523282722977707, guid: 001a1cb094755da428a2c57a34fded1f,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomWall (6)
+      value: RoomWall (9)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1565,7 +1590,12 @@ PrefabInstance:
     - target: {fileID: 6860449241423691958, guid: 0cc25791c944baa4db9ab8c02c3716fe,
         type: 3}
       propertyPath: m_Name
-      value: Generator
+      value: Generator (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924262193504178259, guid: 0cc25791c944baa4db9ab8c02c3716fe,
+        type: 3}
+      propertyPath: m_Name
+      value: generator (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1641,10 +1671,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1602552731421362397, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
+        type: 3}
+      propertyPath: m_Name
+      value: roomRoof (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 1977096757890030300, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
         type: 3}
       propertyPath: m_Name
-      value: roomroof (39)
+      value: RoomRoof (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1665,10 +1700,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8087000886243504136}
     m_Modifications:
+    - target: {fileID: 2085741072103516291, guid: af752fc3301ca294bb31b596fb7de790,
+        type: 3}
+      propertyPath: m_Name
+      value: bateria (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 2250118330841210523, guid: af752fc3301ca294bb31b596fb7de790,
         type: 3}
       propertyPath: m_Name
-      value: Bateria (7)
+      value: Battery (6)
       objectReference: {fileID: 0}
     - target: {fileID: 5837101815220872093, guid: af752fc3301ca294bb31b596fb7de790,
         type: 3}
@@ -1802,7 +1842,12 @@ PrefabInstance:
     - target: {fileID: 4124438595437833222, guid: e308ff2b2a2648649b56868bb4f7926a,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomFloor (14)
+      value: RoomFloor (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8718801460870850285, guid: e308ff2b2a2648649b56868bb4f7926a,
+        type: 3}
+      propertyPath: m_Name
+      value: roomFloor (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1881,7 +1926,12 @@ PrefabInstance:
     - target: {fileID: 4124438595437833222, guid: e308ff2b2a2648649b56868bb4f7926a,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomFloor (5)
+      value: RoomFloor (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8718801460870850285, guid: e308ff2b2a2648649b56868bb4f7926a,
+        type: 3}
+      propertyPath: m_Name
+      value: roomFloor (12)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1960,14 +2010,14 @@ PrefabInstance:
     - target: {fileID: 1977096757890030300, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
         type: 3}
       propertyPath: m_Name
-      value: roomroof (44)
+      value: RoomRoof
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76, type: 3}
---- !u!4 &1292979240583175752 stripped
+--- !u!4 &2056008040468025089 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 971086125883691334, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
     type: 3}
@@ -1984,7 +2034,12 @@ PrefabInstance:
     - target: {fileID: 3011180456325733604, guid: c906c7a22b3f4ba4fa7942ffc3fc82c3,
         type: 3}
       propertyPath: m_Name
-      value: Stasis
+      value: ToxicContainer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5103366578727396739, guid: c906c7a22b3f4ba4fa7942ffc3fc82c3,
+        type: 3}
+      propertyPath: m_Name
+      value: stasis
       objectReference: {fileID: 0}
     - target: {fileID: 8291644613837716851, guid: c906c7a22b3f4ba4fa7942ffc3fc82c3,
         type: 3}
@@ -2063,7 +2118,12 @@ PrefabInstance:
     - target: {fileID: 2768492751811647090, guid: d826ee49466c3944892c901f72247fb3,
         type: 3}
       propertyPath: m_Name
-      value: "labst\xF3\u0142 (1)"
+      value: LabTable
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119162264117794147, guid: d826ee49466c3944892c901f72247fb3,
+        type: 3}
+      propertyPath: m_Name
+      value: table_2
       objectReference: {fileID: 0}
     - target: {fileID: 9161960495926618239, guid: d826ee49466c3944892c901f72247fb3,
         type: 3}
@@ -2209,10 +2269,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1602552731421362397, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
+        type: 3}
+      propertyPath: m_Name
+      value: roomRoof (15)
+      objectReference: {fileID: 0}
     - target: {fileID: 1977096757890030300, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
         type: 3}
       propertyPath: m_Name
-      value: roomroof (29)
+      value: RoomRoof (15)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2291,7 +2356,12 @@ PrefabInstance:
     - target: {fileID: 4124438595437833222, guid: e308ff2b2a2648649b56868bb4f7926a,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomFloor (13)
+      value: RoomFloor (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8718801460870850285, guid: e308ff2b2a2648649b56868bb4f7926a,
+        type: 3}
+      propertyPath: m_Name
+      value: roomFloor (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2315,7 +2385,12 @@ PrefabInstance:
     - target: {fileID: 3011180456325733604, guid: c906c7a22b3f4ba4fa7942ffc3fc82c3,
         type: 3}
       propertyPath: m_Name
-      value: Stasis (4)
+      value: ToxicContainer (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5103366578727396739, guid: c906c7a22b3f4ba4fa7942ffc3fc82c3,
+        type: 3}
+      propertyPath: m_Name
+      value: stasis (4)
       objectReference: {fileID: 0}
     - target: {fileID: 8291644613837716851, guid: c906c7a22b3f4ba4fa7942ffc3fc82c3,
         type: 3}
@@ -2377,7 +2452,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c906c7a22b3f4ba4fa7942ffc3fc82c3, type: 3}
---- !u!4 &3104267832067481921 stripped
+--- !u!4 &7476513435473931787 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8291644613837716851, guid: c906c7a22b3f4ba4fa7942ffc3fc82c3,
     type: 3}
@@ -2391,6 +2466,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6839739634299671930}
     m_Modifications:
+    - target: {fileID: 1364576786209484329, guid: 001a1cb094755da428a2c57a34fded1f,
+        type: 3}
+      propertyPath: m_Name
+      value: roomWall (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 3091256469081076281, guid: 001a1cb094755da428a2c57a34fded1f,
         type: 3}
       propertyPath: m_RootOrder
@@ -2449,14 +2529,14 @@ PrefabInstance:
     - target: {fileID: 6244523282722977707, guid: 001a1cb094755da428a2c57a34fded1f,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomWall (9)
+      value: RoomWall (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 001a1cb094755da428a2c57a34fded1f, type: 3}
---- !u!4 &5525231120978206685 stripped
+--- !u!4 &4586916055354544599 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3091256469081076281, guid: 001a1cb094755da428a2c57a34fded1f,
     type: 3}
@@ -2528,7 +2608,12 @@ PrefabInstance:
     - target: {fileID: 4124438595437833222, guid: e308ff2b2a2648649b56868bb4f7926a,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomFloor (3)
+      value: RoomFloor (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8718801460870850285, guid: e308ff2b2a2648649b56868bb4f7926a,
+        type: 3}
+      propertyPath: m_Name
+      value: roomFloor (13)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2604,10 +2689,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1602552731421362397, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
+        type: 3}
+      propertyPath: m_Name
+      value: roomRoof (12)
+      objectReference: {fileID: 0}
     - target: {fileID: 1977096757890030300, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
         type: 3}
       propertyPath: m_Name
-      value: roomroof (32)
+      value: RoomRoof (12)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2628,6 +2718,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6839739634299671930}
     m_Modifications:
+    - target: {fileID: 1364576786209484329, guid: 001a1cb094755da428a2c57a34fded1f,
+        type: 3}
+      propertyPath: m_Name
+      value: roomWall (10)
+      objectReference: {fileID: 0}
     - target: {fileID: 3091256469081076281, guid: 001a1cb094755da428a2c57a34fded1f,
         type: 3}
       propertyPath: m_RootOrder
@@ -2686,14 +2781,14 @@ PrefabInstance:
     - target: {fileID: 6244523282722977707, guid: 001a1cb094755da428a2c57a34fded1f,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomWall (4)
+      value: RoomWall (10)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 001a1cb094755da428a2c57a34fded1f, type: 3}
---- !u!4 &1846249015814520321 stripped
+--- !u!4 &3709111027183209529 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3091256469081076281, guid: 001a1cb094755da428a2c57a34fded1f,
     type: 3}
@@ -2707,10 +2802,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6839739634299671930}
     m_Modifications:
+    - target: {fileID: 49086982201886463, guid: ec51e95f0d3f4844187eaf27cbc497b3,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (2) (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894328693718889832, guid: ec51e95f0d3f4844187eaf27cbc497b3,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (1) (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 2073918932470562551, guid: ec51e95f0d3f4844187eaf27cbc497b3,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomCorner
+      value: RoomCorner (3)
       objectReference: {fileID: 0}
     - target: {fileID: 2554033750550376182, guid: ec51e95f0d3f4844187eaf27cbc497b3,
         type: 3}
@@ -2767,6 +2872,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3557731449742051539, guid: ec51e95f0d3f4844187eaf27cbc497b3,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (5) (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3766176116733235408, guid: ec51e95f0d3f4844187eaf27cbc497b3,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354787163994418213, guid: ec51e95f0d3f4844187eaf27cbc497b3,
+        type: 3}
+      propertyPath: m_Name
+      value: Cols (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5657922470420184020, guid: ec51e95f0d3f4844187eaf27cbc497b3,
+        type: 3}
+      propertyPath: m_Name
+      value: roomCorner (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126655072381707121, guid: ec51e95f0d3f4844187eaf27cbc497b3,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (3) (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927527891884389576, guid: ec51e95f0d3f4844187eaf27cbc497b3,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (4) (5)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2786,6 +2921,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6839739634299671930}
     m_Modifications:
+    - target: {fileID: 1364576786209484329, guid: 001a1cb094755da428a2c57a34fded1f,
+        type: 3}
+      propertyPath: m_Name
+      value: roomWall (11)
+      objectReference: {fileID: 0}
     - target: {fileID: 3091256469081076281, guid: 001a1cb094755da428a2c57a34fded1f,
         type: 3}
       propertyPath: m_RootOrder
@@ -2844,7 +2984,7 @@ PrefabInstance:
     - target: {fileID: 6244523282722977707, guid: 001a1cb094755da428a2c57a34fded1f,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomWall (3)
+      value: RoomWall (11)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2920,10 +3060,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1602552731421362397, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
+        type: 3}
+      propertyPath: m_Name
+      value: roomRoof (17)
+      objectReference: {fileID: 0}
     - target: {fileID: 1977096757890030300, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
         type: 3}
       propertyPath: m_Name
-      value: roomroof (27)
+      value: RoomRoof (17)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2999,10 +3144,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1602552731421362397, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
+        type: 3}
+      propertyPath: m_Name
+      value: roomRoof (16)
+      objectReference: {fileID: 0}
     - target: {fileID: 1977096757890030300, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
         type: 3}
       propertyPath: m_Name
-      value: roomroof (28)
+      value: RoomRoof (16)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3026,7 +3176,7 @@ PrefabInstance:
     - target: {fileID: 2073918932470562551, guid: ec51e95f0d3f4844187eaf27cbc497b3,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomCorner (3)
+      value: RoomCorner
       objectReference: {fileID: 0}
     - target: {fileID: 2554033750550376182, guid: ec51e95f0d3f4844187eaf27cbc497b3,
         type: 3}
@@ -3102,10 +3252,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8087000886243504136}
     m_Modifications:
+    - target: {fileID: 1727847776265052424, guid: 97292ecd80b3ef8489ec2927cf904f83,
+        type: 3}
+      propertyPath: m_Name
+      value: skrzynia2
+      objectReference: {fileID: 0}
     - target: {fileID: 2937253718405192764, guid: 97292ecd80b3ef8489ec2927cf904f83,
         type: 3}
       propertyPath: m_Name
-      value: Skrzynia2
+      value: Box2
       objectReference: {fileID: 0}
     - target: {fileID: 6553713215144978907, guid: 97292ecd80b3ef8489ec2927cf904f83,
         type: 3}
@@ -3196,10 +3351,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8087000886243504136}
     m_Modifications:
+    - target: {fileID: 2085741072103516291, guid: af752fc3301ca294bb31b596fb7de790,
+        type: 3}
+      propertyPath: m_Name
+      value: bateria (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 2250118330841210523, guid: af752fc3301ca294bb31b596fb7de790,
         type: 3}
       propertyPath: m_Name
-      value: Bateria (2)
+      value: Battery (2)
       objectReference: {fileID: 0}
     - target: {fileID: 5837101815220872093, guid: af752fc3301ca294bb31b596fb7de790,
         type: 3}
@@ -3261,7 +3421,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af752fc3301ca294bb31b596fb7de790, type: 3}
---- !u!4 &2701979485411260462 stripped
+--- !u!4 &8394376733990820784 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5837101815220872093, guid: af752fc3301ca294bb31b596fb7de790,
     type: 3}
@@ -3333,7 +3493,12 @@ PrefabInstance:
     - target: {fileID: 4124438595437833222, guid: e308ff2b2a2648649b56868bb4f7926a,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomFloor (4)
+      value: RoomFloor (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8718801460870850285, guid: e308ff2b2a2648649b56868bb4f7926a,
+        type: 3}
+      propertyPath: m_Name
+      value: roomFloor (14)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3357,7 +3522,17 @@ PrefabInstance:
     - target: {fileID: 130241999908223802, guid: eb019e11ee2173f428c0ca4fa8b52061,
         type: 3}
       propertyPath: m_Name
-      value: LampRoom (14)
+      value: LampRoom (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023473674247369721, guid: eb019e11ee2173f428c0ca4fa8b52061,
+        type: 3}
+      propertyPath: m_Name
+      value: Point Light (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5209791698019952649, guid: eb019e11ee2173f428c0ca4fa8b52061,
+        type: 3}
+      propertyPath: m_Name
+      value: lamp (3)
       objectReference: {fileID: 0}
     - target: {fileID: 6138491368353283460, guid: eb019e11ee2173f428c0ca4fa8b52061,
         type: 3}
@@ -3518,10 +3693,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1978550045326994700, guid: 93efed29a73ecf24e854f636f56d85d2,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (2) (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 2161421901178173193, guid: 93efed29a73ecf24e854f636f56d85d2,
         type: 3}
       propertyPath: m_Name
-      value: SM_RoomDoor
+      value: RoomDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675820244664883823, guid: 93efed29a73ecf24e854f636f56d85d2,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (3) (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6677928816106652720, guid: 93efed29a73ecf24e854f636f56d85d2,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (4) (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164480475767185283, guid: 93efed29a73ecf24e854f636f56d85d2,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (1) (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8225866610645423334, guid: 93efed29a73ecf24e854f636f56d85d2,
+        type: 3}
+      propertyPath: m_Name
+      value: Cols (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8779207822225497392, guid: 93efed29a73ecf24e854f636f56d85d2,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3542,10 +3747,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6839739634299671930}
     m_Modifications:
+    - target: {fileID: 49086982201886463, guid: ec51e95f0d3f4844187eaf27cbc497b3,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (2) (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894328693718889832, guid: ec51e95f0d3f4844187eaf27cbc497b3,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (1) (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 2073918932470562551, guid: ec51e95f0d3f4844187eaf27cbc497b3,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomCorner (1)
+      value: RoomCorner (2)
       objectReference: {fileID: 0}
     - target: {fileID: 2554033750550376182, guid: ec51e95f0d3f4844187eaf27cbc497b3,
         type: 3}
@@ -3601,6 +3816,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557731449742051539, guid: ec51e95f0d3f4844187eaf27cbc497b3,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (5) (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3766176116733235408, guid: ec51e95f0d3f4844187eaf27cbc497b3,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354787163994418213, guid: ec51e95f0d3f4844187eaf27cbc497b3,
+        type: 3}
+      propertyPath: m_Name
+      value: Cols (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5657922470420184020, guid: ec51e95f0d3f4844187eaf27cbc497b3,
+        type: 3}
+      propertyPath: m_Name
+      value: roomCorner (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126655072381707121, guid: ec51e95f0d3f4844187eaf27cbc497b3,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (3) (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927527891884389576, guid: ec51e95f0d3f4844187eaf27cbc497b3,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (4) (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3691,17 +3936,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1542449454893657034, guid: ea4294e8dbc63da48907d8b119fb155f,
+        type: 3}
+      propertyPath: m_Name
+      value: skrzynia1
+      objectReference: {fileID: 0}
     - target: {fileID: 3518871535700766002, guid: ea4294e8dbc63da48907d8b119fb155f,
         type: 3}
       propertyPath: m_Name
-      value: Skrzynia1 (1)
+      value: Box1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea4294e8dbc63da48907d8b119fb155f, type: 3}
---- !u!4 &3417568853896114566 stripped
+--- !u!4 &4571908244038934416 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1161658846040845845, guid: ea4294e8dbc63da48907d8b119fb155f,
     type: 3}
@@ -3770,10 +4020,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1602552731421362397, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
+        type: 3}
+      propertyPath: m_Name
+      value: roomRoof (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 1977096757890030300, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
         type: 3}
       propertyPath: m_Name
-      value: roomroof (42)
+      value: RoomRoof (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3797,7 +4052,12 @@ PrefabInstance:
     - target: {fileID: 2768492751811647090, guid: d826ee49466c3944892c901f72247fb3,
         type: 3}
       propertyPath: m_Name
-      value: "labst\xF3\u0142"
+      value: LabTable (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119162264117794147, guid: d826ee49466c3944892c901f72247fb3,
+        type: 3}
+      propertyPath: m_Name
+      value: table_2 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 9161960495926618239, guid: d826ee49466c3944892c901f72247fb3,
         type: 3}
@@ -3891,7 +4151,17 @@ PrefabInstance:
     - target: {fileID: 130241999908223802, guid: eb019e11ee2173f428c0ca4fa8b52061,
         type: 3}
       propertyPath: m_Name
-      value: LampRoom (17)
+      value: LampRoom (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023473674247369721, guid: eb019e11ee2173f428c0ca4fa8b52061,
+        type: 3}
+      propertyPath: m_Name
+      value: Point Light (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5209791698019952649, guid: eb019e11ee2173f428c0ca4fa8b52061,
+        type: 3}
+      propertyPath: m_Name
+      value: lamp (4)
       objectReference: {fileID: 0}
     - target: {fileID: 6138491368353283460, guid: eb019e11ee2173f428c0ca4fa8b52061,
         type: 3}
@@ -3997,6 +4267,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6839739634299671930}
     m_Modifications:
+    - target: {fileID: 1364576786209484329, guid: 001a1cb094755da428a2c57a34fded1f,
+        type: 3}
+      propertyPath: m_Name
+      value: roomWall (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 3091256469081076281, guid: 001a1cb094755da428a2c57a34fded1f,
         type: 3}
       propertyPath: m_RootOrder
@@ -4055,7 +4330,7 @@ PrefabInstance:
     - target: {fileID: 6244523282722977707, guid: 001a1cb094755da428a2c57a34fded1f,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomWall (11)
+      value: RoomWall (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4076,10 +4351,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8087000886243504136}
     m_Modifications:
+    - target: {fileID: 2085741072103516291, guid: af752fc3301ca294bb31b596fb7de790,
+        type: 3}
+      propertyPath: m_Name
+      value: bateria (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 2250118330841210523, guid: af752fc3301ca294bb31b596fb7de790,
         type: 3}
       propertyPath: m_Name
-      value: Bateria (1)
+      value: Battery (4)
       objectReference: {fileID: 0}
     - target: {fileID: 5837101815220872093, guid: af752fc3301ca294bb31b596fb7de790,
         type: 3}
@@ -4213,7 +4493,12 @@ PrefabInstance:
     - target: {fileID: 4124438595437833222, guid: e308ff2b2a2648649b56868bb4f7926a,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomFloor (15)
+      value: RoomFloor (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8718801460870850285, guid: e308ff2b2a2648649b56868bb4f7926a,
+        type: 3}
+      propertyPath: m_Name
+      value: roomFloor (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4237,7 +4522,12 @@ PrefabInstance:
     - target: {fileID: 3011180456325733604, guid: c906c7a22b3f4ba4fa7942ffc3fc82c3,
         type: 3}
       propertyPath: m_Name
-      value: Stasis (1)
+      value: ToxicContainer (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5103366578727396739, guid: c906c7a22b3f4ba4fa7942ffc3fc82c3,
+        type: 3}
+      propertyPath: m_Name
+      value: stasis (1)
       objectReference: {fileID: 0}
     - target: {fileID: 8291644613837716851, guid: c906c7a22b3f4ba4fa7942ffc3fc82c3,
         type: 3}
@@ -4313,10 +4603,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8087000886243504136}
     m_Modifications:
+    - target: {fileID: 2085741072103516291, guid: af752fc3301ca294bb31b596fb7de790,
+        type: 3}
+      propertyPath: m_Name
+      value: bateria (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 2250118330841210523, guid: af752fc3301ca294bb31b596fb7de790,
         type: 3}
       propertyPath: m_Name
-      value: Bateria (8)
+      value: Battery (7)
       objectReference: {fileID: 0}
     - target: {fileID: 5837101815220872093, guid: af752fc3301ca294bb31b596fb7de790,
         type: 3}
@@ -4440,7 +4735,7 @@ PrefabInstance:
     - target: {fileID: 6153285247061457777, guid: ab549edc24c1ed34cb5026fcca602d3a,
         type: 3}
       propertyPath: m_Name
-      value: picture_frame_picture Variant (3)
+      value: PictureFrame
       objectReference: {fileID: 0}
     - target: {fileID: 6153285247061457777, guid: ab549edc24c1ed34cb5026fcca602d3a,
         type: 3}
@@ -4594,7 +4889,12 @@ PrefabInstance:
     - target: {fileID: 4124438595437833222, guid: e308ff2b2a2648649b56868bb4f7926a,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomFloor (1)
+      value: RoomFloor (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8718801460870850285, guid: e308ff2b2a2648649b56868bb4f7926a,
+        type: 3}
+      propertyPath: m_Name
+      value: roomFloor (16)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4615,10 +4915,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8087000886243504136}
     m_Modifications:
+    - target: {fileID: 2085741072103516291, guid: af752fc3301ca294bb31b596fb7de790,
+        type: 3}
+      propertyPath: m_Name
+      value: bateria (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 2250118330841210523, guid: af752fc3301ca294bb31b596fb7de790,
         type: 3}
       propertyPath: m_Name
-      value: Bateria (6)
+      value: Battery (5)
       objectReference: {fileID: 0}
     - target: {fileID: 5837101815220872093, guid: af752fc3301ca294bb31b596fb7de790,
         type: 3}
@@ -4764,10 +5069,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1542449454893657034, guid: ea4294e8dbc63da48907d8b119fb155f,
+        type: 3}
+      propertyPath: m_Name
+      value: skrzynia1 (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 3518871535700766002, guid: ea4294e8dbc63da48907d8b119fb155f,
         type: 3}
       propertyPath: m_Name
-      value: Skrzynia1 (4)
+      value: Box1 (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4788,6 +5098,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6839739634299671930}
     m_Modifications:
+    - target: {fileID: 1364576786209484329, guid: 001a1cb094755da428a2c57a34fded1f,
+        type: 3}
+      propertyPath: m_Name
+      value: roomWall (8)
+      objectReference: {fileID: 0}
     - target: {fileID: 3091256469081076281, guid: 001a1cb094755da428a2c57a34fded1f,
         type: 3}
       propertyPath: m_RootOrder
@@ -4846,7 +5161,7 @@ PrefabInstance:
     - target: {fileID: 6244523282722977707, guid: 001a1cb094755da428a2c57a34fded1f,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomWall (5)
+      value: RoomWall (8)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4937,10 +5252,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1542449454893657034, guid: ea4294e8dbc63da48907d8b119fb155f,
+        type: 3}
+      propertyPath: m_Name
+      value: skrzynia1 (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 3518871535700766002, guid: ea4294e8dbc63da48907d8b119fb155f,
         type: 3}
       propertyPath: m_Name
-      value: Skrzynia1 (3)
+      value: Box1 (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5019,7 +5339,12 @@ PrefabInstance:
     - target: {fileID: 4124438595437833222, guid: e308ff2b2a2648649b56868bb4f7926a,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomFloor (11)
+      value: RoomFloor (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8718801460870850285, guid: e308ff2b2a2648649b56868bb4f7926a,
+        type: 3}
+      propertyPath: m_Name
+      value: roomFloor (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5098,7 +5423,12 @@ PrefabInstance:
     - target: {fileID: 4124438595437833222, guid: e308ff2b2a2648649b56868bb4f7926a,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomFloor (9)
+      value: RoomFloor (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8718801460870850285, guid: e308ff2b2a2648649b56868bb4f7926a,
+        type: 3}
+      propertyPath: m_Name
+      value: roomFloor (8)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5174,10 +5504,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1602552731421362397, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
+        type: 3}
+      propertyPath: m_Name
+      value: roomRoof (8)
+      objectReference: {fileID: 0}
     - target: {fileID: 1977096757890030300, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
         type: 3}
       propertyPath: m_Name
-      value: roomroof (36)
+      value: RoomRoof (8)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5253,10 +5588,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1602552731421362397, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
+        type: 3}
+      propertyPath: m_Name
+      value: roomRoof (13)
+      objectReference: {fileID: 0}
     - target: {fileID: 1977096757890030300, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
         type: 3}
       propertyPath: m_Name
-      value: roomroof (31)
+      value: RoomRoof (13)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5332,10 +5672,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1602552731421362397, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
+        type: 3}
+      propertyPath: m_Name
+      value: roomRoof (9)
+      objectReference: {fileID: 0}
     - target: {fileID: 1977096757890030300, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
         type: 3}
       propertyPath: m_Name
-      value: roomroof (35)
+      value: RoomRoof (9)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5356,6 +5701,56 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6839739634299671930}
     m_Modifications:
+    - target: {fileID: 350215678551138419, guid: af4349101d7eb4144a45d3403899cae3,
+        type: 3}
+      propertyPath: m_Name
+      value: CorridorDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 2418251853761359968, guid: af4349101d7eb4144a45d3403899cae3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steam
+      objectReference: {fileID: 0}
+    - target: {fileID: 2842273848200370140, guid: af4349101d7eb4144a45d3403899cae3,
+        type: 3}
+      propertyPath: m_Name
+      value: corridordoor (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3704766877176151075, guid: af4349101d7eb4144a45d3403899cae3,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (5) (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3960046555232789962, guid: af4349101d7eb4144a45d3403899cae3,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (2) (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4269726187125902479, guid: af4349101d7eb4144a45d3403899cae3,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (1) (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4352724910138972417, guid: af4349101d7eb4144a45d3403899cae3,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (3) (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4932067388479000050, guid: af4349101d7eb4144a45d3403899cae3,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (4) (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923340735379539139, guid: af4349101d7eb4144a45d3403899cae3,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974142670221125779, guid: af4349101d7eb4144a45d3403899cae3,
+        type: 3}
+      propertyPath: m_Name
+      value: CorridorDoor (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 6027118498919673992, guid: af4349101d7eb4144a45d3403899cae3,
         type: 3}
       propertyPath: m_RootOrder
@@ -5411,10 +5806,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7351963877353713752, guid: af4349101d7eb4144a45d3403899cae3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steam (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8162094102427803452, guid: af4349101d7eb4144a45d3403899cae3,
+        type: 3}
+      propertyPath: m_Name
+      value: corridordoor
+      objectReference: {fileID: 0}
     - target: {fileID: 8463435822376599409, guid: af4349101d7eb4144a45d3403899cae3,
         type: 3}
       propertyPath: m_Name
-      value: SM_wallDoor
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 9055727719395569405, guid: af4349101d7eb4144a45d3403899cae3,
+        type: 3}
+      propertyPath: m_Name
+      value: Cols (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5513,7 +5923,7 @@ PrefabInstance:
     - target: {fileID: 6860449241423691958, guid: 0cc25791c944baa4db9ab8c02c3716fe,
         type: 3}
       propertyPath: m_Name
-      value: Generator (2)
+      value: Generator
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5592,7 +6002,12 @@ PrefabInstance:
     - target: {fileID: 6860449241423691958, guid: 0cc25791c944baa4db9ab8c02c3716fe,
         type: 3}
       propertyPath: m_Name
-      value: Generator (1)
+      value: Generator (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924262193504178259, guid: 0cc25791c944baa4db9ab8c02c3716fe,
+        type: 3}
+      propertyPath: m_Name
+      value: generator (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5668,10 +6083,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1602552731421362397, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
+        type: 3}
+      propertyPath: m_Name
+      value: roomRoof (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 1977096757890030300, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
         type: 3}
       propertyPath: m_Name
-      value: roomroof (37)
+      value: RoomRoof (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5692,6 +6112,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6839739634299671930}
     m_Modifications:
+    - target: {fileID: 1364576786209484329, guid: 001a1cb094755da428a2c57a34fded1f,
+        type: 3}
+      propertyPath: m_Name
+      value: roomWall (13)
+      objectReference: {fileID: 0}
     - target: {fileID: 3091256469081076281, guid: 001a1cb094755da428a2c57a34fded1f,
         type: 3}
       propertyPath: m_RootOrder
@@ -5750,7 +6175,7 @@ PrefabInstance:
     - target: {fileID: 6244523282722977707, guid: 001a1cb094755da428a2c57a34fded1f,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomWall (1)
+      value: RoomWall (13)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5771,10 +6196,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6839739634299671930}
     m_Modifications:
+    - target: {fileID: 49086982201886463, guid: ec51e95f0d3f4844187eaf27cbc497b3,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (2) (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894328693718889832, guid: ec51e95f0d3f4844187eaf27cbc497b3,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (1) (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 2073918932470562551, guid: ec51e95f0d3f4844187eaf27cbc497b3,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomCorner (2)
+      value: RoomCorner (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2554033750550376182, guid: ec51e95f0d3f4844187eaf27cbc497b3,
         type: 3}
@@ -5830,6 +6265,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557731449742051539, guid: ec51e95f0d3f4844187eaf27cbc497b3,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (5) (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3766176116733235408, guid: ec51e95f0d3f4844187eaf27cbc497b3,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354787163994418213, guid: ec51e95f0d3f4844187eaf27cbc497b3,
+        type: 3}
+      propertyPath: m_Name
+      value: Cols (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5657922470420184020, guid: ec51e95f0d3f4844187eaf27cbc497b3,
+        type: 3}
+      propertyPath: m_Name
+      value: roomCorner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126655072381707121, guid: ec51e95f0d3f4844187eaf27cbc497b3,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (3) (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927527891884389576, guid: ec51e95f0d3f4844187eaf27cbc497b3,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (4) (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5905,10 +6370,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1602552731421362397, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
+        type: 3}
+      propertyPath: m_Name
+      value: roomRoof (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 1977096757890030300, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
         type: 3}
       propertyPath: m_Name
-      value: roomroof (40)
+      value: RoomRoof (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5929,6 +6399,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6839739634299671930}
     m_Modifications:
+    - target: {fileID: 1364576786209484329, guid: 001a1cb094755da428a2c57a34fded1f,
+        type: 3}
+      propertyPath: m_Name
+      value: roomWall (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 3091256469081076281, guid: 001a1cb094755da428a2c57a34fded1f,
         type: 3}
       propertyPath: m_RootOrder
@@ -5987,7 +6462,7 @@ PrefabInstance:
     - target: {fileID: 6244523282722977707, guid: 001a1cb094755da428a2c57a34fded1f,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomWall (7)
+      value: RoomWall (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6008,10 +6483,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8087000886243504136}
     m_Modifications:
+    - target: {fileID: 2085741072103516291, guid: af752fc3301ca294bb31b596fb7de790,
+        type: 3}
+      propertyPath: m_Name
+      value: bateria (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 2250118330841210523, guid: af752fc3301ca294bb31b596fb7de790,
         type: 3}
       propertyPath: m_Name
-      value: Bateria
+      value: Battery (3)
       objectReference: {fileID: 0}
     - target: {fileID: 5837101815220872093, guid: af752fc3301ca294bb31b596fb7de790,
         type: 3}
@@ -6145,7 +6625,12 @@ PrefabInstance:
     - target: {fileID: 4124438595437833222, guid: e308ff2b2a2648649b56868bb4f7926a,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomFloor (6)
+      value: RoomFloor (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8718801460870850285, guid: e308ff2b2a2648649b56868bb4f7926a,
+        type: 3}
+      propertyPath: m_Name
+      value: roomFloor (11)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6221,10 +6706,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1602552731421362397, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
+        type: 3}
+      propertyPath: m_Name
+      value: roomRoof (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 1977096757890030300, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
         type: 3}
       propertyPath: m_Name
-      value: roomroof (43)
+      value: RoomRoof (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6248,7 +6738,12 @@ PrefabInstance:
     - target: {fileID: 130241999908223802, guid: eb019e11ee2173f428c0ca4fa8b52061,
         type: 3}
       propertyPath: m_Name
-      value: LampRoom (19)
+      value: LampRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 5209791698019952649, guid: eb019e11ee2173f428c0ca4fa8b52061,
+        type: 3}
+      propertyPath: m_Name
+      value: lamp
       objectReference: {fileID: 0}
     - target: {fileID: 6138491368353283460, guid: eb019e11ee2173f428c0ca4fa8b52061,
         type: 3}
@@ -6357,7 +6852,7 @@ PrefabInstance:
     - target: {fileID: 2290112274351174095, guid: d05696c47e7d9a64db4473f392f5d86d,
         type: 3}
       propertyPath: m_Name
-      value: Note (2)
+      value: Note
       objectReference: {fileID: 0}
     - target: {fileID: 2290112274351174095, guid: d05696c47e7d9a64db4473f392f5d86d,
         type: 3}
@@ -6485,6 +6980,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6839739634299671930}
     m_Modifications:
+    - target: {fileID: 1364576786209484329, guid: 001a1cb094755da428a2c57a34fded1f,
+        type: 3}
+      propertyPath: m_Name
+      value: roomWall (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 3091256469081076281, guid: 001a1cb094755da428a2c57a34fded1f,
         type: 3}
       propertyPath: m_RootOrder
@@ -6543,7 +7043,7 @@ PrefabInstance:
     - target: {fileID: 6244523282722977707, guid: 001a1cb094755da428a2c57a34fded1f,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomWall (12)
+      value: RoomWall (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6634,10 +7134,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1542449454893657034, guid: ea4294e8dbc63da48907d8b119fb155f,
+        type: 3}
+      propertyPath: m_Name
+      value: skrzynia1 (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 3518871535700766002, guid: ea4294e8dbc63da48907d8b119fb155f,
         type: 3}
       propertyPath: m_Name
-      value: Skrzynia1
+      value: Box1 (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6658,10 +7163,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8087000886243504136}
     m_Modifications:
+    - target: {fileID: 2085741072103516291, guid: af752fc3301ca294bb31b596fb7de790,
+        type: 3}
+      propertyPath: m_Name
+      value: bateria (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 2250118330841210523, guid: af752fc3301ca294bb31b596fb7de790,
         type: 3}
       propertyPath: m_Name
-      value: Bateria (4)
+      value: Battery (1)
       objectReference: {fileID: 0}
     - target: {fileID: 5837101815220872093, guid: af752fc3301ca294bb31b596fb7de790,
         type: 3}
@@ -6792,10 +7302,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1602552731421362397, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
+        type: 3}
+      propertyPath: m_Name
+      value: roomRoof (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 1977096757890030300, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
         type: 3}
       propertyPath: m_Name
-      value: roomroof (41)
+      value: RoomRoof (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6874,7 +7389,12 @@ PrefabInstance:
     - target: {fileID: 4124438595437833222, guid: e308ff2b2a2648649b56868bb4f7926a,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomFloor (10)
+      value: RoomFloor (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8718801460870850285, guid: e308ff2b2a2648649b56868bb4f7926a,
+        type: 3}
+      propertyPath: m_Name
+      value: roomFloor (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6950,17 +7470,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1602552731421362397, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
+        type: 3}
+      propertyPath: m_Name
+      value: roomRoof (14)
+      objectReference: {fileID: 0}
     - target: {fileID: 1977096757890030300, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
         type: 3}
       propertyPath: m_Name
-      value: roomroof (30)
+      value: RoomRoof (14)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76, type: 3}
---- !u!4 &7249391066181109290 stripped
+--- !u!4 &7629941556732368751 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 971086125883691334, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
     type: 3}
@@ -6977,7 +7502,17 @@ PrefabInstance:
     - target: {fileID: 130241999908223802, guid: eb019e11ee2173f428c0ca4fa8b52061,
         type: 3}
       propertyPath: m_Name
-      value: LampRoom (15)
+      value: LampRoom (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023473674247369721, guid: eb019e11ee2173f428c0ca4fa8b52061,
+        type: 3}
+      propertyPath: m_Name
+      value: Point Light (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5209791698019952649, guid: eb019e11ee2173f428c0ca4fa8b52061,
+        type: 3}
+      propertyPath: m_Name
+      value: lamp (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6138491368353283460, guid: eb019e11ee2173f428c0ca4fa8b52061,
         type: 3}
@@ -7086,7 +7621,12 @@ PrefabInstance:
     - target: {fileID: 3011180456325733604, guid: c906c7a22b3f4ba4fa7942ffc3fc82c3,
         type: 3}
       propertyPath: m_Name
-      value: Stasis (3)
+      value: ToxicContainer (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5103366578727396739, guid: c906c7a22b3f4ba4fa7942ffc3fc82c3,
+        type: 3}
+      propertyPath: m_Name
+      value: stasis (2)
       objectReference: {fileID: 0}
     - target: {fileID: 8291644613837716851, guid: c906c7a22b3f4ba4fa7942ffc3fc82c3,
         type: 3}
@@ -7220,7 +7760,12 @@ PrefabInstance:
     - target: {fileID: 4124438595437833222, guid: e308ff2b2a2648649b56868bb4f7926a,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomFloor (7)
+      value: RoomFloor (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8718801460870850285, guid: e308ff2b2a2648649b56868bb4f7926a,
+        type: 3}
+      propertyPath: m_Name
+      value: roomFloor (9)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7241,10 +7786,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8087000886243504136}
     m_Modifications:
+    - target: {fileID: 1727847776265052424, guid: 97292ecd80b3ef8489ec2927cf904f83,
+        type: 3}
+      propertyPath: m_Name
+      value: skrzynia2 (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 2937253718405192764, guid: 97292ecd80b3ef8489ec2927cf904f83,
         type: 3}
       propertyPath: m_Name
-      value: Skrzynia2 (1)
+      value: Box2 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6553713215144978907, guid: 97292ecd80b3ef8489ec2927cf904f83,
         type: 3}
@@ -7393,7 +7943,7 @@ PrefabInstance:
     - target: {fileID: 6244523282722977707, guid: 001a1cb094755da428a2c57a34fded1f,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomWall (14)
+      value: RoomWall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7417,7 +7967,17 @@ PrefabInstance:
     - target: {fileID: 130241999908223802, guid: eb019e11ee2173f428c0ca4fa8b52061,
         type: 3}
       propertyPath: m_Name
-      value: LampRoom (16)
+      value: LampRoom (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023473674247369721, guid: eb019e11ee2173f428c0ca4fa8b52061,
+        type: 3}
+      propertyPath: m_Name
+      value: Point Light (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5209791698019952649, guid: eb019e11ee2173f428c0ca4fa8b52061,
+        type: 3}
+      propertyPath: m_Name
+      value: lamp (5)
       objectReference: {fileID: 0}
     - target: {fileID: 6138491368353283460, guid: eb019e11ee2173f428c0ca4fa8b52061,
         type: 3}
@@ -7526,7 +8086,17 @@ PrefabInstance:
     - target: {fileID: 130241999908223802, guid: eb019e11ee2173f428c0ca4fa8b52061,
         type: 3}
       propertyPath: m_Name
-      value: LampRoom (18)
+      value: LampRoom (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023473674247369721, guid: eb019e11ee2173f428c0ca4fa8b52061,
+        type: 3}
+      propertyPath: m_Name
+      value: Point Light (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5209791698019952649, guid: eb019e11ee2173f428c0ca4fa8b52061,
+        type: 3}
+      propertyPath: m_Name
+      value: lamp (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6138491368353283460, guid: eb019e11ee2173f428c0ca4fa8b52061,
         type: 3}
@@ -7702,10 +8272,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1542449454893657034, guid: ea4294e8dbc63da48907d8b119fb155f,
+        type: 3}
+      propertyPath: m_Name
+      value: skrzynia1 (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 3518871535700766002, guid: ea4294e8dbc63da48907d8b119fb155f,
         type: 3}
       propertyPath: m_Name
-      value: Skrzynia1 (2)
+      value: Box1 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7729,12 +8304,22 @@ PrefabInstance:
     - target: {fileID: 130241999908223802, guid: eb019e11ee2173f428c0ca4fa8b52061,
         type: 3}
       propertyPath: m_Name
-      value: LampRoom (13)
+      value: LampRoom (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023473674247369721, guid: eb019e11ee2173f428c0ca4fa8b52061,
+        type: 3}
+      propertyPath: m_Name
+      value: Point Light (6)
       objectReference: {fileID: 0}
     - target: {fileID: 4383709443989879422, guid: eb019e11ee2173f428c0ca4fa8b52061,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.369
+      objectReference: {fileID: 0}
+    - target: {fileID: 5209791698019952649, guid: eb019e11ee2173f428c0ca4fa8b52061,
+        type: 3}
+      propertyPath: m_Name
+      value: lamp (6)
       objectReference: {fileID: 0}
     - target: {fileID: 6138491368353283460, guid: eb019e11ee2173f428c0ca4fa8b52061,
         type: 3}
@@ -7826,7 +8411,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb019e11ee2173f428c0ca4fa8b52061, type: 3}
---- !u!4 &7808023203071317201 stripped
+--- !u!4 &1325344251344040056 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9097053746174977192, guid: eb019e11ee2173f428c0ca4fa8b52061,
     type: 3}
@@ -7898,7 +8483,7 @@ PrefabInstance:
     - target: {fileID: 4124438595437833222, guid: e308ff2b2a2648649b56868bb4f7926a,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomFloor (17)
+      value: RoomFloor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7922,7 +8507,12 @@ PrefabInstance:
     - target: {fileID: 3011180456325733604, guid: c906c7a22b3f4ba4fa7942ffc3fc82c3,
         type: 3}
       propertyPath: m_Name
-      value: Stasis (2)
+      value: ToxicContainer (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5103366578727396739, guid: c906c7a22b3f4ba4fa7942ffc3fc82c3,
+        type: 3}
+      propertyPath: m_Name
+      value: stasis (3)
       objectReference: {fileID: 0}
     - target: {fileID: 8291644613837716851, guid: c906c7a22b3f4ba4fa7942ffc3fc82c3,
         type: 3}
@@ -7998,6 +8588,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6839739634299671930}
     m_Modifications:
+    - target: {fileID: 1364576786209484329, guid: 001a1cb094755da428a2c57a34fded1f,
+        type: 3}
+      propertyPath: m_Name
+      value: roomWall (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 3091256469081076281, guid: 001a1cb094755da428a2c57a34fded1f,
         type: 3}
       propertyPath: m_RootOrder
@@ -8056,7 +8651,7 @@ PrefabInstance:
     - target: {fileID: 6244523282722977707, guid: 001a1cb094755da428a2c57a34fded1f,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomWall (13)
+      value: RoomWall (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8135,7 +8730,12 @@ PrefabInstance:
     - target: {fileID: 4124438595437833222, guid: e308ff2b2a2648649b56868bb4f7926a,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomFloor (16)
+      value: RoomFloor (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8718801460870850285, guid: e308ff2b2a2648649b56868bb4f7926a,
+        type: 3}
+      propertyPath: m_Name
+      value: roomFloor (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8211,10 +8811,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1602552731421362397, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
+        type: 3}
+      propertyPath: m_Name
+      value: roomRoof (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 1977096757890030300, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
         type: 3}
       propertyPath: m_Name
-      value: roomroof (38)
+      value: RoomRoof (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8293,7 +8898,12 @@ PrefabInstance:
     - target: {fileID: 4124438595437833222, guid: e308ff2b2a2648649b56868bb4f7926a,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomFloor (12)
+      value: RoomFloor (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8718801460870850285, guid: e308ff2b2a2648649b56868bb4f7926a,
+        type: 3}
+      propertyPath: m_Name
+      value: roomFloor (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8372,7 +8982,12 @@ PrefabInstance:
     - target: {fileID: 4124438595437833222, guid: e308ff2b2a2648649b56868bb4f7926a,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomFloor
+      value: RoomFloor (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8718801460870850285, guid: e308ff2b2a2648649b56868bb4f7926a,
+        type: 3}
+      propertyPath: m_Name
+      value: roomFloor (17)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8396,7 +9011,17 @@ PrefabInstance:
     - target: {fileID: 130241999908223802, guid: eb019e11ee2173f428c0ca4fa8b52061,
         type: 3}
       propertyPath: m_Name
-      value: LampRoom (12)
+      value: LampRoom (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023473674247369721, guid: eb019e11ee2173f428c0ca4fa8b52061,
+        type: 3}
+      propertyPath: m_Name
+      value: Point Light (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5209791698019952649, guid: eb019e11ee2173f428c0ca4fa8b52061,
+        type: 3}
+      propertyPath: m_Name
+      value: lamp (7)
       objectReference: {fileID: 0}
     - target: {fileID: 6138491368353283460, guid: eb019e11ee2173f428c0ca4fa8b52061,
         type: 3}
@@ -8502,6 +9127,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6839739634299671930}
     m_Modifications:
+    - target: {fileID: 1364576786209484329, guid: 001a1cb094755da428a2c57a34fded1f,
+        type: 3}
+      propertyPath: m_Name
+      value: roomWall (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 3091256469081076281, guid: 001a1cb094755da428a2c57a34fded1f,
         type: 3}
       propertyPath: m_RootOrder
@@ -8560,7 +9190,7 @@ PrefabInstance:
     - target: {fileID: 6244523282722977707, guid: 001a1cb094755da428a2c57a34fded1f,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomWall (10)
+      value: RoomWall (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8641,6 +9271,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Generator (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6924262193504178259, guid: 0cc25791c944baa4db9ab8c02c3716fe,
+        type: 3}
+      propertyPath: m_Name
+      value: generator (3)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8715,10 +9350,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1602552731421362397, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
+        type: 3}
+      propertyPath: m_Name
+      value: roomRoof (10)
+      objectReference: {fileID: 0}
     - target: {fileID: 1977096757890030300, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
         type: 3}
       propertyPath: m_Name
-      value: roomroof (34)
+      value: RoomRoof (10)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8739,6 +9379,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6839739634299671930}
     m_Modifications:
+    - target: {fileID: 1364576786209484329, guid: 001a1cb094755da428a2c57a34fded1f,
+        type: 3}
+      propertyPath: m_Name
+      value: roomWall (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 3091256469081076281, guid: 001a1cb094755da428a2c57a34fded1f,
         type: 3}
       propertyPath: m_RootOrder
@@ -8797,7 +9442,7 @@ PrefabInstance:
     - target: {fileID: 6244523282722977707, guid: 001a1cb094755da428a2c57a34fded1f,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomWall (8)
+      value: RoomWall (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8873,10 +9518,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1602552731421362397, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
+        type: 3}
+      propertyPath: m_Name
+      value: roomRoof (11)
+      objectReference: {fileID: 0}
     - target: {fileID: 1977096757890030300, guid: ffc0b5ed5daf64c4cbbd8c8946e40d76,
         type: 3}
       propertyPath: m_Name
-      value: roomroof (33)
+      value: RoomRoof (11)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8897,6 +9547,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6839739634299671930}
     m_Modifications:
+    - target: {fileID: 1364576786209484329, guid: 001a1cb094755da428a2c57a34fded1f,
+        type: 3}
+      propertyPath: m_Name
+      value: roomWall (12)
+      objectReference: {fileID: 0}
     - target: {fileID: 3091256469081076281, guid: 001a1cb094755da428a2c57a34fded1f,
         type: 3}
       propertyPath: m_RootOrder
@@ -8955,14 +9610,14 @@ PrefabInstance:
     - target: {fileID: 6244523282722977707, guid: 001a1cb094755da428a2c57a34fded1f,
         type: 3}
       propertyPath: m_Name
-      value: SM_roomWall (2)
+      value: RoomWall (12)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 001a1cb094755da428a2c57a34fded1f, type: 3}
---- !u!4 &9203305368241537712 stripped
+--- !u!4 &6151613736446537878 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3091256469081076281, guid: 001a1cb094755da428a2c57a34fded1f,
     type: 3}

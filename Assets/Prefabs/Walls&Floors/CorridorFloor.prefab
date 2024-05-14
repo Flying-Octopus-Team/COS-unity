@@ -30,7 +30,7 @@ Transform:
   m_Children:
   - {fileID: 3669955768674714350}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3847468463106680069
 PrefabInstance:
@@ -98,7 +98,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 18d061d1e0ee97e4ba1ce6de0dd25a99,
         type: 3}
       propertyPath: m_Name
-      value: floor2
+      value: corridorFloor
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 18d061d1e0ee97e4ba1ce6de0dd25a99,
         type: 3}

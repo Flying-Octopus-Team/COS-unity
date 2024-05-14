@@ -108,7 +108,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9dc2521da74306f488bda6706dc3c6bd,
         type: 3}
       propertyPath: m_Name
-      value: sufitkorytarz2 (1)
+      value: corridorCeiling2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9dc2521da74306f488bda6706dc3c6bd,
         type: 3}

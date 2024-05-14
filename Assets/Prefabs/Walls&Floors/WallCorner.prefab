@@ -113,7 +113,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 04f15e4d3d67457418bcf022b9b9cb4f,
         type: 3}
       propertyPath: m_Name
-      value: wallcorner1
+      value: wallCorner
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 04f15e4d3d67457418bcf022b9b9cb4f,
         type: 3}

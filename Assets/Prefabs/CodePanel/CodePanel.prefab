@@ -335,7 +335,7 @@ Transform:
   - {fileID: 1119228510568696324}
   - {fileID: 7976078564015777573}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2005883841219734618
 MonoBehaviour:
@@ -612,7 +612,7 @@ PrefabInstance:
     - target: {fileID: 7189174253786860155, guid: 61bb3f8f4fd89ae44b67cd5b1513228d,
         type: 3}
       propertyPath: m_Name
-      value: Button (11)
+      value: CodePanelButton
       objectReference: {fileID: 0}
     - target: {fileID: 8822492431470847947, guid: 61bb3f8f4fd89ae44b67cd5b1513228d,
         type: 3}
@@ -711,7 +711,7 @@ PrefabInstance:
     - target: {fileID: 7189174253786860155, guid: 61bb3f8f4fd89ae44b67cd5b1513228d,
         type: 3}
       propertyPath: m_Name
-      value: Button (3)
+      value: CodePanelButton
       objectReference: {fileID: 0}
     - target: {fileID: 8822492431470847947, guid: 61bb3f8f4fd89ae44b67cd5b1513228d,
         type: 3}
@@ -810,7 +810,7 @@ PrefabInstance:
     - target: {fileID: 7189174253786860155, guid: 61bb3f8f4fd89ae44b67cd5b1513228d,
         type: 3}
       propertyPath: m_Name
-      value: Button (2)
+      value: CodePanelButton
       objectReference: {fileID: 0}
     - target: {fileID: 8822492431470847947, guid: 61bb3f8f4fd89ae44b67cd5b1513228d,
         type: 3}
@@ -909,7 +909,7 @@ PrefabInstance:
     - target: {fileID: 7189174253786860155, guid: 61bb3f8f4fd89ae44b67cd5b1513228d,
         type: 3}
       propertyPath: m_Name
-      value: Button
+      value: CodePanelButton
       objectReference: {fileID: 0}
     - target: {fileID: 8822492431470847947, guid: 61bb3f8f4fd89ae44b67cd5b1513228d,
         type: 3}
@@ -1008,7 +1008,7 @@ PrefabInstance:
     - target: {fileID: 7189174253786860155, guid: 61bb3f8f4fd89ae44b67cd5b1513228d,
         type: 3}
       propertyPath: m_Name
-      value: Button (1)
+      value: CodePanelButton
       objectReference: {fileID: 0}
     - target: {fileID: 8822492431470847947, guid: 61bb3f8f4fd89ae44b67cd5b1513228d,
         type: 3}
@@ -1107,7 +1107,7 @@ PrefabInstance:
     - target: {fileID: 7189174253786860155, guid: 61bb3f8f4fd89ae44b67cd5b1513228d,
         type: 3}
       propertyPath: m_Name
-      value: Button (8)
+      value: CodePanelButton
       objectReference: {fileID: 0}
     - target: {fileID: 8822492431470847947, guid: 61bb3f8f4fd89ae44b67cd5b1513228d,
         type: 3}
@@ -1206,7 +1206,7 @@ PrefabInstance:
     - target: {fileID: 7189174253786860155, guid: 61bb3f8f4fd89ae44b67cd5b1513228d,
         type: 3}
       propertyPath: m_Name
-      value: Button (5)
+      value: CodePanelButton
       objectReference: {fileID: 0}
     - target: {fileID: 8822492431470847947, guid: 61bb3f8f4fd89ae44b67cd5b1513228d,
         type: 3}
@@ -1305,7 +1305,7 @@ PrefabInstance:
     - target: {fileID: 7189174253786860155, guid: 61bb3f8f4fd89ae44b67cd5b1513228d,
         type: 3}
       propertyPath: m_Name
-      value: Button (4)
+      value: CodePanelButton
       objectReference: {fileID: 0}
     - target: {fileID: 8822492431470847947, guid: 61bb3f8f4fd89ae44b67cd5b1513228d,
         type: 3}
@@ -1404,7 +1404,7 @@ PrefabInstance:
     - target: {fileID: 7189174253786860155, guid: 61bb3f8f4fd89ae44b67cd5b1513228d,
         type: 3}
       propertyPath: m_Name
-      value: Button (9)
+      value: CodePanelButton
       objectReference: {fileID: 0}
     - target: {fileID: 8822492431470847947, guid: 61bb3f8f4fd89ae44b67cd5b1513228d,
         type: 3}
@@ -1503,7 +1503,7 @@ PrefabInstance:
     - target: {fileID: 7189174253786860155, guid: 61bb3f8f4fd89ae44b67cd5b1513228d,
         type: 3}
       propertyPath: m_Name
-      value: Button (7)
+      value: CodePanelButton
       objectReference: {fileID: 0}
     - target: {fileID: 8822492431470847947, guid: 61bb3f8f4fd89ae44b67cd5b1513228d,
         type: 3}
@@ -1602,7 +1602,7 @@ PrefabInstance:
     - target: {fileID: 7189174253786860155, guid: 61bb3f8f4fd89ae44b67cd5b1513228d,
         type: 3}
       propertyPath: m_Name
-      value: Button (6)
+      value: CodePanelButton
       objectReference: {fileID: 0}
     - target: {fileID: 8822492431470847947, guid: 61bb3f8f4fd89ae44b67cd5b1513228d,
         type: 3}
@@ -1701,7 +1701,7 @@ PrefabInstance:
     - target: {fileID: 7189174253786860155, guid: 61bb3f8f4fd89ae44b67cd5b1513228d,
         type: 3}
       propertyPath: m_Name
-      value: Button (10)
+      value: CodePanelButton
       objectReference: {fileID: 0}
     - target: {fileID: 8822492431470847947, guid: 61bb3f8f4fd89ae44b67cd5b1513228d,
         type: 3}

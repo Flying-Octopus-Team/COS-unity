@@ -103,7 +103,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c7e2c7ff23499c641896802d58276c33,
         type: 3}
       propertyPath: m_Name
-      value: szafka
+      value: cabine
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c7e2c7ff23499c641896802d58276c33,
         type: 3}

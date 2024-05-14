@@ -103,7 +103,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 30fc5f8bd897c59478f5c90fc7f2e6ea,
         type: 3}
       propertyPath: m_Name
-      value: roomwall
+      value: roomWall
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 30fc5f8bd897c59478f5c90fc7f2e6ea,
         type: 3}

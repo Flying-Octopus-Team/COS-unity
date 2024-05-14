@@ -209,7 +209,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 414fce4c70b46cf4f9b335faf8edb043,
         type: 3}
       propertyPath: m_Name
-      value: corridorkolumna
+      value: corridorColumn
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 414fce4c70b46cf4f9b335faf8edb043,
         type: 3}

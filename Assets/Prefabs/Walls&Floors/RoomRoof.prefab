@@ -103,7 +103,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 07dbdda3335f2d340aebe30c43f5377f,
         type: 3}
       propertyPath: m_Name
-      value: roomroof (1)
+      value: roomRoof
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 07dbdda3335f2d340aebe30c43f5377f,
         type: 3}

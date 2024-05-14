@@ -103,7 +103,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 36a685cd679466e4789afbaf1d7ffc08,
         type: 3}
       propertyPath: m_Name
-      value: "labst\xF3\u0142 (1)"
+      value: labTable
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 36a685cd679466e4789afbaf1d7ffc08,
         type: 3}

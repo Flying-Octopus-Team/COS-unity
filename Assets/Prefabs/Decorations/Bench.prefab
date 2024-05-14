@@ -103,7 +103,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2dc9736aaccc3524c91e0a9af0d9b0bb,
         type: 3}
       propertyPath: m_Name
-      value: "roomkrzes\u0142o1"
+      value: RoomBench
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2dc9736aaccc3524c91e0a9af0d9b0bb,
         type: 3}

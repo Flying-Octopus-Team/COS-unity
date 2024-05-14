@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 8337490092149800023}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &6989329272410156346
 BoxCollider:
@@ -125,7 +125,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2690f739d515ab0459b5697245f44412,
         type: 3}
       propertyPath: m_Name
-      value: roomfloor
+      value: roomFloor
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2690f739d515ab0459b5697245f44412,
         type: 3}

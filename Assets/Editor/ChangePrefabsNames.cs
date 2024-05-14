@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,7 +13,7 @@ public class ChangePrefabsNames : Editor {
         activeScene = SceneManager.GetActiveScene();
 
         GameObject[] allObjects = FindObjectsOfType<GameObject>();
-        Debug.Log($"{allObjects.Count()} GameObjects found on the scene");
+        Debug.Log($"{allObjects.Length} GameObjects found on the scene");
 
         for (int i = 0; i < allObjects.Length; i++) {
             if (PrefabUtility.GetPrefabInstanceStatus(allObjects[i]) == PrefabInstanceStatus.Connected) {
@@ -22,7 +21,7 @@ public class ChangePrefabsNames : Editor {
             }
         }
 
-        Debug.Log($"{prefabs.Count()} Prefabs found on the scene");
+        Debug.Log($"{prefabs.Count} Prefabs found on the scene");
     }
 
     [MenuItem("Prefabs Settings/Rename prefabs")]
@@ -44,5 +43,4 @@ public class ChangePrefabsNames : Editor {
             }
         }
     }
-
 }
