@@ -1145,7 +1145,7 @@ Transform:
   - {fileID: 7351963877353745528}
   - {fileID: 2418251853761850432}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2478060580166826958
 Animator:
@@ -1346,7 +1346,7 @@ PrefabInstance:
     - target: {fileID: 1985674195292155347, guid: 6e4b860eab402ff4f9ec0f56b636fd7b,
         type: 3}
       propertyPath: m_Name
-      value: corridordoor
+      value: corridordoor (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2027222238737605948, guid: 6e4b860eab402ff4f9ec0f56b636fd7b,
         type: 3}
@@ -1605,7 +1605,7 @@ PrefabInstance:
     - target: {fileID: 1985674195292155347, guid: 6e4b860eab402ff4f9ec0f56b636fd7b,
         type: 3}
       propertyPath: m_Name
-      value: corridordoor
+      value: corridordoor (0)
       objectReference: {fileID: 0}
     - target: {fileID: 2027222238737605948, guid: 6e4b860eab402ff4f9ec0f56b636fd7b,
         type: 3}

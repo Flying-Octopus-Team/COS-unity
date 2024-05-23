@@ -18,7 +18,7 @@ public class PCpuzzle : MonoBehaviour, IInteract
     [ContextMenu("Select PC")]
     public void Interact()
     {
-        LevelManager.Instance.ActivateComputer(this);
+        StageTwoManager.Instance.ActivateComputer(this);
         if(audioSource) audioSource.Play();
     }
 

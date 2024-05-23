@@ -8,8 +8,9 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 178a901f58bba8849bb7c39c12f4ff2b
+  m_OcclusionCullingData: {fileID: 36300000, guid: 230690abdfb6f60439997e459fdaa2c8,
+    type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -14690,6 +14691,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5310916164434092609}
+  - component: {fileID: 9131466785045308573}
   m_Layer: 0
   m_Name: Level2
   m_TagString: Untagged
@@ -14697,3 +14699,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &9131466785045308573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9131466785045308572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97813b8b8f9b9bb42873e282a3b57d13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indicatorsActiveColor: {r: 0, g: 1, b: 0, a: 1}
+  indicatorsInactiveColor: {r: 1, g: 0, b: 0, a: 1}
+  codeOutput: {fileID: 0}
+  secondIndicators: []
+  computers: []
+  choosenComputers: []
+  codeLen: 4
+  stageTwoDoors: {fileID: 0}
