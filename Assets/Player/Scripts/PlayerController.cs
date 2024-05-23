@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 playerVelocity;
     private Vector3 lastPlayerPosition;
     private Image crosshairImage;
+    private Animator crosshairAnimator;
     private IInteract interactObject;
     
 
@@ -86,6 +87,7 @@ public class PlayerController : MonoBehaviour
     {
         pRef.SetPc(this);
         crosshairImage = crosshair.GetComponent<Image>();
+        crosshairAnimator = crosshair.GetComponent<Animator>();
     }
     void Start()
     {
@@ -179,7 +181,7 @@ public class PlayerController : MonoBehaviour
             if (hit.transform.TryGetComponent(out IInteract o))
             {
                 Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.green, 3);
-                StartCoroutine(AppearCrosshair(true));
+                crosshairAnimator.SetBool("CrosshairState", true);
                 interactedObjectTMPro.enabled = true;
                 interactObject = o;
                 interactedObjectTMPro.SetText(hit.transform.name);
@@ -188,36 +190,13 @@ public class PlayerController : MonoBehaviour
             else if(hit.collider != null)
             {
                 interactObject = null;
-                StartCoroutine(DissapearCrosshair(false));
+                crosshairAnimator.SetBool("CrosshairState", false);
                 interactedObjectTMPro.enabled = false;
             }
             Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow, 3);
             return;
         }
         Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.TransformDirection(Vector3.forward) * interactionDistance, Color.red, 3);
-    }
-
-    private IEnumerator AppearCrosshair(bool isCrosshair)
-    {
-        if(isCrosshair)
-        {
-            while(crosshairImage.color.a < 1 && isCrosshair)
-            {
-                fadeAmount = crosshairImage.color.a + (fadeSpeed * Time.deltaTime);
-                crosshairImage.color = new Color(255, 255, 255, fadeAmount);
-                yield return null;
-            }
-        }
-    }
-
-    private IEnumerator DissapearCrosshair(bool isCrosshair)
-    {
-        while (crosshairImage.color.a > 0 && !isCrosshair)
-        {
-            fadeAmount = crosshairImage.color.a - (fadeSpeed * Time.deltaTime);
-            crosshairImage.color = new Color(255, 255, 255, fadeAmount);
-            yield return null;
-        }
     }
 
 
