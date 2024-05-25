@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR;
+using UnityEngine.UI;
+using UnityEngine.Windows;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,6 +18,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private GameEvent lockCursor;
     [SerializeField] private GameEvent unlockCursor;
+    [SerializeField] private GameObject crosshair;
+    [SerializeField] private TextMeshProUGUI interactedObjectTMPro;
 
     [Header("Latara")]
     public Transform lataraHandler;
@@ -53,6 +58,10 @@ public class PlayerController : MonoBehaviour
     private Vector2 movementInput;
     private Vector3 playerVelocity;
     private Vector3 lastPlayerPosition;
+    private Image crosshairImage;
+    private Animator crosshairAnimator;
+    private IInteract interactObject;
+    
 
     private float xRot = 0f; //Buffer for mouse up/down input
     private float interactionDistance = 10f;
@@ -61,6 +70,8 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     private bool canLookAround = true;
     private bool canMoveAround = true;
+    [SerializeField] private float fadeSpeed = 1f;
+    private float fadeAmount = 0;
     private CharacterController cController;
 
     [Header("Audio")]
@@ -75,10 +86,12 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         pRef.SetPc(this);
+        crosshairImage = crosshair.GetComponent<Image>();
+        crosshairAnimator = crosshair.GetComponent<Animator>();
     }
     void Start()
     {
-        Application.targetFrameRate= 120;
+        Application.targetFrameRate = 120;
         playerCamera = GetComponentInChildren<Camera>();
         cController = GetComponent<CharacterController>();
         stepSource = GetComponent<AudioSource>();
@@ -88,19 +101,21 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         //Landing
-        bool newIsGrounded = IsGrounded(); 
-        if(!isGrounded && newIsGrounded)
+        bool newIsGrounded = IsGrounded();
+        if (!isGrounded && newIsGrounded)
         {
             //wylaczone tymczasowo - nie ma dzwieku upadku
             //stepSource.PlayOneShot(landSound);
         }
-        isGrounded= newIsGrounded;
+        isGrounded = newIsGrounded;
         //
         HandlePlayerLifeSupport();
         HandleCameraMovement();
         HandlePlayerMovement(isGrounded);
         HandlePlayerPhysics(isGrounded);
         FlashLightPositionRotation(isGrounded);
+
+        HandlePlayerInteraction();
     }
 
 
@@ -117,7 +132,7 @@ public class PlayerController : MonoBehaviour
         if (moveVector.magnitude > 0 && grounded)
         {
             stepTimer += Time.deltaTime * movementPenalty;
-            if (stepTimer > stepRate && stepSource && Vector3.Distance(transform.position, lastPlayerPosition)>0.015f)
+            if (stepTimer > stepRate && stepSource && Vector3.Distance(transform.position, lastPlayerPosition) > 0.015f)
             {
                 stepSource.PlayOneShot(GetRandomClip(ref stepSound));
                 stepTimer = 0;
@@ -125,14 +140,14 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            stepTimer = stepRate*0.85f;
+            stepTimer = stepRate * 0.85f;
         }
         lastPlayerPosition = transform.position;
     }
 
     private void HandleCameraMovement()
     {
-        if (!canLookAround || health<=0) return;
+        if (!canLookAround || health <= 0) return;
         Vector2 cameraMovement = cameraInput * cameraSensitivity * Time.deltaTime;
         this.transform.Rotate(Vector3.up * cameraMovement.x);
 
@@ -153,31 +168,44 @@ public class PlayerController : MonoBehaviour
         }
         cController.Move(playerVelocity);
     }
-    
+
     private void HandlePlayerInteraction()
     {
         RaycastHit hit;
-        if (Physics.Raycast(playerCamera.transform.position, 
+
+
+        if (Physics.Raycast(playerCamera.transform.position,
             playerCamera.transform.forward, out hit, interactionDistance, interactionMask))
         {
-            if(hit.transform.TryGetComponent(out IInteract o))
+
+            if (hit.transform.TryGetComponent(out IInteract o))
             {
-                Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.green,3);
-                o.Interact();
-                return;
+                Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.green, 3);
+                crosshairAnimator.SetBool("CrosshairState", true);
+                interactedObjectTMPro.enabled = true;
+                interactObject = o;
+                interactedObjectTMPro.SetText(hit.transform.name);
+                return; 
             }
-            Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow,3);
+            else if(hit.collider != null)
+            {
+                interactObject = null;
+                crosshairAnimator.SetBool("CrosshairState", false);
+                interactedObjectTMPro.enabled = false;
+            }
+            Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow, 3);
             return;
         }
-        Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.TransformDirection(Vector3.forward) * interactionDistance, Color.red,3);
+        Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.TransformDirection(Vector3.forward) * interactionDistance, Color.red, 3);
     }
+
 
     private void HandlePlayerLifeSupport()
     {
-        if (lifeSupportHoldTime > 0f && health>0)
+        if (lifeSupportHoldTime > 0f && health > 0)
         {
             //effects cuz player holding button
-            lifesupportBootStatus.localScale= new Vector3((float)((Time.time - lifeSupportHoldTime)/ lifeSupportSwitchTime),1,1);
+            lifesupportBootStatus.localScale = new Vector3((float)((Time.time - lifeSupportHoldTime) / lifeSupportSwitchTime), 1, 1);
             if ((Time.time - lifeSupportHoldTime) >= lifeSupportSwitchTime)
             {
                 lifeSupportStatus = !lifeSupportStatus;
@@ -192,7 +220,7 @@ public class PlayerController : MonoBehaviour
         if (!lifeSupportStatus)
         {
             healthLostTimer += Time.deltaTime;
-            if(healthLostTimer > 2 ) 
+            if (healthLostTimer > 2)
             {
                 DamagePlayer(5);
                 healthLostTimer = 0;
@@ -203,8 +231,8 @@ public class PlayerController : MonoBehaviour
     public void DamagePlayer(int dmg)
     {
         if (health <= 0) return;
-        health-=dmg;
-        health=Mathf.Clamp(health, 0, MAX_HP);
+        health -= dmg;
+        health = Mathf.Clamp(health, 0, MAX_HP);
         if (health <= 0) PlayerDie();
     }
 
@@ -247,8 +275,8 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 bobEulerRotation = new Vector3();
         bobEulerRotation.x = (movementInput != Vector2.zero ? (Mathf.Sin(2 * speedCurve)) : (Mathf.Sin(2 * speedCurve) / 2));
-        bobEulerRotation.y = (movementInput != Vector2.zero ?  curveCos : 0);
-        bobEulerRotation.z = (movementInput != Vector2.zero ?   curveCos * movementInput.x : 0);
+        bobEulerRotation.y = (movementInput != Vector2.zero ? curveCos : 0);
+        bobEulerRotation.z = (movementInput != Vector2.zero ? curveCos * movementInput.x : 0);
         bobEulerRotation *= multiplier;
         return bobEulerRotation;
     }
@@ -256,12 +284,12 @@ public class PlayerController : MonoBehaviour
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
         Rigidbody body = hit.collider.attachedRigidbody;
-        if (body == null || body.isKinematic)return;
-        if (hit.moveDirection.y < -0.3)return;
+        if (body == null || body.isKinematic) return;
+        if (hit.moveDirection.y < -0.3) return;
         Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
         body.velocity = pushDir * 2;
     }
-    
+
     private bool IsGrounded()
     {
         //Moze potem zmienic na box?
@@ -272,7 +300,7 @@ public class PlayerController : MonoBehaviour
     {
         canLookAround = lockState;
     }
-  
+
     public void LockMovingAround(bool lockState)
     {
         canMoveAround = lockState;
@@ -296,7 +324,7 @@ public class PlayerController : MonoBehaviour
         if (context.started)
         {
             MainMenuToggle();
-        }   
+        }
     }
     public void MainMenuToggle()
     {
@@ -323,12 +351,12 @@ public class PlayerController : MonoBehaviour
 
     public void HandleInteractInput(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.started && interactObject != null)
         {
-            HandlePlayerInteraction();
+            interactObject.Interact();
         }
     }
-    
+
     public void HandleFlashlightInput(InputAction.CallbackContext context)
     {
         if (context.started && flashlight)
@@ -363,7 +391,7 @@ public class PlayerController : MonoBehaviour
     {
         return clips[UnityEngine.Random.Range(0, clips.Length)];
     }
-    
+
     public float GetPlayerDetectionLevel()
     {
         float detection = 1;
@@ -374,7 +402,7 @@ public class PlayerController : MonoBehaviour
     [ExecuteAlways]
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = IsGrounded()? Color.green : Color.red;
+        Gizmos.color = IsGrounded() ? Color.green : Color.red;
         Gizmos.DrawSphere(GetLegsPosition(), len);
     }
     private void OnGUI()
