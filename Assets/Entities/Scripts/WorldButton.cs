@@ -19,7 +19,7 @@ public class WorldButton : MonoBehaviour, IInteract
         {
             buttonMaterial = renderer.material;
         }
-        UdateColor();
+        UpdateColor();
     }
     
     public void Interact()
@@ -34,9 +34,9 @@ public class WorldButton : MonoBehaviour, IInteract
             }
         }
 
-        UdateColor();
+        UpdateColor();
     }
-    private void UdateColor()
+    private void UpdateColor()
     {
         if (buttonMaterial != null)
         {
@@ -48,11 +48,11 @@ public class WorldButton : MonoBehaviour, IInteract
     public void Deactivate()
     {
         active = false;
-        UdateColor();
+        UpdateColor();
     }
     public void ChangeButtonState(bool newState)
     {
         active = newState;
-        UdateColor();
+        UpdateColor();
     }
 }
