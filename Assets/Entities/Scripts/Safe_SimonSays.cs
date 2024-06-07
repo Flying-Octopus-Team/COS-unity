@@ -14,29 +14,39 @@ public class SejfSzymonMówi : MonoBehaviour, IInteract
     [SerializeField] private UnityEngine.Object YellowButton;
     [SerializeField] private UnityEngine.Object GreenButton;
     [SerializeField] private UnityEngine.Object BlueButton;
-    [SerializeField] private Material RedButtonsColor;
-    [SerializeField] private Material YellowButtonsColor;
-    [SerializeField] private Material GreenButtonsColor;
-    [SerializeField] private Material BlueButtonsColor;
+    [SerializeField] private Material RedButtonsMaterial;
+    [SerializeField] private Material YellowButtonsMaterial;
+    [SerializeField] private Material GreenButtonsMaterial;
+    [SerializeField] private Material BlueButtonsMaterial;
+    private bool beginThePuzzle;
     
     void Start()
     {
-
-        Debug.Log("Witam w mojej kuchni!");
-        RedButtonsColor.SetColor("_EmissionColor", ColorOfInactiveButton);
-        YellowButtonsColor.SetColor("_EmissionColor", ColorOfInactiveButton);
-        GreenButtonsColor.SetColor("_EmissionColor", ColorOfInactiveButton);
-        BlueButtonsColor.SetColor("_EmissionColor", ColorOfInactiveButton);
+        RedButtonsMaterial.SetColor("_EmissionColor", ColorOfInactiveButton);
+        YellowButtonsMaterial.SetColor("_EmissionColor", ColorOfInactiveButton);
+        GreenButtonsMaterial.SetColor("_EmissionColor", ColorOfInactiveButton);
+        BlueButtonsMaterial.SetColor("_EmissionColor", ColorOfInactiveButton);
         
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update(){
+        if (beginThePuzzle){
+            RedButtonsMaterial.SetColor("_EmissionColor", ColorOfRedButton);
+            YellowButtonsMaterial.SetColor("_EmissionColor", ColorOfYellowButton);
+            GreenButtonsMaterial.SetColor("_EmissionColor", ColorOfGreenButton);
+            BlueButtonsMaterial.SetColor("_EmissionColor", ColorOfBlueButton);
+        }
     }
 
     public void Interact(){
+        beginThePuzzle = true;
+    }
 
+    public void OnApplicationQuit(){
+        RedButtonsMaterial.SetColor("_EmissionColor", ColorOfRedButton);
+        YellowButtonsMaterial.SetColor("_EmissionColor", ColorOfYellowButton);
+        GreenButtonsMaterial.SetColor("_EmissionColor", ColorOfGreenButton);
+        BlueButtonsMaterial.SetColor("_EmissionColor", ColorOfBlueButton);
     }
 }
