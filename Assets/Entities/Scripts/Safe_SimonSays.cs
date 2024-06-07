@@ -21,6 +21,8 @@ public class SejfSzymonMówi : MonoBehaviour, IInteract
     
     void Start()
     {
+
+        Debug.Log("Witam w mojej kuchni!");
         RedButtonsColor.SetColor("_EmissionColor", ColorOfInactiveButton);
         YellowButtonsColor.SetColor("_EmissionColor", ColorOfInactiveButton);
         GreenButtonsColor.SetColor("_EmissionColor", ColorOfInactiveButton);
