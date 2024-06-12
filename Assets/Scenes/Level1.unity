@@ -560,6 +560,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Sejf_SzymonM\xF3wi"
       objectReference: {fileID: 0}
+    - target: {fileID: 7688097350949715254, guid: 9b49cfbf1c1a9cd4882eba122b84dd18,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1535202211954697770, guid: 9500903c6c689e34cbd5164e117e868f,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

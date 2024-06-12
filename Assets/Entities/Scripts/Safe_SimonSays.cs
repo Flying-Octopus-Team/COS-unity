@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class SejfSzymonMówi : MonoBehaviour, IInteract
 {
+    [SerializeField] private UnityEngine.Object Player;
     [SerializeField] private Color ColorOfInactiveButton;
     [SerializeField] private Color ColorOfRedButton;
     [SerializeField] private Color ColorOfYellowButton;
