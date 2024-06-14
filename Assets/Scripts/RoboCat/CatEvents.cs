@@ -16,4 +16,11 @@ public class CatEvents : MonoBehaviour {
             onCatMove(destination);
         }
     }
+    
+    public event Action<AudioClip> onCatMakeSound;
+    public void CatMakeSound(AudioClip catSound) {
+        if (onCatMakeSound != null) {
+            onCatMakeSound(catSound);
+        }
+    }
 }
