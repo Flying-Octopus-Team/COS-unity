@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class FollowPlayer : MonoBehaviour {
+public class CatActions : MonoBehaviour {
     [SerializeField] private GameObject player;
     [SerializeField] private List<CatPlaces> catPlaces = new List<CatPlaces>();
     private NavMeshAgent agent;
     private CatEvents catEvents;
-
 
     private void Awake() {
         agent = GetComponent<NavMeshAgent>();
