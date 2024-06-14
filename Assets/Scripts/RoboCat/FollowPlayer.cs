@@ -4,9 +4,11 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class FollowPlayer : MonoBehaviour {
+    [SerializeField] private GameObject player;
+    [SerializeField] private List<CatPlaces> catPlaces = new List<CatPlaces>();
     private NavMeshAgent agent;
-    public GameObject player;
     private CatEvents catEvents;
+
 
     private void Awake() {
         agent = GetComponent<NavMeshAgent>();
@@ -14,14 +16,13 @@ public class FollowPlayer : MonoBehaviour {
     }
 
     private void Start() {
+        if (player == null)
+            player = GameObject.FindGameObjectWithTag("Player");
+
         catEvents.onCatMove += AgentSetDestination;
     }
 
-    private void Update() {
-        catEvents.CatMove();
-    }
-
-    public void AgentSetDestination() {
-        agent.SetDestination(player.transform.position);
+    public void AgentSetDestination(Vector3 destination) {
+        agent.SetDestination(destination);
     }
 }

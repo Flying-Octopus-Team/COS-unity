@@ -10,10 +10,10 @@ public class CatEvents : MonoBehaviour {
         current = this;
     }
 
-    public event Action onCatMove;
-    public void CatMove() {
+    public event Action<Vector3> onCatMove;
+    public void CatMove(Vector3 destination) {
         if (onCatMove != null) {
-            onCatMove();
+            onCatMove(destination);
         }
     }
 }
