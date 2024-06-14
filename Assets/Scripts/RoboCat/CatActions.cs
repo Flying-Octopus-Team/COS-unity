@@ -21,6 +21,7 @@ public class CatActions : MonoBehaviour {
 
         catEvents.onCatMove += AgentSetDestination;
         catEvents.onCatMakeSound += CatMakeSound;
+
     }
 
     public void AgentSetDestination(Vector3 destination) {
@@ -31,4 +32,6 @@ public class CatActions : MonoBehaviour {
         audioSource.clip = catSound;
         audioSource.Play();
     }
+
+    
 }
