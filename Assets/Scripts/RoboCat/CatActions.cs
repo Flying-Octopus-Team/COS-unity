@@ -9,6 +9,7 @@ public class CatActions : MonoBehaviour {
     private NavMeshAgent agent;
     private CatEvents catEvents;
     private AudioSource audioSource;
+    private NavMeshPath path;
 
     private void Awake() {
         agent = GetComponent<NavMeshAgent>();
@@ -21,11 +22,25 @@ public class CatActions : MonoBehaviour {
 
         catEvents.onCatMove += AgentSetDestination;
         catEvents.onCatMakeSound += CatMakeSound;
+        path = new NavMeshPath();
+    }
 
+    private void Update() {
+        catEvents.CatMove(player.transform.position);
     }
 
     public void AgentSetDestination(Vector3 destination) {
-        agent.SetDestination(destination);
+        Debug.Log(agent.hasPath);
+        Debug.Log(agent.remainingDistance);
+
+        if (agent.remainingDistance < 2f && agent.hasPath) {
+            agent.isStopped = true;
+            return;
+                
+        }
+        //agent.isStopped = false;
+        agent.CalculatePath(destination, path);
+        agent.SetPath(path);
     }
 
     public void CatMakeSound(AudioClip catSound) {
