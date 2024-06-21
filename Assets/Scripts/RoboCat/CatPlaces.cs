@@ -5,6 +5,6 @@ using UnityEngine;
 
 [Serializable]
 public class CatPlaces {
-    [SerializeField] private AnimationClip animation;
-    [SerializeField] private GameObject destination;
+    public AnimationClip animation;
+    public GameObject destination;
 }

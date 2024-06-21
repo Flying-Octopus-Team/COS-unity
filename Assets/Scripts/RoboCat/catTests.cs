@@ -9,9 +9,10 @@ public class catTests : MonoBehaviour {
 
     private void Start() {
         player = GameObject.FindGameObjectWithTag("Player");
+        catEvents = CatEvents.current;
         catActions = GetComponent<CatActions>();
 
-        //StartCoroutine(CatMoveRandomlyTowardsPlayer());
+        CatMoveRandomlyTowardsRandomPoint();
     }
 
     public IEnumerator CatMoveRandomlyTowardsPlayer() {
@@ -24,17 +25,13 @@ public class catTests : MonoBehaviour {
 
         }
     }
-    
-    public IEnumerator CatMoveRandomlyTowardsRandomPoint() {
-        float randomDelay;
-        // int randomCatPlace = catActions // choose random cat action with random animation and make it
 
-        while (true) {
-            randomDelay = Random.Range(0f, 3f);
-            yield return new WaitForSeconds(randomDelay);
+    public void CatMoveRandomlyTowardsRandomPoint() {
+        int randomCatPlace = Random.Range(0, catActions.catPlaces.Count);
 
-            catEvents.CatMove(player.transform.position);
-
-        }
+        catEvents.CatMove(catActions.catPlaces[randomCatPlace].destination.transform.position);
+        Debug.Log(catActions.catPlaces[randomCatPlace].destination.transform.position);
+        Debug.Log("Cat: " + transform.position);
+        //catActions.catPlaces[randomCatPlace].animation.Play();
     }
 }

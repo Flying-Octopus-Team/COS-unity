@@ -5,11 +5,10 @@ using UnityEngine.AI;
 
 public class CatActions : MonoBehaviour {
     [SerializeField] private GameObject player;
-    [SerializeField] private List<CatPlaces> catPlaces = new List<CatPlaces>();
+    public List<CatPlaces> catPlaces = new List<CatPlaces>();
     private NavMeshAgent agent;
     private CatEvents catEvents;
     private AudioSource audioSource;
-    private NavMeshPath path;
 
     private void Awake() {
         agent = GetComponent<NavMeshAgent>();
@@ -22,25 +21,20 @@ public class CatActions : MonoBehaviour {
 
         catEvents.onCatMove += AgentSetDestination;
         catEvents.onCatMakeSound += CatMakeSound;
-        path = new NavMeshPath();
     }
 
     private void Update() {
-        catEvents.CatMove(player.transform.position);
+        //catEvents.CatMove(player.transform.position);
     }
 
     public void AgentSetDestination(Vector3 destination) {
-        Debug.Log(agent.hasPath);
-        Debug.Log(agent.remainingDistance);
-
-        if (agent.remainingDistance < 2f && agent.hasPath) {
+        agent.SetDestination(destination);
+        if (agent.remainingDistance <= 1.5f && agent.hasPath) {
             agent.isStopped = true;
             return;
                 
         }
-        //agent.isStopped = false;
-        agent.CalculatePath(destination, path);
-        agent.SetPath(path);
+        agent.isStopped = false;
     }
 
     public void CatMakeSound(AudioClip catSound) {
