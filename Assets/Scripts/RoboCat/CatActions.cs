@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class CatActions : MonoBehaviour {
-    [SerializeField] private GameObject player;
+    public List<AudioClip> meowSounds = new List<AudioClip>();
     public List<CatPlaces> catPlaces = new List<CatPlaces>();
+    [SerializeField] private GameObject player;
     private NavMeshAgent agent;
     private CatEvents catEvents;
     private AudioSource audioSource;

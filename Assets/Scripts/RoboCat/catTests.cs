@@ -12,10 +12,12 @@ public class catTests : MonoBehaviour {
         catEvents = CatEvents.current;
         catActions = GetComponent<CatActions>();
 
-        CatMoveRandomlyTowardsRandomPoint();
+        //StartCoroutine(CatMoveRandomlyTowardsPlayer());
+        StartCoroutine(CatRandomlyMeows());
+        //CatMoveRandomlyTowardsRandomPoint();
     }
 
-    public IEnumerator CatMoveRandomlyTowardsPlayer() {
+    private IEnumerator CatMoveRandomlyTowardsPlayer() {
         float randomDelay;
         while (true) {
             randomDelay = Random.Range(0f, 3f);
@@ -26,12 +28,25 @@ public class catTests : MonoBehaviour {
         }
     }
 
-    public void CatMoveRandomlyTowardsRandomPoint() {
+    private void CatMoveRandomlyTowardsRandomPoint() {
         int randomCatPlace = Random.Range(0, catActions.catPlaces.Count);
 
         catEvents.CatMove(catActions.catPlaces[randomCatPlace].destination.transform.position);
         Debug.Log(catActions.catPlaces[randomCatPlace].destination.transform.position);
         Debug.Log("Cat: " + transform.position);
         //catActions.catPlaces[randomCatPlace].animation.Play();
+    }
+
+    private IEnumerator CatRandomlyMeows() {
+        float randomDelay;
+        int randomSoundIndex;
+
+        while (true) {
+            randomDelay = Random.Range(0f, 3f);
+            randomSoundIndex = Random.Range(0, catActions.meowSounds.Count);
+            yield return new WaitForSeconds(randomDelay);
+
+            catEvents.CatMakeSound(catActions.meowSounds[randomSoundIndex]);
+        }
     }
 }

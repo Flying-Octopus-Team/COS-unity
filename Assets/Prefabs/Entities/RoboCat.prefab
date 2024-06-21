@@ -205,8 +205,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10149ddde42646f459ea92aea4d2796d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meowSounds: []
+  catPlaces:
+  - animation: {fileID: 0}
+    destination: {fileID: 0}
+  - animation: {fileID: 0}
+    destination: {fileID: 0}
+  - animation: {fileID: 0}
+    destination: {fileID: 0}
   player: {fileID: 0}
-  catPlaces: []
 --- !u!114 &2101652062321173258
 MonoBehaviour:
   m_ObjectHideFlags: 0

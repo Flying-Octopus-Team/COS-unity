@@ -1191,11 +1191,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6649752358239387468, guid: 1563bffe5634dd74b8326923d9e4ef40,
         type: 3}
-      propertyPath: catPlaces.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6649752358239387468, guid: 1563bffe5634dd74b8326923d9e4ef40,
-        type: 3}
       propertyPath: catPlaces.Array.data[0].destination
       value: 
       objectReference: {fileID: 718936314}
