@@ -24,11 +24,9 @@ public class CatActions : MonoBehaviour {
         catEvents.onCatMakeSound += CatMakeSound;
     }
 
-    private void Update() {
-        //catEvents.CatMove(player.transform.position);
-    }
-
     public void AgentSetDestination(Vector3 destination) {
+        if (agent == null) return;
+
         agent.SetDestination(destination);
         if (agent.remainingDistance <= 1.5f && agent.hasPath) {
             agent.isStopped = true;
@@ -39,6 +37,8 @@ public class CatActions : MonoBehaviour {
     }
 
     public void CatMakeSound(AudioClip catSound) {
+        if (catSound == null) return;
+
         audioSource.clip = catSound;
         audioSource.Play();
     }

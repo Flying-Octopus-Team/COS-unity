@@ -7,13 +7,16 @@ public class catTests : MonoBehaviour {
     private GameObject player;
     private CatActions catActions;
 
-    private void Start() {
-        player = GameObject.FindGameObjectWithTag("Player");
+    private void Awake() {
         catEvents = CatEvents.current;
         catActions = GetComponent<CatActions>();
+    }
 
+    private void Start() {
+        player = GameObject.FindGameObjectWithTag("Player");
+        
         //StartCoroutine(CatMoveRandomlyTowardsPlayer());
-        StartCoroutine(CatRandomlyMeows());
+        //StartCoroutine(CatRandomlyMeows());
         //CatMoveRandomlyTowardsRandomPoint();
     }
 
@@ -30,10 +33,9 @@ public class catTests : MonoBehaviour {
 
     private void CatMoveRandomlyTowardsRandomPoint() {
         int randomCatPlace = Random.Range(0, catActions.catPlaces.Count);
+        Vector3 placeToMove = catActions.catPlaces[randomCatPlace].GetDestination().transform.position;
 
-        catEvents.CatMove(catActions.catPlaces[randomCatPlace].destination.transform.position);
-        Debug.Log(catActions.catPlaces[randomCatPlace].destination.transform.position);
-        Debug.Log("Cat: " + transform.position);
+        catEvents.CatMove(placeToMove);
         //catActions.catPlaces[randomCatPlace].animation.Play();
     }
 

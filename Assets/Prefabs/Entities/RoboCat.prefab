@@ -118,9 +118,10 @@ GameObject:
   - component: {fileID: 5788226787343681388}
   - component: {fileID: 4006611333795973730}
   - component: {fileID: 1116151608069888747}
+  - component: {fileID: 1039825867040027243}
   - component: {fileID: 6649752358239387468}
   - component: {fileID: 2101652062321173258}
-  - component: {fileID: 1039825867040027243}
+  - component: {fileID: 4996780043032653455}
   m_Layer: 0
   m_Name: RoboCat
   m_TagString: Untagged
@@ -142,7 +143,7 @@ Transform:
   m_Children:
   - {fileID: 4161089735727164258}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &4006611333795973730
 NavMeshAgent:
@@ -193,39 +194,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &6649752358239387468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7653179812113206659}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10149ddde42646f459ea92aea4d2796d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meowSounds: []
-  catPlaces:
-  - animation: {fileID: 0}
-    destination: {fileID: 0}
-  - animation: {fileID: 0}
-    destination: {fileID: 0}
-  - animation: {fileID: 0}
-    destination: {fileID: 0}
-  player: {fileID: 0}
---- !u!114 &2101652062321173258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7653179812113206659}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f67760e9b3d89de4c9a40c6e8837f892, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &1039825867040027243
 AudioSource:
   m_ObjectHideFlags: 0
@@ -322,3 +290,48 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6649752358239387468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7653179812113206659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10149ddde42646f459ea92aea4d2796d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meowSounds: []
+  catPlaces:
+  - animation: {fileID: 0}
+    destinationObject: {fileID: 0}
+  - animation: {fileID: 0}
+    destinationObject: {fileID: 0}
+  - animation: {fileID: 0}
+    destinationObject: {fileID: 0}
+  player: {fileID: 0}
+--- !u!114 &2101652062321173258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7653179812113206659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67760e9b3d89de4c9a40c6e8837f892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4996780043032653455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7653179812113206659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc9bf7b17604edb4e9e38529428ca8d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
