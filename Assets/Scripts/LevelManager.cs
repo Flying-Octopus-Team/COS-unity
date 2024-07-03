@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
     public DoorController stageOneDoors;
+    [SerializeField] private PlayerController player;
 
     private void Awake()
     {
@@ -18,6 +19,7 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         SceneManager.LoadScene(2,LoadSceneMode.Additive);
+        player.transform.gameObject.SetActive(true);
     }
 
     public void ResetLevel()
