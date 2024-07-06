@@ -17,7 +17,6 @@ public class StageTwoManager : MonoBehaviour
     [SerializeField] private List<PCpuzzle> choosenComputers;
     [SerializeField] private int codeLen = 4;
     private int chosenIndex = 0;
-    [SerializeField] private DoorController stageTwoDoors;
     bool passedSecondStage = false;
     private void Awake()
     {
@@ -48,7 +47,8 @@ public class StageTwoManager : MonoBehaviour
         }
         if (codeOutput != null) codeOutput.SetText(newCode);
 
-        stageTwoDoors.SwitchpowerState(false);
+
+        LevelManager.Instance.stageTwoDoors.SwitchpowerState(false);
     }
 
     public void ActivateComputer(PCpuzzle pc)
@@ -65,8 +65,8 @@ public class StageTwoManager : MonoBehaviour
         if (chosenIndex >= codeLen)
         {
             Debug.Log("Passed!");
-            stageTwoDoors.SwitchpowerState(true);
-            stageTwoDoors.SetState(true);
+            LevelManager.Instance.stageTwoDoors.SwitchpowerState(true);
+            LevelManager.Instance.stageTwoDoors.SetState(true);
             passedSecondStage = true;
         }
 

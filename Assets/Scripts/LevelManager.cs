@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
     public DoorController stageOneDoors;
+    public DoorController stageTwoDoors;
     [SerializeField] private PlayerController player;
 
     private void Awake()
