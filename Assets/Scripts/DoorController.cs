@@ -12,6 +12,8 @@ public class DoorController : MonoBehaviour
     [SerializeField] private AudioSource doorAS;
     [SerializeField] private WorldButton doorButton;
     [SerializeField] private UnityEvent eventOnStartOpening;
+    [Space]
+    [SerializeField] private UnityEvent onClosedDoors;
 
     float lockTime = 0;
 
@@ -62,5 +64,9 @@ public class DoorController : MonoBehaviour
     public void AnimationStartEvent()
     {
         eventOnStartOpening.Invoke();
+    }
+    public void AnimationClosedEvent()
+    {
+        onClosedDoors.Invoke();
     }
 }

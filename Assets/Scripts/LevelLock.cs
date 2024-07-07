@@ -1,66 +1,72 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Sockets;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class LevelLock : MonoBehaviour
 {
     [SerializeField] private int stageToLoad;
-    [SerializeField] private LevelManager levelManager;
     [SerializeField] private DoorController dorsIn;
     [SerializeField] private DoorController dorsOut;
-    [SerializeField] private UnityEvent eventToRise;
+    [SerializeField] private GameObject blockingWall;
 
-    bool locked = false;
-    bool playerIn = false;
-
+    bool lockedDoors = false;
+    bool loaded = false;
     private void Start()
     {
+        lockedDoors = false;
+
+        dorsIn.SetState(false);
+        dorsOut.SetState(false);
+
         dorsOut.SwitchpowerState(false);
+        dorsIn.SwitchpowerState(false);
+
+        blockingWall.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            playerIn = true;
-            if (locked == false)
-            {
-                StartCoroutine(LoadSequence());
-            }
-        }
-    }
+        if (!other.CompareTag("Player")) return;
+        if (lockedDoors) return;
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            playerIn = false;
-        }
-    }
-
-    IEnumerator LoadSequence()
-    {
-        locked = true;
+        lockedDoors = true;
+        blockingWall.SetActive(true);
         dorsIn.SetState(false);//zamykamy drzwi wejsciowe
         dorsIn.SwitchpowerState(false);//wylaczamy im zasilanie (blokujemy - gracz juz nie wraca)
-        eventToRise.Invoke();//glownie chodzi o to by ograniczyc ruch gracza
+    }
 
-        yield return new WaitForSeconds (3);//czekaj az drzwi sie zamkno
-
-        //if (playerIn) //czy przypadkiem nie wyskoczyl urwis jeden
-       // {
-            dorsOut.SwitchpowerState(true);//zasilamy drzwi wyjsciowe
-            dorsOut.SetState(true);//otwieramy drzwi wyjsciowe
-            if (levelManager) levelManager.LoadStage(stageToLoad);//zaladuj tylko odpowiedni etap
-        //}
-        /*
-        else //jesli jednak wyskoczyl to otwieramy wejscie jeszcze raz
+    public void LoadNextStage()
+    {
+        Debug.Log($"Want to load");
+        if (!loaded && lockedDoors)
         {
-            dorsIn.SetState(true);
-            dorsIn.SwitchpowerState(true);
-            locked = false; //odblokowujemy znowu mozliwosc wejscia w przejscie
+            Debug.Log("Load");
+            loaded = true;
+            StartCoroutine(LoadNextStageSequence());
         }
-        */
+    }
+
+    private IEnumerator LoadNextStageSequence()
+    {
+        
+        AsyncOperation asyncUnLoad = SceneManager.UnloadSceneAsync(stageToLoad-1);
+        while (!asyncUnLoad.isDone)
+        {
+            yield return null;
+        }
+        
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(stageToLoad, LoadSceneMode.Additive);
+
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
+        dorsOut.SwitchpowerState(true);//zasilamy drzwi wyjsciowe
+        dorsOut.SetState(true);//otwieramy drzwi wyjsciowe
+
     }
 }
