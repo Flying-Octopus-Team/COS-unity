@@ -13,8 +13,8 @@ public class StageTwoManager : MonoBehaviour
     [Header("Second Stage")]
     [SerializeField] private TextMeshPro codeOutput;
     [SerializeField] private MeshRenderer[] secondIndicators;
-    [SerializeField] private List<PCpuzzle> computers;
-    [SerializeField] private List<PCpuzzle> choosenComputers;
+    private PCpuzzle[] computers;
+    private PCpuzzle[] choosenComputers;
     [SerializeField] private int codeLen = 4;
     private int chosenIndex = 0;
     bool passedSecondStage = false;
@@ -28,22 +28,23 @@ public class StageTwoManager : MonoBehaviour
     {
         for (int i = 0; i < secondIndicators.Length; i++)
         {
-            //secondIndicators[i].material.SetColor("_EmissionColor", indicatorsInactiveColor);
+            secondIndicators[i].material.SetColor("_EmissionColor", indicatorsInactiveColor);
         }
-
-        if (codeLen >= computers.Count)
+        computers = GameObject.FindObjectsOfType<PCpuzzle>();
+        if (codeLen >= computers.Length)
         {
-            codeLen = computers.Count - 1;
+            codeLen = computers.Length - 1;
             Debug.LogWarning("Code is too long!");
         }
 
         string newCode = "";
+        choosenComputers = new PCpuzzle[codeLen];
         for (int i = 0; i < codeLen; i++)
         {
-            int chosen = Random.Range(0, computers.Count);
+            int chosen = Random.Range(0, computers.Length);
             newCode += computers[chosen].code;
-            choosenComputers.Add(computers[chosen]);
-            computers.RemoveAt(chosen);
+            choosenComputers[i]=computers[chosen];
+            //computers.RemoveAt(chosen);
         }
         if (codeOutput != null) codeOutput.SetText(newCode);
 
@@ -64,15 +65,21 @@ public class StageTwoManager : MonoBehaviour
         }
         if (chosenIndex >= codeLen)
         {
-            Debug.Log("Passed!");
-            LevelManager.Instance.stageTwoDoors.SwitchpowerState(true);
-            LevelManager.Instance.stageTwoDoors.SetState(true);
-            passedSecondStage = true;
+            PassLevel();
         }
 
         for (int i = 0; i < secondIndicators.Length; i++)
         {
             secondIndicators[i].material.SetColor("_EmissionColor", (i < chosenIndex) ? indicatorsActiveColor : indicatorsInactiveColor);
         }
+    }
+
+    [ContextMenu("UnlockDoors")]
+    public void PassLevel()
+    {
+        Debug.Log("Passed!");
+        LevelManager.Instance.stageTwoDoors.SwitchpowerState(true);
+        LevelManager.Instance.stageTwoDoors.SetState(true);
+        passedSecondStage = true;
     }
 }

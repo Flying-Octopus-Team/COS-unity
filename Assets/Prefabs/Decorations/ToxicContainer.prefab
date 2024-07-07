@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 8291644613837716851}
   - component: {fileID: 959389779426975567}
   - component: {fileID: 6584499918734104715}
-  - component: {fileID: 4115452920744046123}
+  - component: {fileID: 1721682565411860231}
+  - component: {fileID: 912156314949352080}
   m_Layer: 0
   m_Name: ToxicContainer
   m_TagString: Untagged
@@ -85,8 +86,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4115452920744046123
-MeshCollider:
+--- !u!65 &1721682565411860231
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -103,7 +104,27 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -939061152623264921, guid: e6cc859d68d3daf4aac8a1a0d6a3e8f6, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 1.332953, y: 2.4702084, z: 1.3199999}
+  m_Center: {x: -0.077004194, y: 1.2351042, z: 0}
+--- !u!65 &912156314949352080
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3011180456325733604}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.7651124, y: 2.1003652, z: 0.3188076}
+  m_Center: {x: 0.83452916, y: 1.4200258, z: -0.011207402}
