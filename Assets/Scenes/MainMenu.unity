@@ -7837,6 +7837,7 @@ GameObject:
   - component: {fileID: 1969683357}
   - component: {fileID: 1969683359}
   - component: {fileID: 1969683358}
+  - component: {fileID: 1969683360}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -7908,6 +7909,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1969683356}
   m_CullTransparentMesh: 1
+--- !u!114 &1969683360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969683356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2a97d79d1571134a904899172f2929c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MusicVolumeSlider: {fileID: 2067974199}
+  EffectVolumeSlider: {fileID: 1312062037}
+  FullscreenDropdown: {fileID: 131254243}
+  GraphicLevelDropdown: {fileID: 1214921916}
 --- !u!1 &2038190856
 GameObject:
   m_ObjectHideFlags: 0
@@ -8154,7 +8171,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: a1c6e6cf11498c142b70ef5111b44ba1, type: 2}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: SetMusicVolume
+        m_MethodName: 
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

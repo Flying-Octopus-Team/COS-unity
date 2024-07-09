@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -16,19 +14,23 @@ public class MainMenu : ScriptableObject {
     }
 
     public void ChangeGraphicLevel(int level) {
+        PlayerPrefs.SetInt("GraphicLevel", level);
         level = Mathf.Clamp(level, 0, QualitySettings.names.Length-1);
-        QualitySettings.SetQualityLevel(level, true);
+        QualitySettings.SetQualityLevel(level, Screen.fullScreen);
     }
     public void ChangeFullscreen(int level)
     {
+        PlayerPrefs.SetInt("FullscreenMode", level);
         Screen.fullScreen = Convert.ToBoolean(level);
     }
 
     public void SetEffectVolume(float sliderValue) {
+        PlayerPrefs.SetFloat("EffectVolume", sliderValue);
         effectsVolume.SetFloat("EffectsVolume", Mathf.Log10(sliderValue) * 20);
     }
 
     public void SetMusicVolume(float sliderValue) {
+        PlayerPrefs.SetFloat("MusicVolume", sliderValue);
         musicVolume.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
     }
 
