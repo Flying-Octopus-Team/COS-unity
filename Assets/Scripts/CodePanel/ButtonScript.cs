@@ -30,7 +30,6 @@ public class ButtonScript : MonoBehaviour, IInteract
         if (renderer)
         {
             cubeMaterial = renderer.material;
-            print(cubeMaterial);
         }
 
         if (pressedButton == null)

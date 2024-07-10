@@ -14,8 +14,8 @@ public class LightFlashing : MonoBehaviour {
 
     private void Awake()
     {
-        meshRenderer = gameObjectMesh.GetComponent<MeshRenderer>();
-        lightComponent = gameObjectLight.GetComponent<Light>();
+        if(gameObjectMesh!=null)gameObjectMesh.TryGetComponent(out meshRenderer);
+        if (gameObjectLight != null) gameObjectLight.TryGetComponent(out lightComponent);
     }
     void Start() {
         // Draw first value
@@ -26,9 +26,16 @@ public class LightFlashing : MonoBehaviour {
     {
         if(Time.time >= randomTimeFlashing)
         {
-            lightComponent.enabled = !lightComponent.enabled;
-            if (lightComponent.enabled) meshRenderer.material = lightMaterials[1];
-            else meshRenderer.material = lightMaterials[0];
+            if(lightComponent != null)
+            {
+                lightComponent.enabled = !lightComponent.enabled;
+                if(meshRenderer != null)
+                {
+                    if (lightComponent.enabled) meshRenderer.material = lightMaterials[1];
+                    else meshRenderer.material = lightMaterials[0];
+                }  
+            }
+
             randomTimeFlashing += Random.Range(0.05f, 1f);
         }
     }
