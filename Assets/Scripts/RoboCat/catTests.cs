@@ -5,11 +5,11 @@ using UnityEngine;
 public class catTests : MonoBehaviour {
     private CatEvents catEvents;
     private GameObject player;
-    private CatActions catActions;
+    private Cat cat;
 
     private void Awake() {
         catEvents = CatEvents.current;
-        catActions = GetComponent<CatActions>();
+        cat = GetComponent<Cat>();
     }
 
     private void Start() {
@@ -17,7 +17,6 @@ public class catTests : MonoBehaviour {
         
         //StartCoroutine(CatMoveRandomlyTowardsPlayer());
         //StartCoroutine(CatRandomlyMeows());
-        //CatMoveRandomlyTowardsRandomPoint();
     }
 
     private IEnumerator CatMoveRandomlyTowardsPlayer() {
@@ -31,13 +30,6 @@ public class catTests : MonoBehaviour {
         }
     }
 
-    private void CatMoveRandomlyTowardsRandomPoint() {
-        int randomCatPlace = Random.Range(0, catActions.catPlaces.Count);
-        Vector3 placeToMove = catActions.catPlaces[randomCatPlace].GetDestination().transform.position;
-
-        catEvents.CatMove(placeToMove);
-        //catActions.catPlaces[randomCatPlace].animation.Play();
-    }
 
     private IEnumerator CatRandomlyMeows() {
         float randomDelay;
@@ -45,10 +37,10 @@ public class catTests : MonoBehaviour {
 
         while (true) {
             randomDelay = Random.Range(0f, 3f);
-            randomSoundIndex = Random.Range(0, catActions.meowSounds.Count);
+            randomSoundIndex = Random.Range(0, cat.meowSounds.Count);
             yield return new WaitForSeconds(randomDelay);
 
-            catEvents.CatMakeSound(catActions.meowSounds[randomSoundIndex]);
+            catEvents.CatMakeSound(cat.meowSounds[randomSoundIndex]);
         }
     }
 }

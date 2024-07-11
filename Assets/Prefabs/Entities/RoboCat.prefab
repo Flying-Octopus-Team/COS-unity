@@ -120,8 +120,8 @@ GameObject:
   - component: {fileID: 1116151608069888747}
   - component: {fileID: 1039825867040027243}
   - component: {fileID: 6649752358239387468}
-  - component: {fileID: 2101652062321173258}
   - component: {fileID: 4996780043032653455}
+  - component: {fileID: 495427112209071811}
   m_Layer: 0
   m_Name: RoboCat
   m_TagString: Untagged
@@ -311,18 +311,6 @@ MonoBehaviour:
   - animation: {fileID: 0}
     destinationObject: {fileID: 0}
   player: {fileID: 0}
---- !u!114 &2101652062321173258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7653179812113206659}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f67760e9b3d89de4c9a40c6e8837f892, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4996780043032653455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,5 +321,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc9bf7b17604edb4e9e38529428ca8d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &495427112209071811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7653179812113206659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67760e9b3d89de4c9a40c6e8837f892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
