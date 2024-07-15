@@ -3,11 +3,15 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using System;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 [CreateAssetMenu(fileName = "Main Menu", menuName = "ScriptableObjects/Main Menu")]
 public class MainMenu : ScriptableObject {
     [SerializeField] private AudioMixer effectsVolume;
     [SerializeField] private AudioMixer musicVolume;
+    [SerializeField] private VolumeProfile SampleSceneProfile;
+    [SerializeField] private VolumeProfile SampleSceneProfile1;
 
     public void StartGame() {
         SceneManager.LoadScene(1);
@@ -32,6 +36,19 @@ public class MainMenu : ScriptableObject {
     public void SetMusicVolume(float sliderValue) {
         PlayerPrefs.SetFloat("MusicVolume", sliderValue);
         musicVolume.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
+    }
+    public void ChangeMouseSens(float sliderValue)
+    {
+        PlayerPrefs.SetFloat("MouseSensitivity", sliderValue);
+    }
+    public void ChangeBlurEffectStatus(bool value)
+    {
+        PlayerPrefs.SetInt("BlurEffectStatus", Convert.ToInt32(value));
+        MotionBlur motionBlur;
+        if(SampleSceneProfile.TryGet<MotionBlur>(out motionBlur))
+        {
+            motionBlur.active = value;
+        }
     }
 
     public void ExitGame() {

@@ -218,7 +218,7 @@ Transform:
   - {fileID: 1194126044438313571}
   - {fileID: 6356349400535436135}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8855853370769452364
 GameObject:
@@ -1083,56 +1083,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5134328084627243872}
     m_Modifications:
-    - target: {fileID: 350215678551138419, guid: af4349101d7eb4144a45d3403899cae3,
-        type: 3}
-      propertyPath: m_Name
-      value: CorridorDoor
-      objectReference: {fileID: 0}
-    - target: {fileID: 2418251853761359968, guid: af4349101d7eb4144a45d3403899cae3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steam
-      objectReference: {fileID: 0}
-    - target: {fileID: 2842273848200370140, guid: af4349101d7eb4144a45d3403899cae3,
-        type: 3}
-      propertyPath: m_Name
-      value: corridordoor (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3704766877176151075, guid: af4349101d7eb4144a45d3403899cae3,
-        type: 3}
-      propertyPath: m_Name
-      value: Cube (5) (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3960046555232789962, guid: af4349101d7eb4144a45d3403899cae3,
-        type: 3}
-      propertyPath: m_Name
-      value: Cube (2) (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4269726187125902479, guid: af4349101d7eb4144a45d3403899cae3,
-        type: 3}
-      propertyPath: m_Name
-      value: Cube (1) (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4352724910138972417, guid: af4349101d7eb4144a45d3403899cae3,
-        type: 3}
-      propertyPath: m_Name
-      value: Cube (3) (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4932067388479000050, guid: af4349101d7eb4144a45d3403899cae3,
-        type: 3}
-      propertyPath: m_Name
-      value: Cube (4) (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5923340735379539139, guid: af4349101d7eb4144a45d3403899cae3,
-        type: 3}
-      propertyPath: m_Name
-      value: Cube (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5974142670221125779, guid: af4349101d7eb4144a45d3403899cae3,
-        type: 3}
-      propertyPath: m_Name
-      value: CorridorDoor (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 6027118498919673992, guid: af4349101d7eb4144a45d3403899cae3,
         type: 3}
       propertyPath: m_RootOrder
@@ -1188,25 +1138,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7351963877353713752, guid: af4349101d7eb4144a45d3403899cae3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steam (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8162094102427803452, guid: af4349101d7eb4144a45d3403899cae3,
-        type: 3}
-      propertyPath: m_Name
-      value: corridordoor
-      objectReference: {fileID: 0}
     - target: {fileID: 8463435822376599409, guid: af4349101d7eb4144a45d3403899cae3,
         type: 3}
       propertyPath: m_Name
       value: Door
-      objectReference: {fileID: 0}
-    - target: {fileID: 9055727719395569405, guid: af4349101d7eb4144a45d3403899cae3,
-        type: 3}
-      propertyPath: m_Name
-      value: Cols (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
