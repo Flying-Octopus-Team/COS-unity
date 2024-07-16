@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectsVolume: {fileID: 24100000, guid: de25ce35579122d4f9cf5387150ff5bc, type: 2}
   musicVolume: {fileID: 24100000, guid: df39f6f770835854b90ece4cddf81612, type: 2}
+  SampleSceneProfile: {fileID: 11400000, guid: a6560a915ef98420e9faacc1c7438823, type: 2}
+  SampleSceneProfile1: {fileID: 11400000, guid: bbe4001032d18d148925a124a4b0a5da,
+    type: 2}

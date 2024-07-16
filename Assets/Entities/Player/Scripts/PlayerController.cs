@@ -95,6 +95,7 @@ public class PlayerController : MonoBehaviour
         playerCamera = GetComponentInChildren<Camera>();
         cController = GetComponent<CharacterController>();
         stepSource = GetComponent<AudioSource>();
+        cameraSensitivity *= PlayerPrefs.GetFloat("MouseSensitivity");
         flashlight = playerCamera.GetComponentInChildren<Flashlight>();
     }
 
