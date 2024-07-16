@@ -36,7 +36,6 @@ public class CodePanelScript : MonoBehaviour
         if (renderer)
         {
             displayNumberMaterial = renderer.material;
-            print(displayNumberMaterial);
         }
         displayNumber.SetText("");
     }

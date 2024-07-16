@@ -38,6 +38,7 @@ public class FireExtinguisherScript : MonoBehaviour, IInteract
     {
         endTime = Time.time + howLong;
         rb.AddTorque(new Vector3(Random.Range(0.5f, 2f), Random.Range(0.5f, 2f), Random.Range(0.5f, 2f)));
+        feParticleSystem.Play();
         while (Time.time <= endTime)
         {
             rb.AddForce(this.transform.up * upForce + this.transform.right * MathF.Cos(Time.time*15)*sideForce, ForceMode.Impulse);

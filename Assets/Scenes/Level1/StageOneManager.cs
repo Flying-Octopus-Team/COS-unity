@@ -40,11 +40,13 @@ public class StageOneManager : MonoBehaviour
         if (LevelManager.Instance.stageOneDoors)
         {
             LevelManager.Instance.stageOneDoors.SwitchpowerState(enableDoors);
+            LevelManager.Instance.stageOneDoors.SetState(true);
         }
     }
     [ContextMenu("UnlockDoors")]
     public void UnlockAllDors()
     {
         LevelManager.Instance.stageOneDoors.SwitchpowerState(true);
+        LevelManager.Instance.stageOneDoors.SetState(true);
     }
 }
