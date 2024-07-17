@@ -1,69 +1,106 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class Cat : MonoBehaviour {
     public List<AudioClip> meowSounds = new List<AudioClip>();
     public List<POI> objectsToInteractWith = new List<POI>();
-    [SerializeField] private GameObject player;
+    //public POI[] objectsToInteractWith;
+    public POI player;
     [SerializeField] private string POIName;
     private NavMeshAgent agent;
     private CatEvents catEvents;
     private AudioSource audioSource;
-    private bool lookForInteraction;
+    [SerializeField] private bool lookForInteraction;
+    private Animator animator;
+    public POI currentPOI;
 
     private void Awake() {
         agent = GetComponent<NavMeshAgent>();
         catEvents = CatEvents.current;
+        animator = GetComponent<Animator>();
     }
 
     private void Start() {
         lookForInteraction = true;
 
-        if (player == null)
-            player = GameObject.FindGameObjectWithTag("Player");
-
-        catEvents.onCatMove += AgentSetDestination;
         catEvents.onCatMakeSound += CatMakeSound;
+
+        GetAllPOI();
+        GetClosestPOI();
     }
 
-    public void ToggleLookingForObjects() {
-        lookForInteraction = !lookForInteraction;
-    } 
-
-    private void Update() {
-        if (lookForInteraction) {
-            Test();
-        }
+    private void GetAllPOI() {
+        objectsToInteractWith = FindObjectsOfType<POI>().ToList();
     }
 
-    public void Test() {
-        Collider[] placesToInteract = Physics.OverlapSphere(transform.position, 6);
-        if (placesToInteract.Length > 0) {
-            foreach (Collider places in placesToInteract) {
-                if (places.TryGetComponent<IPOI>(out IPOI poi)) {
-                    objectsToInteractWith.Add(places.GetComponent<POI>());
-                }
+    public void AnimationOut() {
+        animator.Play(currentPOI.outAnimation);
+        objectsToInteractWith.Remove(currentPOI);
+        Destroy(currentPOI);
+        agent.isStopped = false;
+        GetClosestPOI();
+    }
+
+    private void AnimationIn() {
+        animator.Play(currentPOI.inAnimation);
+    }
+
+    private void GetClosestPOI() {
+        float smallestDistance = 20;
+
+        foreach (POI poi in objectsToInteractWith) {
+            float distance = Vector3.Distance(transform.position, poi.transform.position);
+            if(distance < smallestDistance) {
+                smallestDistance = distance;
+                currentPOI = poi;
             }
         }
 
-        int randomAction = Random.Range(0, objectsToInteractWith.Count);
-        POIName = objectsToInteractWith[randomAction].POIName;
+        if (smallestDistance > 20) {
+            currentPOI = player; 
+            animator.SetBool("HasAnimation", false);
+        }
 
-        objectsToInteractWith[randomAction].InEvent();
+        GoToCurrentPOI();
+
     }
 
-    public void AgentSetDestination(Vector3 destination) {
-        if (agent == null) return;
+    private void GoToCurrentPOI() {
+        Debug.Log(currentPOI);
+        StartCoroutine(AgentSetDestination(currentPOI.transform.position));
+        //catEvents.CatMove(currentPOI.transform.position);
+    }
+
+    public IEnumerator AgentSetDestination(Vector3 destination) {
+        if (agent == null) yield return null;
 
         agent.SetDestination(destination);
-        if (agent.remainingDistance <= 1.5f && agent.hasPath) {
-            agent.isStopped = true;
-            return;
-                
+        yield return new WaitForSeconds(1);
+        while (agent.remainingDistance > 0.5f) {
+            yield return null;
         }
-        agent.isStopped = false;
+
+        if (agent.remainingDistance <= 0.5f) { 
+            agent.isStopped = true;
+            agent.ResetPath();
+            AnimationIn();
+        }
+        //if (agent.remainingDistance <= 1.5f && agent.hasPath) {
+        //    agent.isStopped = true;
+        //    return;
+        //        
+        //}
+        //agent.isStopped = false;
+    }
+
+    private IEnumerator AgentStop() {
+        yield return new WaitWhile(() => agent.remainingDistance > 0.5f);
+        agent.isStopped = true;
+        agent.ResetPath();
+        AnimationIn();
     }
 
     public void CatMakeSound(AudioClip catSound) {
