@@ -20,6 +20,7 @@ public class Cat : MonoBehaviour {
     private void Start() {
         GetAllPOI();
         GetClosestPOI();
+        StartCoroutine(RandomlyMakeSound());
     }
 
     private void FixedUpdate() {
@@ -83,8 +84,7 @@ public class Cat : MonoBehaviour {
 
         // Set smallest distance to biggest possible
         float smallestDistance = 20;
-
-        float distance;
+        float distance = 0;
 
         // Iterate through very POI in the list
         foreach (POI poi in objectsToInteractWith) {
@@ -144,10 +144,27 @@ public class Cat : MonoBehaviour {
         }
     }
 
-    public void CatMakeSound(AudioClip catSound) {
-        if (catSound == null) return;
+    private IEnumerator RandomlyMakeSound() {
+        float randomDelay = 0;
 
-        audioSource.clip = catSound;
+        while (true) {
+            // Wait for random amount of time
+            randomDelay = Random.Range(1f, 10f);
+            yield return new WaitForSeconds(randomDelay);
+
+            CatMakeSound();
+        }
+    }
+
+    private void CatMakeSound() {
+        // Return if there is no sounds available
+        if (meowSounds.Count == 0) return;
+
+        // Choose random mewo sound
+        int randomSound = Random.Range(0, meowSounds.Count);
+
+        // Play the meow sound
+        audioSource.clip = meowSounds[randomSound];
         audioSource.Play();
     }
 
