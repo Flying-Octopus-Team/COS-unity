@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 public class Cat : MonoBehaviour {
     [SerializeField] private List<AudioClip> meowSounds = new List<AudioClip>();
-    [SerializeField] private POI player;
+    private POI player;
     private List<POI> objectsToInteractWith = new List<POI>();
     private NavMeshAgent agent;
     private AudioSource audioSource;
@@ -30,8 +30,10 @@ public class Cat : MonoBehaviour {
     }
 
     private void GetAllComponents() {
+        audioSource = GetComponent<AudioSource>();
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        player = GameObject.Find("PlayerCharacter").GetComponent<POI>();
     }
 
     private void GetAllPOI() {

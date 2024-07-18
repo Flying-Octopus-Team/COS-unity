@@ -302,6 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meowSounds: []
+  playerRef: {fileID: 11400000, guid: 5c184b669e2eeda489a93cfe0f245e80, type: 2}
   player: {fileID: 0}
 --- !u!95 &1846677511166435238
 Animator:

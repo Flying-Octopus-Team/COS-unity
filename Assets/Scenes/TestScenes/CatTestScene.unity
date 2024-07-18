@@ -4612,33 +4612,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 855025292}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &872987192 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1535202211954697770, guid: 9500903c6c689e34cbd5164e117e868f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1842331807}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &872987203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 872987192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1d68db266e16bc4aa216c8277d7ca2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  outEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  inAnimationName: FollowPlayerIn
-  outAnimationName: FollowPlayerOut
-  namePOI: Player
 --- !u!1001 &875292605
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8456,11 +8429,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1535202211954697770, guid: 9500903c6c689e34cbd5164e117e868f,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 872987203}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9500903c6c689e34cbd5164e117e868f, type: 3}
 --- !u!1001 &1857404642
 PrefabInstance:
@@ -9344,9 +9313,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6649752358239387468, guid: 1563bffe5634dd74b8326923d9e4ef40,
         type: 3}
-      propertyPath: player
+      propertyPath: playerReference
       value: 
-      objectReference: {fileID: 872987203}
+      objectReference: {fileID: 11400000, guid: 5c184b669e2eeda489a93cfe0f245e80,
+        type: 2}
     - target: {fileID: 6649752358239387468, guid: 1563bffe5634dd74b8326923d9e4ef40,
         type: 3}
       propertyPath: catPlaces.Array.data[0].destination
