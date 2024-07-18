@@ -770,8 +770,8 @@ MonoBehaviour:
   outEvent:
     m_PersistentCalls:
       m_Calls: []
-  inAnimationName: Test2
-  outAnimationName: Test2 1
+  inAnimationName: DrinkingIn
+  outAnimationName: DrinkingOut
   namePOI: Drinking
 --- !u!1001 &415043793
 PrefabInstance:
@@ -1327,8 +1327,8 @@ MonoBehaviour:
   outEvent:
     m_PersistentCalls:
       m_Calls: []
-  inAnimationName: Test1
-  outAnimationName: Test1 1
+  inAnimationName: ScratchingIn
+  outAnimationName: ScratchingOut
   namePOI: Scratching
 --- !u!4 &743618411 stripped
 Transform:
@@ -1444,36 +1444,9 @@ MonoBehaviour:
   outEvent:
     m_PersistentCalls:
       m_Calls: []
-  inAnimationName: FollowPlayer
-  outAnimationName: FollowPlayer
+  inAnimationName: FollowPlayerIn
+  outAnimationName: FollowPlayerOut
   namePOI: Player
---- !u!1 &897033473 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7653179812113206659, guid: 1563bffe5634dd74b8326923d9e4ef40,
-    type: 3}
-  m_PrefabInstance: {fileID: 4173715877093563916}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &897033480
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 897033473}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4ef557eeb61c85140ad6b5ec8c2c3070, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &974765991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3683,8 +3656,8 @@ MonoBehaviour:
   outEvent:
     m_PersistentCalls:
       m_Calls: []
-  inAnimationName: Test3
-  outAnimationName: Test3 1
+  inAnimationName: FlyingIn
+  outAnimationName: FlyingOut
   namePOI: Flying
 --- !u!1001 &4173715877093563916
 PrefabInstance:
@@ -3756,6 +3729,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6649752358239387468, guid: 1563bffe5634dd74b8326923d9e4ef40,
         type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 872987203}
+    - target: {fileID: 6649752358239387468, guid: 1563bffe5634dd74b8326923d9e4ef40,
+        type: 3}
       propertyPath: catPlaces.Array.data[0].destination
       value: 
       objectReference: {fileID: 718936314}
@@ -3797,11 +3775,8 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2101652062321173258, guid: 1563bffe5634dd74b8326923d9e4ef40, type: 3}
     - {fileID: 4996780043032653455, guid: 1563bffe5634dd74b8326923d9e4ef40, type: 3}
+    - {fileID: 495427112209071811, guid: 1563bffe5634dd74b8326923d9e4ef40, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7653179812113206659, guid: 1563bffe5634dd74b8326923d9e4ef40,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 897033480}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1563bffe5634dd74b8326923d9e4ef40, type: 3}
