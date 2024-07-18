@@ -22,6 +22,12 @@ public class Cat : MonoBehaviour {
         GetClosestPOI();
     }
 
+    private void FixedUpdate() {
+        if (Vector3.Distance(transform.position, player.transform.position) > 40) {
+            transform.position = player.transform.position + Vector3.one;
+        }
+    }
+
     private void GetAllComponents() {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
@@ -119,15 +125,15 @@ public class Cat : MonoBehaviour {
         agent.SetDestination(currentPOI.transform.position); 
         yield return new WaitForSeconds(1);
 
-        // Until the remaining distance is bigger than 0.5f return
-        while (agent.remainingDistance > 0.5f) {
+        // Until the remaining distance is bigger than 1f return
+        while (agent.remainingDistance > 1f) {
 
             // Keep setting the destination in case the object moved
             agent.SetDestination(currentPOI.transform.position);
             yield return null;
         }
 
-        if (agent.remainingDistance <= 0.5f) { 
+        if (agent.remainingDistance <= 1f) { 
 
             // Stop the cat
             agent.isStopped = true;
