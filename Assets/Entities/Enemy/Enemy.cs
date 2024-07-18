@@ -3,86 +3,56 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private LayerMask detectionMask;
-    [SerializeField] private LayerMask obstaclesMask;
-
     [SerializeField] private float detectionRange;
-    [SerializeField] private float closedetectionRange;
-    private Collider[] cols;
-    [SerializeField] private float viewAngle = 35.0f;
-    private float angleToPlayer;
+
     private NavMeshAgent nvmAgent;
-    bool knowsWherePlayerIs = false;
-    private float agentSpeed;
 
     [SerializeField] private PlayerReference pcRef;
+    bool isPlayerInSight = false;
+    float playerLastContactTimestamp = - 10;
 
     private void Start()
     {
         nvmAgent= GetComponent<NavMeshAgent>();
-        agentSpeed = nvmAgent.speed;
     }
 
     private void FixedUpdate()
     {
-        knowsWherePlayerIs = false;
-        if (!nvmAgent) return;
-        cols = Physics.OverlapSphere(transform.position, detectionRange, detectionMask);
-        bool playerInRange = false;
-        foreach (Collider c in cols)
+        RaycastHit hit;
+        PlayerController pc = pcRef.GetPc();
+
+        if (pc != null)
         {
-            if (c.transform == this.transform) continue; //w sumie mozna usunac
-            if (!(c.transform.CompareTag("Player")))continue;
-
-            playerInRange = true;
-            angleToPlayer = CalcAngleToPoint(c.transform);
-            float distanceToPlayer = Vector3.Distance(transform.position, c.transform.position);
-            float detectionModifier = PlayerDetectionModificator();
-            if (distanceToPlayer <= (closedetectionRange*(detectionModifier*2)))
+            Vector3 direction = pc.transform.position - transform.position;
+            if (Physics.Raycast(transform.position, direction, out hit, detectionRange))
             {
-                nvmAgent.SetDestination(c.transform.position);
-                knowsWherePlayerIs= true;
-                continue;
-            }
-            if (angleToPlayer > (viewAngle* detectionModifier)) continue;
-
-            //Player is in front of us
-            //checking if can be seen
-            Vector3 directionToPlayer = c.transform.position - transform.position;
-            
-            RaycastHit hit;
-
-            if (!Physics.Raycast(transform.position, directionToPlayer, out hit, (detectionRange+1)* detectionModifier, obstaclesMask)) continue;
-
-            if (hit.collider && hit.collider.CompareTag("Player"))
-            {
-                nvmAgent.SetDestination(c.transform.position);
-                knowsWherePlayerIs = true;
-                Debug.DrawRay(transform.position, directionToPlayer, Color.green, 1f);
+                if(hit.transform.gameObject.GetComponent<PlayerController>() != null)
+                {
+                    Debug.DrawRay(transform.position, direction * detectionRange, Color.green);
+                    playerLastContactTimestamp = Time.time;
+                }
+                Debug.DrawRay(transform.position, direction * detectionRange, Color.yellow);
             }
             else
             {
-                Debug.DrawRay(transform.position, directionToPlayer, Color.red, 1f);
+                Debug.DrawRay(transform.position, direction * detectionRange, Color.white);
             }
         }
-        if (! playerInRange)
-        {
-            angleToPlayer = 0;
-        }
 
-        if(!knowsWherePlayerIs && (!nvmAgent.pathPending && !nvmAgent.hasPath))
+        isPlayerInSight = playerLastContactTimestamp >= Time.time - 5;
+
+        if(isPlayerInSight)
         {
-            nvmAgent.speed = agentSpeed / 4;
-            Vector3 randomDirection = (Random.insideUnitSphere * 200)+ transform.position;
-            NavMeshHit hit;
-            NavMesh.SamplePosition(randomDirection, out hit, 200, 1);
-            nvmAgent.SetDestination(hit.position);
+            nvmAgent.SetDestination(pcRef.GetPc().transform.position);
         }
-        else
+        else if(nvmAgent.remainingDistance < 1)
         {
-            nvmAgent.speed = agentSpeed;
+            POI[] poi = GameObject.FindObjectsOfType<POI>();
+            int randomPoint = Random.Range(0, poi.Length);
+            nvmAgent.SetDestination(poi[randomPoint].gameObject.transform.position);
         }
     }
     private void OnDrawGizmos()
@@ -99,6 +69,7 @@ public class Enemy : MonoBehaviour
     private float PlayerDetectionModificator()
     {
         if (!pcRef) return 1;
+        if (!pcRef.GetPc()) return 1;
         return pcRef.GetPc().GetPlayerDetectionLevel();
     }
 }
