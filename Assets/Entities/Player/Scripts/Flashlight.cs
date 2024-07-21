@@ -17,7 +17,7 @@ public class Flashlight : MonoBehaviour
         currentState = lightSource.enabled;
         audioSource.clip = idleSound;
         audioSource.Play();
-        TurnFlashlight(true);
+        TurnFlashlight(false);
     }
     public void SwitchFlashlight()
     {
