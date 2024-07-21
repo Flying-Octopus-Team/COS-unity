@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour
     public DoorController stageOneDoors;
     public DoorController stageTwoDoors;
     [SerializeField] private PlayerController player;
-
+    [SerializeField] private PlayerReference pRef;
     private void Awake()
     {
         if(Instance == null)Instance = this;
@@ -19,8 +19,9 @@ public class LevelManager : MonoBehaviour
     }
     private void Start()
     {
+        pRef.SetPc(player);
         SceneManager.LoadScene(2,LoadSceneMode.Additive);
-        player.transform.gameObject.SetActive(true);
+        //player.transform.gameObject.SetActive(true);
     }
 
     public void ResetLevel()
