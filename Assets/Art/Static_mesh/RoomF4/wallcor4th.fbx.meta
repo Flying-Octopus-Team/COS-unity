@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8b3699fe920b9f444abc40ab62070b37
+guid: a8b94966cf6870840aaeffece492d293
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,7 +7,7 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: trim2
+      name: trim2.001
     second: {fileID: 2100000, guid: 6a2de7bc9bd9ef6448f7cdeadf028f81, type: 2}
   materials:
     materialImportMode: 2
