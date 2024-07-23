@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e4c738dfe0bbee4c891220b01f71207, type: 3}
+  m_Name: Karmelova 4
+  m_EditorClassIdentifier: 
+  noteData: "30.07.2024\r\nJestem blisko nauczenia mojego kota programowania, mimo
+    m\u0142odego wieku potrafi inicjowa\u0107 zmienne. Jeszcze troch\u0119 lekcji
+    i b\u0119dzie w stanie pom\xF3c mi w pracy i razem b\u0119dziemy tworzy\u0107
+    oprogramowania potrzebne do bada\u0144 nad jego gatunkiem."
