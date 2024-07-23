@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e4c738dfe0bbee4c891220b01f71207, type: 3}
+  m_Name: Ohit_note 1
+  m_EditorClassIdentifier: 
+  noteData: "\rW lod\xF3wce trzymam ser koci dla To\u015Bki. Dzisiaj nasta\u0142
+    dzie\u0144, gdzie pomyli\u0142am go z moim serem cheddar i powiem tylko tyle
+    - nigdy wi\u0119cej"
