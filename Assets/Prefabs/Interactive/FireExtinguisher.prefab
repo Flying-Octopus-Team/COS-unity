@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3237087068602747350}
   - component: {fileID: 5799189427033433403}
   - component: {fileID: 4754123358906638713}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FireExtinguisher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -238,7 +238,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -673,7 +673,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 1
     gravitySource: 0
-    maxNumParticles: 1000
+    maxNumParticles: 500
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -734,13 +734,13 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 25
+    angle: 15
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 0, y: -1, z: 0}
-    m_Rotation: {x: 0, y: 0, z: 0}
+    m_Position: {x: 0, y: 0.05, z: 0}
+    m_Rotation: {x: 90, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
@@ -820,7 +820,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 0.1
       mode: 0
       spread: 0
       speed:
@@ -939,7 +939,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 200
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4846,7 +4846,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c84f469fc0672d54a825645f026eeaff, type: 2}
+  - {fileID: 2100000, guid: 3062613153ea47f42a262f065fec69d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4964,6 +4964,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Gasnica
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 427d19de1279d2444a74363b9aafbba5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
