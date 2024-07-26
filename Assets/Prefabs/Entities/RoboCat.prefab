@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4649113340946873116}
   - component: {fileID: 507479148926080332}
   - component: {fileID: 2161062750483175817}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 1039825867040027243}
   - component: {fileID: 6649752358239387468}
   - component: {fileID: 1846677511166435238}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RoboCat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,8 +302,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meowSounds: []
-  playerRef: {fileID: 11400000, guid: 5c184b669e2eeda489a93cfe0f245e80, type: 2}
-  player: {fileID: 0}
 --- !u!95 &1846677511166435238
 Animator:
   serializedVersion: 5
