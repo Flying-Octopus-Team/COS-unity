@@ -24,7 +24,7 @@ public class NearDoorCat : MonoBehaviour {
 
     private IEnumerator WaitForDoor() {
         agent.isStopped = true;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
         agent.isStopped = false;
         yield return new WaitForSeconds(4);
         dc.SwitchState();
