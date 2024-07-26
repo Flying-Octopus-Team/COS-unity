@@ -109,6 +109,8 @@ public class Cat : MonoBehaviour {
             currentPOI = player; 
         }
 
+        if (currentPOI == null) currentPOI = player;
+
         GoToCurrentPOI();
     }
 
@@ -122,6 +124,8 @@ public class Cat : MonoBehaviour {
     }
 
     private IEnumerator CatSetDestination() {
+        yield return new WaitForSeconds(1);
+
         if (agent == null) yield return null;
 
         // Set the destination of the cat to the current POI
