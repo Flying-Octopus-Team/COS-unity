@@ -24,16 +24,16 @@ public class Cat : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        if (Vector3.Distance(transform.position, player.transform.position) > 40) {
-            transform.position = player.transform.position + Vector3.one;
-        }
+        //if (Vector3.Distance(transform.position, player.transform.position) > 40) {
+        //    transform.position = player.transform.position + Vector3.one;
+        //}
     }
 
     private void GetAllComponents() {
         audioSource = GetComponent<AudioSource>();
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-        player = GameObject.Find("PlayerCharacter").GetComponent<POI>();
+        //player = GameObject.Find("PlayerCharacter").GetComponent<POI>();
     }
 
     private void GetAllPOI() {
