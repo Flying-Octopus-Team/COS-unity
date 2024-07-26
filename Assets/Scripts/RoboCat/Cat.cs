@@ -13,27 +13,28 @@ public class Cat : MonoBehaviour {
     private Animator animator;
     private POI currentPOI;
 
-    private void Awake() {
-        GetAllComponents();
-    }
 
-    private void Start() {
+    private IEnumerator Start() {
+        do { 
+            GetAllComponents();
+            yield return null;
+        } while (player == null);
+        StartCoroutine(RandomlyMakeSound());
         GetAllPOI();
         GetClosestPOI();
-        StartCoroutine(RandomlyMakeSound());
     }
 
     private void FixedUpdate() {
-        //if (Vector3.Distance(transform.position, player.transform.position) > 40) {
-        //    transform.position = player.transform.position + Vector3.one;
-        //}
+        if (player != null && Vector3.Distance(transform.position, player.transform.position) > 40) {
+            transform.position = player.transform.position + Vector3.one;
+        }
     }
 
     private void GetAllComponents() {
         audioSource = GetComponent<AudioSource>();
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-        //player = GameObject.Find("PlayerCharacter").GetComponent<POI>();
+        player = GameObject.Find("PlayerCharacter").GetComponent<POI>();
     }
 
     private void GetAllPOI() {
@@ -85,7 +86,7 @@ public class Cat : MonoBehaviour {
         }
 
         // Set smallest distance to biggest possible
-        float smallestDistance = 20;
+        float smallestDistance = 3;
         float distance = 0;
 
         // Iterate through very POI in the list
@@ -101,8 +102,8 @@ public class Cat : MonoBehaviour {
             }
         }
 
-        // check if the smallest distance is more than 20
-        if (smallestDistance > 20) {
+        // check if the smallest distance is more than 3
+        if (smallestDistance > 3) {
 
             // Set the current POI to be player
             currentPOI = player; 
