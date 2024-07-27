@@ -16,13 +16,12 @@ public class DoorController : MonoBehaviour
     [SerializeField] private UnityEvent onClosedDoors;
 
     float lockTime = 0;
-
+    private void Awake()
+    {
+        doorAnim = GetComponent<Animator>();
+    }
     private void Start()
     {
-        if(doorAnim == null)
-        {
-            doorAnim = GetComponent<Animator>();
-        }
         SwitchpowerState(powerState);
     }
     [ContextMenu("SwitchState")]

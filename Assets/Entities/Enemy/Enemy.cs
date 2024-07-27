@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float detectionRange;
-
+    [SerializeField] private bool enabledAI;
     private NavMeshAgent nvmAgent;
 
     [SerializeField] private PlayerReference pcRef;
@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(enabledAI == false) return;
         RaycastHit hit;
         PlayerController pc = pcRef.GetPc();
 
@@ -71,5 +72,12 @@ public class Enemy : MonoBehaviour
         if (!pcRef) return 1;
         if (!pcRef.GetPc()) return 1;
         return pcRef.GetPc().GetPlayerDetectionLevel();
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(!other.CompareTag("Player")) return;
+        if (!pcRef) return;
+        if (!pcRef.GetPc()) return;
+        pcRef.GetPc().PlayerDie();
     }
 }

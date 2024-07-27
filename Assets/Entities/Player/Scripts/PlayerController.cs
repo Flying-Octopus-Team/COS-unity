@@ -184,7 +184,7 @@ public class PlayerController : MonoBehaviour
                 crosshairAnimator.SetBool("CrosshairState", true);
                 interactedObjectTMPro.enabled = true;
                 interactObject = o;
-                interactedObjectTMPro.SetText(hit.transform.name);
+                //interactedObjectTMPro.SetText(hit.transform.name);
                 return; 
             }
             else if(hit.collider != null)

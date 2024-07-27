@@ -29,9 +29,9 @@ public class LevelLock : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.LogWarning(other.name);
         if (!other.CompareTag("Player")) return;
         if (lockedDoors) return;
-
         lockedDoors = true;
         blockingWall.SetActive(true);
         dorsIn.SetState(false);//zamykamy drzwi wejsciowe
@@ -48,10 +48,15 @@ public class LevelLock : MonoBehaviour
             StartCoroutine(LoadNextStageSequence());
         }
     }
+    public void ForceLoadNextStage()
+    {
+        Debug.Log("Forced Load");
+        loaded = true;
+        StartCoroutine(LoadNextStageSequence());
+    }
 
     private IEnumerator LoadNextStageSequence()
     {
-        
         AsyncOperation asyncUnLoad = SceneManager.UnloadSceneAsync(stageToLoad-1);
         while (!asyncUnLoad.isDone)
         {
