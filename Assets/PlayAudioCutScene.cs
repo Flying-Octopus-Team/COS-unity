@@ -22,7 +22,7 @@ public class PlayAudioCutScene : MonoBehaviour
     public void PlayAudio()
     {
         audioCutScene.clip = audioClip;
-        audioCutScene.Play();
+        audioCutScene.PlayOneShot(audioClip);
     }
 
     public void PlayParticles()

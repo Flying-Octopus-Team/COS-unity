@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueQuotes:
   - text: 
-    audio: {fileID: 8300000, guid: 45e9c9bca4909684680c9e632e413523, type: 3}
+    audio: {fileID: 8300000, guid: b1946b022944e2b44ad62508226a84cb, type: 3}

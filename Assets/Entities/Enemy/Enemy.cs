@@ -14,6 +14,12 @@ public class Enemy : MonoBehaviour
     bool isPlayerInSight = false;
     float playerLastContactTimestamp = - 10;
 
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip monsterScream;
+
+
     private void Start()
     {
         nvmAgent= GetComponent<NavMeshAgent>();
@@ -78,6 +84,8 @@ public class Enemy : MonoBehaviour
         if(!other.CompareTag("Player")) return;
         if (!pcRef) return;
         if (!pcRef.GetPc()) return;
+
+        audioSource.PlayOneShot(monsterScream);
         pcRef.GetPc().PlayerDie();
     }
 }
