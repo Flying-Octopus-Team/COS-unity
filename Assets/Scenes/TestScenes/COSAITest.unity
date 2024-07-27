@@ -326,47 +326,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1304738413300112593, guid: 106d075f0f8f65446b10bf99ae6d73fd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5152352774224419435, guid: 106d075f0f8f65446b10bf99ae6d73fd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6647889676691930383, guid: 106d075f0f8f65446b10bf99ae6d73fd,
-        type: 3}
-      propertyPath: referenceToPlayer
-      value: 
-      objectReference: {fileID: 11400000, guid: 5c184b669e2eeda489a93cfe0f245e80,
-        type: 2}
-    - target: {fileID: 6647889676691930383, guid: 106d075f0f8f65446b10bf99ae6d73fd,
-        type: 3}
-      propertyPath: soundsToBlend.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6647889676691930383, guid: 106d075f0f8f65446b10bf99ae6d73fd,
-        type: 3}
-      propertyPath: soundsToBlend.Array.data[0].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 75f1b10b6e8ecd140a4b6d5165ed3a4f, type: 3}
-    - target: {fileID: 6647889676691930383, guid: 106d075f0f8f65446b10bf99ae6d73fd,
-        type: 3}
-      propertyPath: soundsToBlend.Array.data[1].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 81549e2d6363a9248a604d7dbb2473fb, type: 3}
-    - target: {fileID: 6647889676691930383, guid: 106d075f0f8f65446b10bf99ae6d73fd,
-        type: 3}
-      propertyPath: soundsToBlend.Array.data[0].range
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 6647889676691930383, guid: 106d075f0f8f65446b10bf99ae6d73fd,
-        type: 3}
-      propertyPath: soundsToBlend.Array.data[1].range
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 6710501804632679987, guid: 106d075f0f8f65446b10bf99ae6d73fd,
         type: 3}
       propertyPath: m_RootOrder

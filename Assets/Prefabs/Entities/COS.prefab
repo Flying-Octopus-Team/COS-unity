@@ -228,7 +228,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9063224165348793743}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 2.349}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -236,7 +236,7 @@ Transform:
   - {fileID: 8085024219321812439}
   - {fileID: 2475842016684030323}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &1304738413300112593
 NavMeshAgent:
@@ -338,9 +338,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 8380612326345146118}
-  audioClips:
-  - {fileID: 8300000, guid: 81549e2d6363a9248a604d7dbb2473fb, type: 3}
-  - {fileID: 8300000, guid: 75f1b10b6e8ecd140a4b6d5165ed3a4f, type: 3}
+  soundsToBlend:
+  - range: 25
+    clip: {fileID: 8300000, guid: 75f1b10b6e8ecd140a4b6d5165ed3a4f, type: 3}
+    audioSource: {fileID: 0}
+  - range: 15
+    clip: {fileID: 8300000, guid: 81549e2d6363a9248a604d7dbb2473fb, type: 3}
+    audioSource: {fileID: 0}
+  referenceToPlayer: {fileID: 11400000, guid: 5c184b669e2eeda489a93cfe0f245e80, type: 2}
+  volume: 1
 --- !u!1001 &7479360133539104630
 PrefabInstance:
   m_ObjectHideFlags: 0

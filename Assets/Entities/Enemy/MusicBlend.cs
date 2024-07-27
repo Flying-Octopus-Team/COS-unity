@@ -41,6 +41,15 @@ public class MusicBlend : MonoBehaviour
         }
     }
 
+    public void DisableDelayed(int time)
+    {
+        StartCoroutine(DelayInDisable(time));
+    }
+    private IEnumerator DelayInDisable(int time)
+    {
+        yield return new WaitForSeconds(time);
+        this.enabled = false;
+    }
 }
 [System.Serializable]
 public class BlendSound
