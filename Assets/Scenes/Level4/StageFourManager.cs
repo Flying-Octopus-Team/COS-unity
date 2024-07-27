@@ -8,6 +8,7 @@ public class StageFourManager : MonoBehaviour
     void Start()
     {
         COS.gameObject.SetActive(false);
+        StartCoroutine(EntryCutscene());
     }
     private IEnumerator EntryCutscene()
     {
