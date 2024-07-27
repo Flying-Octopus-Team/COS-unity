@@ -39,6 +39,11 @@ public class DoorController : MonoBehaviour
         }
         
     }
+
+    public bool GetDoorState() {
+        return state;
+    }
+
     public void SetState(bool newState)
     {
         if(state != newState) 
