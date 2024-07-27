@@ -8,7 +8,8 @@ public class DoorController : MonoBehaviour
     [SerializeField] private bool state;
     [SerializeField] private bool powerState;
     private Animator doorAnim;
-    [SerializeField] private AudioClip doorSound;
+    [SerializeField] private AudioClip doorCloseSound;
+    [SerializeField] private AudioClip doorOpenSound;
     [SerializeField] private AudioSource doorAS;
     [SerializeField] private WorldButton doorButton;
     [SerializeField] private UnityEvent eventOnStartOpening;
@@ -33,7 +34,7 @@ public class DoorController : MonoBehaviour
         {
             state = !state;
             doorAnim.SetBool("DoorState", state);
-            if (doorAS) doorAS.PlayOneShot(doorSound);
+            if (doorAS) doorAS.PlayOneShot(state ? doorOpenSound : doorCloseSound);
             lockTime = Time.time + 2;//potem podmienic na faktyczna dlugosc animacji
         }
         
@@ -49,7 +50,7 @@ public class DoorController : MonoBehaviour
         {
             state = newState;
             doorAnim.SetBool("DoorState", state);
-            if (doorAS) doorAS.PlayOneShot(doorSound);
+            if (doorAS) doorAS.PlayOneShot(state ? doorOpenSound : doorCloseSound);
         }
     }
     public void SwitchpowerState(bool newState)

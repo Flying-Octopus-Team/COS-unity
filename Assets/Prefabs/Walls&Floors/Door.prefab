@@ -1586,7 +1586,7 @@ Transform:
   - {fileID: 2418251853761850432}
   - {fileID: 7692466435472281974}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2478060580166826958
 Animator:
@@ -1623,7 +1623,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   powerState: 1
-  doorSound: {fileID: 8300000, guid: 8ca3707c3d82a4187b33bddc1426b8ba, type: 3}
+  doorCloseSound: {fileID: 8300000, guid: a0252c5c93016ad4cb638ac3b4344095, type: 3}
+  doorOpenSound: {fileID: 8300000, guid: 7c326e334a18c0d48b95ad818a9710b4, type: 3}
   doorAS: {fileID: 6143962388719433888}
   doorButton: {fileID: 7989208176442040004}
   eventOnStartOpening:
