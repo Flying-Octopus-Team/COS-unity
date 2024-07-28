@@ -6198,7 +6198,7 @@ AudioSource:
   MinDistance: 2
   MaxDistance: 5
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -6231,7 +6231,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -6485,7 +6485,7 @@ AudioSource:
   MinDistance: 2
   MaxDistance: 5
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -6518,7 +6518,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -26293,6 +26293,7 @@ GameObject:
   - component: {fileID: 1240092630}
   - component: {fileID: 1240092629}
   - component: {fileID: 1240092628}
+  - component: {fileID: 1240092633}
   m_Layer: 7
   m_Name: Ambient_Korytarz_Mocny
   m_TagString: Untagged
@@ -26351,7 +26352,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: df39f6f770835854b90ece4cddf81612,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 81249a8fd8f15447584b1bed23b69d4c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 47fc715bb9f5bff45940a36a14f1547d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.871
   m_Pitch: 1
@@ -26508,6 +26509,103 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1240092626}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!82 &1240092633
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240092626}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: df39f6f770835854b90ece4cddf81612,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 5c5d0e6b867c1a64e8b384e75b9540f3, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1245342147
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30033,7 +30131,7 @@ AudioSource:
   MinDistance: 2
   MaxDistance: 5
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -30066,7 +30164,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -39692,6 +39790,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7238465435613362951}
     m_Modifications:
+    - target: {fileID: 372827525425753459, guid: f99a9761772f0e942880ebb1fb92a618,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 951676368052134326, guid: f99a9761772f0e942880ebb1fb92a618,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -65907,6 +66010,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7238465435613362951}
     m_Modifications:
+    - target: {fileID: 372827525425753459, guid: f99a9761772f0e942880ebb1fb92a618,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 951676368052134326, guid: f99a9761772f0e942880ebb1fb92a618,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
