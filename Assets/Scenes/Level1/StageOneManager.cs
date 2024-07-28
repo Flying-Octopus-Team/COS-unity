@@ -7,10 +7,10 @@ public class StageOneManager : MonoBehaviour
 
     [SerializeField] private Color indicatorsActiveColor;
     [SerializeField] private Color indicatorsInactiveColor;
-
+    
     [SerializeField] private MeshRenderer[] indicators;
     private bool[] fuseStates;
-
+    
     private void Start()
     {
         for (int i = 0; i < indicators.Length; i++)
@@ -43,6 +43,8 @@ public class StageOneManager : MonoBehaviour
             LevelManager.Instance.stageOneDoors.SetState(true);
         }
     }
+    
+
     [ContextMenu("UnlockDoors")]
     public void UnlockAllDors()
     {

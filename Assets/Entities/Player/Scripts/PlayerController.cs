@@ -83,6 +83,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform pauseScreen;
     bool paused = false;
 
+    [Header("Anim")]
+    [SerializeField] private Image panel;
+
     private void Awake()
     {
         pRef.SetPc(this);
@@ -397,6 +400,13 @@ public class PlayerController : MonoBehaviour
         float detection = 1;
         if (lifeSupportStatus) detection *= 3;
         return detection;
+    }
+
+    public void SetOpacity(float f)
+    {
+        Color tempColor = panel.color;
+        tempColor.a = f;
+        panel.color = tempColor;
     }
     //DEBUG
     [ExecuteAlways]

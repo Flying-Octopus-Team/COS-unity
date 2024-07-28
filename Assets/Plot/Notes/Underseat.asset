@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e4c738dfe0bbee4c891220b01f71207, type: 3}
+  m_Name: Underseat
+  m_EditorClassIdentifier: 
+  noteData: "05.01.2091\n\rOd dnia dzisiejszego za stan kapsu\u0142 ewakuacyjnych
+    odpowiada nasz nowy nadzorca Dawid Underseat - ma\u0142omiasteczkowy fan tazos\xF3w
+    i Ohit.\nLiczymy na to \u017Ce zmiana pozytywnie wp\u0142ynie na szumy komunikacyjne
+    i nie b\u0119dzie ju\u017C fal"

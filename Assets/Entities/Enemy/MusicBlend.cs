@@ -24,7 +24,6 @@ public class MusicBlend : MonoBehaviour
     private void Update()
     {
         float range = Vector3.Distance(transform.position, playerTransform.position);
-        Debug.Log($"{range}");
         bool founded = false;
         for(int i = soundsToBlend.Count-1; i>=0;i--)
         {

@@ -21,7 +21,8 @@ public class WorldButton : MonoBehaviour, IInteract
         }
         UdateColor();
     }
-    
+
+    [ContextMenu("Click")]
     public void Interact()
     {
         if(active) 
