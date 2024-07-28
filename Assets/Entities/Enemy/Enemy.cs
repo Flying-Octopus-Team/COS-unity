@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
         nvmAgent= GetComponent<NavMeshAgent>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if(enabledAI == false) return;
         RaycastHit hit;
@@ -55,11 +55,16 @@ public class Enemy : MonoBehaviour
         {
             nvmAgent.SetDestination(pcRef.GetPc().transform.position);
         }
-        else if(nvmAgent.remainingDistance < 1)
+        else if(nvmAgent.remainingDistance < 1 && (Time.time - playerLastContactTimestamp) < 30)
         {
             POI[] poi = GameObject.FindObjectsOfType<POI>();
             int randomPoint = Random.Range(0, poi.Length);
             nvmAgent.SetDestination(poi[randomPoint].gameObject.transform.position);
+        }
+        else
+        {
+            Debug.Log("Adrenaline burst");
+            nvmAgent.SetDestination(pcRef.GetPc().transform.position);
         }
     }
     private void OnDrawGizmos()

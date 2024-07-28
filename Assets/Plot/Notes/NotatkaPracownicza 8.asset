@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e4c738dfe0bbee4c891220b01f71207, type: 3}
+  m_Name: NotatkaPracownicza 8
+  m_EditorClassIdentifier: 
+  noteData: "A wi\u0119c ZNOWU zapomnieli\u015Bcie kodu do lab\xF3w, wi\u0119c ustawi\u0142em
+    je na 0000.\nCzy \u0142amiemy polityk\u0119 bezpiecze\u0144stwa?\nBardzo mo\u017Cliwe?\nCzy
+    nie m\xF3wimy o tym przy inspekcji?\nOczywi\u015Bcie"
