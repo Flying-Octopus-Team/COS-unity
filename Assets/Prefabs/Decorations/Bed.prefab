@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 3279195328195678663}
   - component: {fileID: 7130440556618172216}
   - component: {fileID: 5362173077746191672}
-  - component: {fileID: 4848469379629592165}
+  - component: {fileID: 7615759581841177334}
   m_Layer: 0
   m_Name: Frame
   m_TagString: Untagged
@@ -266,19 +266,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.25, y: 0.65, z: 1.6000001}
   m_Center: {x: 1.08, y: 0.25, z: 0}
---- !u!208 &4848469379629592165
-NavMeshObstacle:
+--- !u!114 &7615759581841177334
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3252946290564631054}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 1.2, y: 0.31300002, z: 0.8}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.263, z: 0}
-  m_TimeToStationary: 0.5
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 2.08, y: 1, z: 1.2}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
