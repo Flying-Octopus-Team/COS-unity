@@ -11,7 +11,7 @@ public class ScrollingText : MonoBehaviour {
 
     private void Update() {
         transform.Translate(Camera.main.transform.up * scrollSpeed * Time.deltaTime);
-        if (transform.localPosition.y > 600) {
+        if (transform.localPosition.y > 1000) {
             transform.position = startTextPosition;
         }
     }
