@@ -4569,9 +4569,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "3D Artists:\nKamil Sell\nEmil Kopytek\n\n2D Artists:\nSeven\nMisuzu Faraday\n\nAudio
-    and sound design:\nAleksander Intek\nMarek Kokorudz\n\nProgrammers:\nMi\u0142osz
-    Klim\nCosinus\n\nMany thanks to:\ndyedMagenta\nFrost\nTum\nCarl-bot\nChannu\nKazmo"
+  m_text: "3D Artists:\nKamil Sell\nEmil Kopytek\nRuruelam\nwikson20\n\n2D Artists:\nSeven\nMisuzu
+    Faraday\nwikson20\n\nAudio and sound design:\nAleksander Intek\nMarek Kokorudz\n\nProgrammers:\nMi\u0142osz
+    Klim\nOliwia Paw\u0142owska (Cosinus)\nOlga Maruszy\u0144ska\r\nSymarfiusz Renesans\r\n\nGame
+    Design:\nHubert Cendrowski\r\n\nMany thanks to:\njlododa\ndyedMagenta\nFrost\nTum\nCarl-bot\nChannu\nKazmo"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7a75433ec9bea9a46a752fbd6c9d385f, type: 2}
   m_sharedMaterial: {fileID: 410896014808052429, guid: 7a75433ec9bea9a46a752fbd6c9d385f,
@@ -4635,7 +4636,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -262.05917, y: -293.83612, z: 122.89119, w: -302.28885}
+  m_margin: {x: -262.05917, y: -293.83612, z: 122.89119, w: -800.0745}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
