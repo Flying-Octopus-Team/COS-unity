@@ -15,6 +15,7 @@ public class StageFourManager : MonoBehaviour
     [SerializeField] private Color indicatorsInactiveColor;
 
     [SerializeField] private MeshRenderer[] indicators;
+    [SerializeField] private AudioSource startSound;
     [SerializeField] private AudioSource endSound;
     [SerializeField] private AudioClip wziumClip;
     [SerializeField] private AudioClip blehClip;
@@ -33,7 +34,8 @@ public class StageFourManager : MonoBehaviour
     }
     private IEnumerator EntryCutscene()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(60);
+        startSound.PlayOneShot(blehClip);
         COS.gameObject.SetActive(true);
     }
     public void ActiveFuse()
