@@ -11,6 +11,7 @@ public class WorldButton : MonoBehaviour, IInteract
     [SerializeField] private Color activeColor;
     [SerializeField] private Color inactiveColor;
     private bool active = true;
+    private AudioSource audioSource;
     
     void Start()
     {
@@ -19,6 +20,7 @@ public class WorldButton : MonoBehaviour, IInteract
         {
             buttonMaterial = renderer.material;
         }
+        audioSource = GetComponent<AudioSource>();
         UdateColor();
     }
 
@@ -55,5 +57,10 @@ public class WorldButton : MonoBehaviour, IInteract
     {
         active = newState;
         UdateColor();
+    }
+
+    public void PlayAudio(Dialog dialog) {
+        audioSource.clip = dialog.dialogueQuotes[0].audio;
+        audioSource.Play();
     }
 }
