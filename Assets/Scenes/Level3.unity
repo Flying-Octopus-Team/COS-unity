@@ -7143,7 +7143,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.09
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: f064afd6c53c26b4e8504d40736d1717, type: 2}
   m_BuildHeightMesh: 0
@@ -21516,6 +21516,7 @@ GameObject:
   - component: {fileID: 397241637}
   - component: {fileID: 397241636}
   - component: {fileID: 397241635}
+  - component: {fileID: 397241638}
   m_Layer: 0
   m_Name: skrzynia1
   m_TagString: Untagged
@@ -21609,6 +21610,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 397241633}
   m_Mesh: {fileID: 6163357941915963767, guid: fba7745da1a44af49aa2a0dd111233bc, type: 3}
+--- !u!114 &397241638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397241633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &399585157
 GameObject:
   m_ObjectHideFlags: 0
@@ -79675,6 +79695,59 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1168816220}
   m_Mesh: {fileID: -6505552537926968463, guid: eae17518bf157754d85deb7bc626539f, type: 3}
+--- !u!1 &1169062033
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1169062034}
+  - component: {fileID: 1169062035}
+  m_Layer: 0
+  m_Name: POI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1169062034
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169062033}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 66.70695, y: 0.060239017, z: -22.503061}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1169062035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169062033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1d68db266e16bc4aa216c8277d7ca2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  outEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  inAnimationName: SittingIn
+  outAnimationName: SittingOut
+  namePOI: Sitting
 --- !u!1 &1170222135
 GameObject:
   m_ObjectHideFlags: 0

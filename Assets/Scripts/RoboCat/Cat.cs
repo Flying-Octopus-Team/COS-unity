@@ -41,6 +41,7 @@ public class Cat : MonoBehaviour {
         // Add every POI to the list but skip player
         foreach (POI poi in FindObjectsOfType<POI>()) {
             if (poi.POIName == "Player") continue;
+            if (poi.POIName == "MonsterPatrolPoint") continue;
             objectsToInteractWith.Add(poi);
         }
     }
